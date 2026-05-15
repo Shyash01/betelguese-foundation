@@ -1,0 +1,8 @@
+# Cursor & VS Code files
+.vscode/
+.cursor/
+.DS_Store
+
+# Large assets or temporary logs
+*.log
+node_modules/
