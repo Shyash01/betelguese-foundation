@@ -76,6 +76,121 @@
         .footer-link-home {
             color: var(--accent) !important;
         }
+
+        /* ── Elite Execution Marquee ── */
+        .marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-marquee 35s linear infinite;
+        }
+
+        .marquee-wrapper:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 2rem;
+            padding-right: 2rem;
+        }
+
+        @keyframes scroll-marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Card — Clean View (Default) */
+        .logo-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 200px;
+            padding: 1.5rem 1.25rem 1.75rem;
+            background-color: var(--white);
+            border-radius: 14px;
+            border: 1px solid #f1f5f9;
+            text-align: center;
+            cursor: default;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.35s ease;
+        }
+
+        /* Card — Interaction (Hover) */
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px -8px rgba(15, 23, 42, 0.10),
+                0 6px 16px rgba(79, 70, 229, 0.08);
+            border-color: #e0e7ff;
+        }
+
+        /* Logo */
+        .logo-card img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        /* Organization Name */
+        .logo-card h4 {
+            margin: 12px 0 0;
+            font-family: var(--heading-font);
+            font-size: 14px;
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.3;
+        }
+
+        /* Functional Role — hidden by default */
+        .logo-card .partner-role {
+            display: block;
+            margin-top: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #4F46E5;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Functional Role — revealed on hover */
+        .logo-card:hover .partner-role {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Expanding Indigo Bottom Line */
+        .logo-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            border-radius: 3px 3px 0 0;
+            background-color: #4F46E5;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+
+        .logo-card:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -136,7 +251,7 @@
 
                 <p class="hero-description">
                     Betelgeuse Foundation partners with institutions, conferences, and universities to manage conference
-                    logistics, execute delegate operations, and build structured leadership programs — with proven
+                    logistics, execute delegate operations, and build structured leadership programs with proven
                     delivery across 14+ institutional events.
                 </p>
 
@@ -312,7 +427,7 @@
 
             <!-- Section Heading -->
             <div class="section-header">
-                <p class="section-tag">Collaboration Network</p>
+                <p class="section-tag">Verified Operational Deployments</p>
                 <h2>Trusted By Institutions Across India</h2>
                 <p>Collaborating seamlessly with prominent academic bodies, established UN models, and prestigious
                     industry operations platforms.</p>
@@ -324,87 +439,77 @@
                     <!-- Track groups two strips so one transform can loop seamlessly -->
                     <div class="marquee-track">
                         <div class="marquee-content">
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>CyberPeace Foundation</strong>
-                                <span class="partner-meta">Programme Partner</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/AMIMUN'26-logo.png" alt="AMIMUN'26">
+                                <h4>AMIMUN</h4>
+                                <span class="partner-role">LEAD LOGISTICS PARTNER</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>RDIAS</strong>
-                                <span class="partner-meta">Academic Alliance</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/google-logo.png" alt="Google.org">
+                                <h4>Google.org</h4>
+                                <span class="partner-role">STRATEGIC SOCIAL PARTNER</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>Confluence 2026</strong>
-                                <span class="partner-meta">Institutional Summit</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/Cyber Peace-logo.png" alt="CyberPeace">
+                                <h4>CyberPeace</h4>
+                                <span class="partner-role">CYBER OPS PARTNER</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>AMIMUN</strong>
-                                <span class="partner-meta">University Flagship</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/USI MUN 2.0-logo.png" alt="USI MUN">
+                                <h4>USI MUN</h4>
+                                <span class="partner-role">INTEGRATION SUPPORT</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>USI MUN</strong>
-                                <span class="partner-meta">Strategic Partner</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/SMIT MUN-logo.png" alt="SMIT MUN">
+                                <h4>SMIT MUN</h4>
+                                <span class="partner-role">BRANDING DEPLOYMENT</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>Google.org</strong>
-                                <span class="partner-meta">Philanthropic Partner</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/Dabur-logo.png" alt="Dabur India">
+                                <h4>Dabur India</h4>
+                                <span class="partner-role">CORPORATE COLLABORATOR</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>Rotaract</strong>
-                                <span class="partner-meta">Civic Network</span>
-                            </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>Heritage Group</strong>
-                                <span class="partner-meta">Educational Group</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/RDIAS 6.0-logo.png" alt="RDIAS">
+                                <h4>RDIAS</h4>
+                                <span class="partner-role">ACADEMIC ALLIANCE</span>
                             </div>
                         </div>
                         <div class="marquee-content" aria-hidden="true">
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>CyberPeace Foundation</strong>
-                                <span class="partner-meta">Programme Partner</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/AMIMUN'26-logo.png" alt="AMIMUN'26">
+                                <h4>AMIMUN</h4>
+                                <span class="partner-role">LEAD LOGISTICS PARTNER</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>RDIAS</strong>
-                                <span class="partner-meta">Academic Alliance</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/google-logo.png" alt="Google.org">
+                                <h4>Google.org</h4>
+                                <span class="partner-role">STRATEGIC SOCIAL PARTNER</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>Confluence 2026</strong>
-                                <span class="partner-meta">Institutional Summit</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/Cyber Peace-logo.png" alt="CyberPeace">
+                                <h4>CyberPeace</h4>
+                                <span class="partner-role">CYBER OPS PARTNER</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>AMIMUN</strong>
-                                <span class="partner-meta">University Flagship</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/USI MUN 2.0-logo.png" alt="USI MUN">
+                                <h4>USI MUN</h4>
+                                <span class="partner-role">INTEGRATION SUPPORT</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>USI MUN</strong>
-                                <span class="partner-meta">Strategic Partner</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/SMIT MUN-logo.png" alt="SMIT MUN">
+                                <h4>SMIT MUN</h4>
+                                <span class="partner-role">BRANDING DEPLOYMENT</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>Google.org</strong>
-                                <span class="partner-meta">Philanthropic Partner</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/Dabur-logo.png" alt="Dabur India">
+                                <h4>Dabur India</h4>
+                                <span class="partner-role">CORPORATE COLLABORATOR</span>
                             </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>Rotaract</strong>
-                                <span class="partner-meta">Civic Network</span>
-                            </div>
-                            <div class="logo-card premium-card card">
-                                <span class="card-accent-line"></span>
-                                <strong>Heritage Group</strong>
-                                <span class="partner-meta">Educational Group</span>
+                            <div class="logo-card">
+                                <img src="assets/Logos/RDIAS 6.0-logo.png" alt="RDIAS">
+                                <h4>RDIAS</h4>
+                                <span class="partner-role">ACADEMIC ALLIANCE</span>
                             </div>
                         </div>
                     </div>
