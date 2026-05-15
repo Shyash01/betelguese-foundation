@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Logistics & Delegate Operations | Betelgeuse Foundation</title>
+    <meta name="description"
+        content="End-to-end delegate kit logistics, precision stationery, credential systems, and on-ground field execution for institutional conferences and MUNs.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* =======================================================================
+           GLOBAL DESIGN SYSTEM
+        ======================================================================= */
+        :root {
+            --accent: #4F46E5;
+            --accent-light: #EEF2FF;
+            --accent-glow: #6366F1;
+            --dark: #111827;
+            --body: #4B5563;
+            --muted: #9CA3AF;
+            --white: #FFFFFF;
+            --border: #E5E7EB;
+            --dark-bg: #0F172A;
+            --dark-surface: #1E2A3A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--body);
+            background-color: var(--white);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Section anchors */
+        section[id],
+        div[id] {
+            scroll-margin-top: 110px;
+        }
+
+        details {
+            scroll-margin-top: 110px;
+        }
+
+        .container {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .bg-light {
+            background: var(--accent-light);
+        }
+
+        .bg-white {
+            background: var(--white);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: clamp(36px, 4.5vw, 52px);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: clamp(36px, 4vw, 48px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-top: 12px;
+            margin-bottom: 16px;
+        }
+
+        .section-subtext {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--body);
+            max-width: 580px;
+            margin: 0 auto 0;
+            text-align: center;
+        }
+
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 999px;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            padding: 14px 28px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #4338CA;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--dark);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* =======================================================================
+           HEADER & NAVBAR
+        ======================================================================= */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--body);
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 6px;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .nav-btn:hover {
+            background: #4338CA;
+        }
+
+        /* =======================================================================
+           SECTION 1: PAGE HERO
+        ======================================================================= */
+        .hero {
+            padding: 40px 0 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-left .pill-badge {
+            margin-bottom: 24px;
+        }
+
+        .hero-left .pill-badge::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .hero-left h1 .accent-text {
+            color: var(--accent);
+        }
+
+        .hero-left p {
+            font-size: 17px;
+            margin: 24px 0 40px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .stat-chip {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 20px;
+            background: var(--white);
+            display: inline-flex;
+            flex-direction: column;
+        }
+
+        .stat-chip-val {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-chip-lbl {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        @keyframes floatAnim {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .ops-brief-card {
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(17, 24, 39, 0.12);
+            animation: floatAnim 4s ease-in-out infinite;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .ops-brief-card:hover {
+            box-shadow: 0 0 40px rgba(79, 70, 229, 0.3);
+        }
+
+        .ops-header {
+            background: var(--dark);
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ops-header-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: #94A3B8;
+            text-transform: uppercase;
+        }
+
+        .ops-header-pill {
+            background: rgba(34, 197, 94, 0.15);
+            color: #22C55E;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .ops-body {
+            padding: 28px;
+            background: var(--white);
+        }
+
+        .ops-line {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            padding: 13px 0;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+
+        .ops-line:last-child {
+            border-bottom: none;
+        }
+
+        .ops-line-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .ops-status-pill {
+            border-radius: 999px;
+            padding: 3px 10px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .ops-pill-green {
+            background: #DCFCE7;
+            color: #15803D;
+        }
+
+        .ops-pill-amber {
+            background: #FEF3C7;
+            color: #B45309;
+        }
+
+        .ops-pill-gray {
+            background: #F1F5F9;
+            color: #64748B;
+        }
+
+        .ops-footer {
+            background: var(--accent-light);
+            padding: 16px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ops-footer-left {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--body);
+        }
+
+        .ops-footer-right {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .section-header-centered {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header-centered .pill-badge {
+            margin-bottom: 16px;
+        }
+
+        /* =======================================================================
+           SECTION 2: OPERATIONAL CAPABILITIES
+        ======================================================================= */
+        .capabilities-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .cap-card {
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-bottom: 2px solid transparent;
+            border-radius: 20px;
+            padding: 32px;
+            background: #F8FAFC;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease, border-color 0.35s ease, border-bottom-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .cap-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            background-color: var(--white);
+            border-color: #e2e8f0;
+            border-bottom: 2px solid var(--accent);
+            box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.12), 0 10px 28px rgba(79, 70, 229, 0.12);
+        }
+
+        .capabilities-grid:has(.cap-card:hover) .cap-card:not(:hover) {
+            opacity: 0.5;
+        }
+
+        .cap-icon-box {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-light);
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            color: var(--accent);
+        }
+
+        .cap-card h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 14px 0 8px;
+        }
+
+        .cap-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .cap-list-item {
+            font-size: 13px;
+            color: var(--body);
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .cap-list-item::before {
+            content: "–";
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* =======================================================================
+           SECTION 3: TACTILE ASSETS
+        ======================================================================= */
+        .tactile-assets {
+            padding: 80px 0;
+            background: radial-gradient(circle at center, #EEF2FF 0%, #FFFFFF 70%);
+        }
+
+        .assets-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 40px;
+        }
+
+        .assets-grid:has(.asset-card:hover) .asset-card:not(:hover) {
+            opacity: 0.5;
+        }
+
+        .asset-card {
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-bottom: 2px solid transparent;
+            border-radius: 20px;
+            background: #F8FAFC;
+            padding: 32px;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease, border-color 0.35s ease, border-bottom-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .asset-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            background-color: var(--white);
+            border-color: #e2e8f0;
+            border-bottom: 2px solid var(--accent);
+            box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.12), 0 10px 28px rgba(79, 70, 229, 0.12);
+        }
+
+        .asset-icon-area {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .asset-card h3 {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .asset-card p {
+            font-size: 15px;
+            margin-bottom: 16px;
+            color: var(--body);
+        }
+
+        .asset-divider {
+            border-top: 1px solid var(--border);
+            margin: 16px 0;
+        }
+
+        .asset-checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .asset-checklist-item {
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: var(--body);
+        }
+
+        .asset-checklist-item .check {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .asset-link {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .asset-link:hover {
+            opacity: 0.8;
+        }
+
+        /* =======================================================================
+           SECTION 4: SPECIFICATIONS MATRIX
+        ======================================================================= */
+        .specs-section {
+            padding: 72px 0;
+            background: var(--accent-light);
+        }
+
+        .specs-container {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        summary {
+            padding: 24px 32px;
+            background: var(--white);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            list-style: none;
+            transition: all 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary {
+            border-radius: 14px 14px 0 0;
+            border-bottom: none;
+        }
+
+        summary:hover {
+            background: #F8F8FF;
+        }
+
+        .summary-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .summary-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .summary-title {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--dark);
+        }
+
+        .summary-icon {
+            transition: transform 0.3s ease;
+            font-size: 24px;
+            line-height: 1;
+            color: var(--muted);
+        }
+
+        details[open] summary .summary-icon {
+            transform: rotate(45deg);
+        }
+
+        .details-content {
+            padding: 0 28px 20px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 14px 14px;
+        }
+
+        .spec-row {
+            display: grid;
+            grid-template-columns: 200px auto;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .spec-value {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        /* =======================================================================
+           SECTION 5: EXECUTION PIPELINE
+        ======================================================================= */
+        .pipeline-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .pipeline-layout {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+        }
+
+        .pipeline-rail {
+            position: absolute;
+            left: 19px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), #C7D2FE);
+            z-index: 1;
+        }
+
+        .pipeline-item {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .rail-node-wrap {
+            width: 40px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            padding-top: 24px;
+        }
+
+        .rail-node {
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+        }
+
+        .pipeline-card {
+            flex-grow: 1;
+            margin-left: 20px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--white);
+            padding: 20px 32px;
+            transition: all 0.3s ease;
+        }
+
+        .pipeline-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 32px rgba(79, 70, 229, 0.1);
+        }
+
+        .pipeline-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .badge-verified {
+            background: #DCFCE7;
+            color: #16A34A;
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .badge-ttc {
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .pipeline-card h3 {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--dark);
+            margin-top: 12px;
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================================
+           SECTION 6: FEATURED COLLABORATIONS (AUDIT TABLE)
+        ======================================================================= */
+        .collab-section {
+            padding: 80px 0;
+            background: var(--accent-light);
+        }
+
+        .audit-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .audit-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+            transition: background-color 0.3s ease;
+            background-color: var(--white);
+        }
+
+        .audit-row:hover {
+            background-color: #F8FAFC;
+        }
+
+        /* subtle shift */
+        .audit-year {
+            font-weight: 800;
+            color: var(--accent);
+            width: 80px;
+            font-size: 16px;
+        }
+
+        .audit-name {
+            font-weight: 700;
+            color: var(--dark);
+            flex: 1.5;
+            font-size: 16px;
+        }
+
+        .audit-scale {
+            color: var(--body);
+            flex: 1;
+            font-size: 15px;
+        }
+
+        .audit-role {
+            font-weight: 600;
+            color: var(--dark);
+            flex: 1.5;
+            text-align: right;
+            font-size: 15px;
+        }
+
+        /* =======================================================================
+           SECTION 7: WHY BETELGEUSE
+        ======================================================================= */
+        .diff-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .diff-grid:has(.diff-card:hover) .diff-card:not(:hover) {
+            opacity: 0.5;
+        }
+
+        .diff-card {
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            border-bottom: 2px solid transparent;
+            border-radius: 20px;
+            background: #F8FAFC;
+            padding: 32px;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease, border-color 0.35s ease, border-bottom-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .diff-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            background-color: var(--white);
+            border-color: #e2e8f0;
+            border-bottom: 2px solid var(--accent);
+            box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.12), 0 10px 28px rgba(79, 70, 229, 0.12);
+        }
+
+        .diff-card .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .diff-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-top: 14px;
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================================
+           SECTION 8: THROUGHPUT SNAPSHOT (DARK METRICS)
+        ======================================================================= */
+        .metrics-section {
+            background-color: var(--dark-bg);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .metrics-header {
+            margin-bottom: 60px;
+        }
+
+        .metrics-header .pill-text {
+            color: var(--accent-glow);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .metrics-header h2 {
+            color: var(--white);
+            margin: 16px 0;
+        }
+
+        .metrics-desc {
+            font-size: 16px;
+            color: #94A3B8;
+            margin-bottom: 48px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .metrics-grid {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .metric-block .num {
+            font-size: 64px;
+            font-weight: 800;
+            color: var(--accent-glow);
+            line-height: 1;
+            text-shadow: 0 0 40px rgba(99, 102, 241, 0.5);
+        }
+
+        .metric-block .label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #94A3B8;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .metrics-cta {
+            margin-top: 56px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary-dark {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            border-radius: 10px;
+            padding: 14px 28px;
+            font-weight: 700;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-dark:hover {
+            border-color: var(--white);
+        }
+
+        /* =======================================================================
+           SECTION 9: FOOTER
+        ======================================================================= */
+        .footer {
+            background: #0F172A;
+            color: #64748B;
+            padding: 80px 0 24px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            max-width: 150px;
+            margin-bottom: 16px;
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        .footer-column ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-column ul li,
+        .footer-column ul a {
+            color: #94A3B8;
+            font-size: 14px;
+        }
+
+        .footer-column ul a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 13px;
+            color: #64748B;
+        }
+
+        /* =======================================================================
+           RESPONSIVE DESIGN
+        ======================================================================= */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-wrap: wrap;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .assets-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .metrics-grid {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .audit-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .audit-role {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .assets-grid,
+            .diff-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .spec-row {
+                grid-template-columns: 1fr;
+                gap: 4px;
+                padding: 10px 0;
+            }
+
+            summary {
+                padding: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .details-content {
+                padding: 0 16px 20px;
+            }
+
+            .summary-icon {
+                display: none;
+            }
+
+            .pipeline-rail {
+                display: none;
+            }
+
+            .rail-node-wrap {
+                display: none;
+            }
+
+            .pipeline-card {
+                margin-left: 0;
+            }
+        }
+    
+        /* Active Footer Link */
+        .footer-link-logistics { color: var(--accent) !important; }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         [1] HEADER / NAVBAR
+    ========================== -->
+    <header class="header">
+        <div class="container navbar">
+            <div class="logo">
+                <a href="../index.html" class="logo-link">
+                    <span class="nav-brand">Betelgeuse Foundation</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="logistics.html" class="active">Logistics</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-initiatives.html">Social Initiatives</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="nav-btn">Partner With Us</a>
+        </div>
+    </header>
+
+    <!-- =========================
+         [2] SECTION 1: PAGE HERO
+    ========================== -->
+    <section class="hero bg-light">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <div class="pill-badge">Operations · Materials · Field Execution</div>
+                <h1>Precision Logistics & <span class="accent-text">Delegate Operations</span></h1>
+                <p>End-to-end supply chain control, custom high-fidelity delegate materials, and flawless on-ground
+                    execution for large-scale institutional fora.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Request Logistics Audit</a>
+                    <a href="#" class="btn btn-secondary">View Past Collaborations</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-chip">
+                        <span class="stat-chip-val counter-anim" data-target="50000" data-suffix="+">0+</span>
+                        <span class="stat-chip-lbl">Kits Assembled</span>
+                    </div>
+                    <div class="stat-chip">
+                        <span class="stat-chip-val counter-anim" data-target="0" data-suffix="%">0%</span>
+                        <span class="stat-chip-lbl">Default Rate</span>
+                    </div>
+                    <div class="stat-chip">
+                        <span class="stat-chip-val counter-anim" data-target="12" data-suffix="+">0+</span>
+                        <span class="stat-chip-lbl">Conferences Powered</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="ops-brief-card">
+                    <div class="ops-header">
+                        <span class="ops-header-title">Operations Brief</span>
+                        <span class="ops-header-pill">● ACTIVE</span>
+                    </div>
+                    <div class="ops-body">
+                        <div class="ops-line">
+                            <span class="ops-line-text">Delegate Kit Assembly</span>
+                            <span class="ops-status-pill ops-pill-green">CONFIRMED</span>
+                        </div>
+                        <div class="ops-line">
+                            <span class="ops-line-text">Credential &amp; Badge Production</span>
+                            <span class="ops-status-pill ops-pill-green">CONFIRMED</span>
+                        </div>
+                        <div class="ops-line">
+                            <span class="ops-line-text">Executive Folder Dispatch</span>
+                            <span class="ops-status-pill ops-pill-amber">IN PROGRESS</span>
+                        </div>
+                        <div class="ops-line">
+                            <span class="ops-line-text">On-Ground Distribution Staging</span>
+                            <span class="ops-status-pill ops-pill-amber">SCHEDULED</span>
+                        </div>
+                        <div class="ops-line">
+                            <span class="ops-line-text">Post-Event Audit &amp; Reporting</span>
+                            <span class="ops-status-pill ops-pill-gray">PENDING</span>
+                        </div>
+                    </div>
+                    <div class="ops-footer">
+                        <span class="ops-footer-left">Betelgeuse Ops Lead — On-Site</span>
+                        <span class="ops-footer-right">QA-Verified Dispatch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         [3] OPERATIONAL CAPABILITIES
+    ========================== -->
+    <section class="capabilities-section">
+        <div class="container">
+            <div class="section-header-centered">
+                <div class="pill-badge">What We Handle</div>
+                <h2>End-to-End Conference Operations</h2>
+                <p class="section-subtext">Betelgeuse doesn't manage aesthetics. We manage the operational
+                    infrastructure that makes institutional conferences run without friction.</p>
+            </div>
+
+            <div class="capabilities-grid">
+
+                <div class="cap-card">
+                    <div class="cap-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h4>Delegate Management</h4>
+                    <div class="cap-list">
+                        <div class="cap-list-item">Registration &amp; check-in systems</div>
+                        <div class="cap-list-item">ID verification workflows</div>
+                        <div class="cap-list-item">Delegate support coordination</div>
+                    </div>
+                </div>
+
+                <div class="cap-card">
+                    <div class="cap-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h4>Venue Coordination</h4>
+                    <div class="cap-list">
+                        <div class="cap-list-item">Hall allocation &amp; seating structure</div>
+                        <div class="cap-list-item">Equipment setup &amp; AV coordination</div>
+                        <div class="cap-list-item">Session scheduling support</div>
+                    </div>
+                </div>
+
+                <div class="cap-card">
+                    <div class="cap-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="16.5" y1="9.4" x2="7.5" y2="4.21" />
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                            <line x1="12" y1="22.08" x2="12" y2="12" />
+                        </svg>
+                    </div>
+                    <h4>Materials &amp; Kits</h4>
+                    <div class="cap-list">
+                        <div class="cap-list-item">Delegate kit assembly &amp; QA</div>
+                        <div class="cap-list-item">Executive folder production</div>
+                        <div class="cap-list-item">Chitpad &amp; stationery supply</div>
+                    </div>
+                </div>
+
+                <div class="cap-card">
+                    <div class="cap-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7" />
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                        </svg>
+                    </div>
+                    <h4>Branding Deployment</h4>
+                    <div class="cap-list">
+                        <div class="cap-list-item">Banner &amp; standee logistics</div>
+                        <div class="cap-list-item">Event collateral coordination</div>
+                        <div class="cap-list-item">Credential &amp; lanyard systems</div>
+                    </div>
+                </div>
+
+                <div class="cap-card">
+                    <div class="cap-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                            <polyline points="2 17 12 22 22 17" />
+                            <polyline points="2 12 12 17 22 12" />
+                        </svg>
+                    </div>
+                    <h4>Volunteer Operations</h4>
+                    <div class="cap-list">
+                        <div class="cap-list-item">Team role assignment &amp; briefing</div>
+                        <div class="cap-list-item">Workflow supervision</div>
+                        <div class="cap-list-item">Communication management</div>
+                    </div>
+                </div>
+
+                <div class="cap-card">
+                    <div class="cap-icon-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                        </svg>
+                    </div>
+                    <h4>Institutional Coordination</h4>
+                    <div class="cap-list">
+                        <div class="cap-list-item">University &amp; faculty liaison</div>
+                        <div class="cap-list-item">Administrative alignment across departments</div>
+                        <div class="cap-list-item">Multi-team execution management</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         [4] TACTILE ASSETS
+    ========================== -->
+    <section class="tactile-assets">
+        <div class="container">
+            <div class="section-header-centered">
+                <div class="pill-badge">Tactile Assets</div>
+                <h2>Inventory Built for Institutional Scale</h2>
+                <p class="section-subtext">Premium physical touchpoints engineered for recognition, durability, and
+                    frictionless delegate experiences across multi-day fora.</p>
+            </div>
+            <div class="assets-grid">
+
+                <div class="asset-card">
+                    <div class="asset-icon-area">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </div>
+                    <h3>Executive Folders &amp; Portfolios</h3>
+                    <p>Premium leatherette, custom debossing, structured document layouts for institutional gravitas.
+                    </p>
+                    <div class="asset-divider"></div>
+                    <div class="asset-checklist">
+                        <div class="asset-checklist-item">
+                            <span class="check">✓</span> <span>Committee-ready tab systems</span>
+                        </div>
+                        <div class="asset-checklist-item">
+                            <span class="check">✓</span> <span>Institutional crest alignment</span>
+                        </div>
+                        <div class="asset-checklist-item">
+                            <span class="check">✓</span> <span>Bulk finishing &amp; QA gates</span>
+                        </div>
+                    </div>
+                    <a href="#specifications" class="asset-link">View Specifications &darr;</a>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-icon-area">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+                            <line x1="9" y1="12" x2="15" y2="12" />
+                            <line x1="9" y1="16" x2="13" y2="16" />
+                        </svg>
+                    </div>
+                    <h3>Precision Stationery</h3>
+                    <p>Branded chitpads, diplomatic notepads, high-GSM paper stock for deliberative environments.</p>
+                    <div class="asset-divider"></div>
+                    <div class="asset-checklist">
+                        <div class="asset-checklist-item">
+                            <span class="check">✓</span> <span>Rulebook-weight stock options</span>
+                        </div>
+                        <div class="asset-checklist-item">
+                            <span class="check">✓</span> <span>Per-committee print variants</span>
+                        </div>
+                        <div class="asset-checklist-item">
+                            <span class="check">✓</span> <span>Color-system consistency</span>
+                        </div>
+                    </div>
+                    <a href="#specifications" class="asset-link">View Specifications &darr;</a>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-icon-area">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            <circle cx="12" cy="12" r="2" />
+                        </svg>
+                    </div>
+                    <h3>Credential Systems</h3>
+                    <p>Lanyards, RFID-ready badges, tiered delegate ID matrices for registration excellence.</p>
+                    <div class="asset-divider"></div>
+                    <div class="asset-checklist">
+                        <div class="asset-checklist-item">
+                            <span class="check">✓</span> <span>Role-based visual encoding</span>
+                        </div>
+                        <div class="asset-checklist-item">
+                            <span class="check">✓</span> <span>Rapid reprint contingencies</span>
+                        </div>
+                        <div class="asset-checklist-item">
+                            <span class="check">✓</span> <span>Registration desk bundles</span>
+                        </div>
+                    </div>
+                    <a href="#specifications" class="asset-link">View Specifications &darr;</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         [5] SPECIFICATIONS MATRIX
+    ========================== -->
+    <section id="specifications" class="specs-section">
+        <div class="container">
+            <div class="section-header-centered">
+                <div class="pill-badge">Product Specifications</div>
+                <h2>Material Specifications Matrix</h2>
+                <p class="section-subtext">Technical parameters for procurement, institutional review, and vendor
+                    coordination.</p>
+            </div>
+            <div class="specs-container">
+
+                <details id="spec-folders">
+                    <summary>
+                        <div class="summary-left">
+                            <div class="summary-dot"></div>
+                            <span class="summary-title">Executive Folders &amp; Portfolios</span>
+                        </div>
+                        <span class="summary-icon">+</span>
+                    </summary>
+                    <div class="details-content">
+                        <div class="spec-row">
+                            <span class="spec-label">Dimensions</span>
+                            <span class="spec-value">A4 oversized · spine 32–38mm</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Stock</span>
+                            <span class="spec-value">300GSM matt outer · 120GSM inner</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Finishing</span>
+                            <span class="spec-value">Spot UV · soft-touch laminate</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Deboss</span>
+                            <span class="spec-value">Single-plate institutional crest</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">MOQ</span>
+                            <span class="spec-value">250 units per event</span>
+                        </div>
+                    </div>
+                </details>
+
+                <details id="spec-stationery">
+                    <summary>
+                        <div class="summary-left">
+                            <div class="summary-dot"></div>
+                            <span class="summary-title">Precision Stationery Suite</span>
+                        </div>
+                        <span class="summary-icon">+</span>
+                    </summary>
+                    <div class="details-content">
+                        <div class="spec-row">
+                            <span class="spec-label">Format</span>
+                            <span class="spec-value">A5 spiral-bound notepad · A4 letterhead block</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Paper GSM</span>
+                            <span class="spec-value">90GSM ruled interior · 160GSM cover</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Print</span>
+                            <span class="spec-value">4-color offset · committee-specific cover art</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Branding</span>
+                            <span class="spec-value">Full bleed logo · event theme integration</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">MOQ</span>
+                            <span class="spec-value">300 sets per event</span>
+                        </div>
+                    </div>
+                </details>
+
+                <details id="spec-credentials">
+                    <summary>
+                        <div class="summary-left">
+                            <div class="summary-dot"></div>
+                            <span class="summary-title">Credential &amp; Badge Systems</span>
+                        </div>
+                        <span class="summary-icon">+</span>
+                    </summary>
+                    <div class="details-content">
+                        <div class="spec-row">
+                            <span class="spec-label">Badge Size</span>
+                            <span class="spec-value">86mm × 54mm (CR80) · double-sided print</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Lanyard</span>
+                            <span class="spec-value">15mm polyester · custom color dye sublimation</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Encoding</span>
+                            <span class="spec-value">RFID chip option · QR matrix fallback</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Tiers</span>
+                            <span class="spec-value">Delegate / Observer / Press / Staff / Secretariat</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">MOQ</span>
+                            <span class="spec-value">150 units per tier</span>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         [6] EXECUTION PIPELINE
+    ========================== -->
+    <section class="pipeline-section">
+        <div class="container">
+            <div class="section-header-centered">
+                <div class="pill-badge">Process Discipline</div>
+                <h2>The Execution Pipeline</h2>
+                <p class="section-subtext">A single accountable thread from sampling to distribution — designed to
+                    remove ambiguity before your opening gavel.</p>
+            </div>
+
+            <div class="pipeline-layout">
+                <div class="pipeline-rail"></div>
+
+                <div class="pipeline-item">
+                    <div class="rail-node-wrap">
+                        <div class="rail-node"></div>
+                    </div>
+                    <div class="pipeline-card">
+                        <div class="pipeline-badges">
+                            <span class="badge-verified">PHASE STATUS · VERIFIED</span>
+                            <span class="badge-ttc">Standard Lane</span>
+                        </div>
+                        <h3>Phase 1: Sourcing &amp; Prototyping</h3>
+                        <p>Vendor pipeline control, material sampling, and prototype approval before bulk commitment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pipeline-item">
+                    <div class="rail-node-wrap">
+                        <div class="rail-node"></div>
+                    </div>
+                    <div class="pipeline-card">
+                        <div class="pipeline-badges">
+                            <span class="badge-verified">PHASE STATUS · VERIFIED</span>
+                            <span class="badge-ttc">Assembly Window</span>
+                        </div>
+                        <h3>Phase 2: Assembly &amp; Quality Assurance</h3>
+                        <p>Pre-packing delegate kits with QA checkpoints to ensure zero on-site bottlenecks or missing
+                            items.</p>
+                    </div>
+                </div>
+
+                <div class="pipeline-item">
+                    <div class="rail-node-wrap">
+                        <div class="rail-node"></div>
+                    </div>
+                    <div class="pipeline-card">
+                        <div class="pipeline-badges">
+                            <span class="badge-verified">PHASE STATUS · VERIFIED</span>
+                            <span class="badge-ttc">Go-Live</span>
+                        </div>
+                        <h3>Phase 3: On-Ground Distribution</h3>
+                        <p>Staging registration desks, managing delegate flow, and real-time inventory reconciliation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pipeline-item">
+                    <div class="rail-node-wrap">
+                        <div class="rail-node"></div>
+                    </div>
+                    <div class="pipeline-card">
+                        <div class="pipeline-badges">
+                            <span class="badge-verified">PHASE STATUS · VERIFIED</span>
+                            <span class="badge-ttc">Post-Event</span>
+                        </div>
+                        <h3>Phase 4: Reconciliation &amp; Reporting</h3>
+                        <p>Full audit trail — materials accounted for, defect logs closed, and a stakeholder report
+                            delivered within 48 hours of closing ceremony.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         [7] FEATURED COLLABORATIONS (Audit Table)
+    ========================== -->
+    <section class="collab-section">
+        <div class="container">
+            <div class="section-header-centered">
+                <div class="pill-badge">Past Collaborations</div>
+                <h2>Conferences We've Powered</h2>
+                <p class="section-subtext">Operational proof — not promises. Here is where Betelgeuse has delivered on
+                    the ground.</p>
+            </div>
+
+            <div class="audit-list">
+                <div class="audit-row">
+                    <div class="audit-year">2026</div>
+                    <div class="audit-name">AMIMUN '26</div>
+                    <div class="audit-scale">800+ Delegates</div>
+                    <div class="audit-role">Lead Logistics Partner</div>
+                </div>
+                <div class="audit-row">
+                    <div class="audit-year">2026</div>
+                    <div class="audit-name">USI Forum MUN</div>
+                    <div class="audit-scale">500+ Kits Dispatched</div>
+                    <div class="audit-role">Delegate Materials Partner</div>
+                </div>
+                <div class="audit-row">
+                    <div class="audit-year">2026</div>
+                    <div class="audit-name">Confluence 2026</div>
+                    <div class="audit-scale">2 Venues</div>
+                    <div class="audit-role">Full Operations Support</div>
+                </div>
+                <div class="audit-row">
+                    <div class="audit-year">2025</div>
+                    <div class="audit-name">Pre-Conference Bootcamp</div>
+                    <div class="audit-scale">120 Delegates</div>
+                    <div class="audit-role">Logistics &amp; Materials</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         [8] WHY BETELGEUSE
+    ========================== -->
+    <section class="diff-section">
+        <div class="container">
+            <div class="section-header-centered">
+                <div class="pill-badge">The Difference</div>
+                <h2>Why Institutions Choose Betelgeuse</h2>
+                <p class="section-subtext">Not a vendor. A logistics partner accountable to your delegate experience.
+                </p>
+            </div>
+            <div class="diff-grid">
+
+                <div class="diff-card">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h4>Zero-Default Guarantee</h4>
+                    <p>Every kit ships complete or we reprint, reassemble, and redeliver — no excuses, no delays passed
+                        to your delegates.</p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h4>TTC-Locked Timelines</h4>
+                    <p>Every phase has a committed Time-To-Completion. We don't give estimates — we give contractual
+                        delivery windows.</p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                        </svg>
+                    </div>
+                    <h4>Tiered Customization</h4>
+                    <p>From delegate kits to VIP portfolios — every tier receives materials calibrated to their role,
+                        not a one-size template.</p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h4>On-Site Command Presence</h4>
+                    <p>A dedicated Betelgeuse ops lead is on the floor from setup to closing gavel. You get a partner,
+                        not a drop-off.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         [9] THROUGHPUT SNAPSHOT (DARK METRICS)
+    ========================== -->
+    <section class="metrics-section">
+        <div class="container">
+            <div class="metrics-header">
+                <span class="pill-text">Throughput Snapshot</span>
+                <h2>Operations at Scale</h2>
+                <p class="metrics-desc">Every number below is a field-verified operational record — not an estimate.</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-block">
+                    <div class="num"><span class="counter-anim" data-target="50000" data-suffix="+">0+</span></div>
+                    <div class="label">Kits Assembled</div>
+                </div>
+                <div class="metric-block">
+                    <div class="num"><span class="counter-anim" data-target="0" data-suffix="%">0%</span></div>
+                    <div class="label">Default Rate</div>
+                </div>
+                <div class="metric-block">
+                    <div class="num"><span class="counter-anim" data-target="12" data-suffix="+">0+</span></div>
+                    <div class="label">National Conferences Powered</div>
+                </div>
+            </div>
+            <div class="metrics-cta">
+                <a href="#" class="btn btn-primary">Request a Logistics Audit &rarr;</a>
+                <a href="#" class="btn-secondary-dark">View Collaboration History</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         [10] FOOTER
+    ========================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <img src="../assets/images/logo_primary.png" alt="Betelgeuse Foundation Logo" class="footer-logo">
+                    <p>Conference solutions, leadership initiatives, institutional collaborations, and social impact
+                        programs.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="logistics.html">Logistics</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="social-initiatives.html">Social Initiatives</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>info@betelguesefoundation.org</li>
+                        <li>+91 XXXXX XXXXX</li>
+                        <li>Noida, India</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Betelgeuse Foundation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".counter-anim");
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute("data-target"), 10);
+                        const suffix = el.getAttribute("data-suffix") || "";
+                        const duration = 2000;
+                        let startTimestamp = null;
+
+                        const step = (timestamp) => {
+                            if (!startTimestamp) startTimestamp = timestamp;
+                            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                            const easeOutQuad = 1 - (1 - progress) * (1 - progress);
+                            const currentCount = Math.floor(easeOutQuad * target);
+
+                            el.innerText = currentCount.toLocaleString() + suffix;
+
+                            if (progress < 1) {
+                                window.requestAnimationFrame(step);
+                            } else {
+                                el.innerText = target.toLocaleString() + suffix;
+                            }
+                        };
+
+                        window.requestAnimationFrame(step);
+                        obs.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            counters.forEach(counter => {
+                counter.innerText = "0" + (counter.getAttribute("data-suffix") || "");
+                observer.observe(counter);
+            });
+        });
+    </script>
+</body>
+
+</html>

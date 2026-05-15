@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website Title -->
+    <title>Betelgeuse Foundation</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-metrics-inline {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .service-card .icon-wrapper {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+        }
+
+        .service-card:not(.featured-card) .icon-wrapper {
+            background-color: var(--accent-light);
+            color: var(--accent-color);
+        }
+
+        .service-card .icon-wrapper svg {
+            stroke-width: 1.75;
+        }
+
+        .features-grid:has(.feature-card:hover) .feature-card:not(:hover) {
+            opacity: 0.5;
+        }
+
+        .features-grid .feature-card {
+            transition:
+                opacity 0.35s ease,
+                transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.35s ease,
+                border-color 0.35s ease,
+                border-bottom-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .feature-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--accent-light);
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon-box svg {
+            stroke: currentColor;
+            fill: none;
+        }
+
+        .testimonial-author-lockup .testimonial-org {
+            text-transform: none;
+            letter-spacing: 0.02em;
+        }
+
+        .final-cta .cta-box {
+            margin-top: 80px;
+        }
+
+        /* Active Footer Link */
+        .footer-link-home {
+            color: var(--accent) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER / NAVBAR
+    ========================== -->
+    <header class="header">
+
+        <div class="container navbar">
+
+            <!-- Brand -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <span class="nav-brand">Betelgeuse Foundation</span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/logistics.html">Logistics</a></li>
+                    <li><a href="pages/events.html">Events</a></li>
+                    <li><a href="pages/social-initiatives.html">Social Initiatives</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="#" class="nav-btn">Partner With Us</a>
+
+        </div>
+
+    </header>
+    <!-- =========================
+     HERO SECTION
+========================= -->
+    <section class="hero">
+
+        <div class="container hero-container">
+
+            <!-- Left Content -->
+            <div class="hero-content">
+
+                <div class="hero-badge-wrapper">
+                    <span class="pulse-dot"></span>
+                    <span class="hero-tag">Conference Solutions • Leadership • Social Impact</span>
+                </div>
+
+                <h1>
+                    Building Impact Through<br>
+                    Conferences, <span class="text-gradient">Leadership &</span><br>
+                    Execution Excellence
+                </h1>
+
+                <p class="hero-description">
+                    Betelgeuse Foundation partners with institutions, conferences, and universities to manage conference
+                    logistics, execute delegate operations, and build structured leadership programs — with proven
+                    delivery across 14+ institutional events.
+                </p>
+
+                <!-- Hero Buttons -->
+                <div class="hero-buttons">
+                    <a href="pages/logistics.html" class="primary-btn">
+                        <span>Explore Logistics Solutions</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#" class="secondary-btn">
+                        View Flagship Work
+                    </a>
+                </div>
+
+                <!-- Supporting Indicators -->
+                <div class="hero-metrics-inline">
+                    <div class="metric-item">
+                        <strong>14+</strong>
+                        <span>Events Executed</span>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <strong>450+</strong>
+                        <span>Students Trained</span>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <strong>8+</strong>
+                        <span>Institutional Partners</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Dynamic Visual -->
+            <div class="hero-visual-wrapper">
+
+                <div class="image-frame">
+                    <img src="assets/images/hero_conference.png" alt="Executive Conference Showcase">
+                    <div class="image-overlay-glow"></div>
+                </div>
+
+                <!-- Floating Status Badge -->
+                <div class="floating-badge top-right">
+                    <span class="status-indicator"></span>
+                    <strong>Live Operations Active</strong>
+                </div>
+
+                <!-- Floating Stat Panel -->
+                <div class="floating-panel bottom-left">
+                    <div class="panel-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <div class="panel-data">
+                        <h4>End-to-End Execution</h4>
+                        <p>Delegate Kits & Logistics</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================
+     WHAT WE DO SECTION
+========================= -->
+    <section class="services motion-reveal">
+
+        <div class="container">
+
+            <!-- Section Heading -->
+            <div class="section-header">
+                <p class="section-tag">What We Do</p>
+                <h2>Three Areas of Institutional Work</h2>
+                <p>Betelgeuse operates across conference logistics, institutional event execution, and social impact —
+                    each domain with its own operational depth and delivery record.</p>
+            </div>
+
+            <!-- Service Cards -->
+            <div class="services-grid">
+
+                <!-- Card 1: Premium Executive Dark Mode -->
+                <div class="service-card featured-card">
+                    <div class="card-gradient-top"></div>
+                    <div class="card-header-row">
+                        <div class="icon-wrapper dark-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            </svg>
+                        </div>
+                        <span class="card-status-badge">Flagship Capability</span>
+                    </div>
+                    <h3>Conference &amp; Logistics Solutions</h3>
+                    <p>Premium custom-crafted delegate kits, executive chitpads, folders, operational branding
+                        materials, and comprehensive vendor pipeline control.</p>
+                    <ul class="capability-list">
+                        <li>High-fidelity custom stationery</li>
+                        <li>Lanyards &amp; delegate credential systems</li>
+                        <li>On-ground distribution operations</li>
+                    </ul>
+                    <a href="pages/logistics.html" class="card-link">Explore Logistics Pipeline →</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="card-gradient-top"></div>
+                    <div class="card-header-row">
+                        <div class="icon-wrapper">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Events &amp; Training Systems</h3>
+                    <p>Architecting Model UN conferences, structured leadership bootcamps, academic content abstracting,
+                        and high-level parliamentary procedure seminars.</p>
+                    <ul class="capability-list">
+                        <li>Academic content formatting</li>
+                        <li>Committee scheduling pipelines</li>
+                        <li>Experiential delegate bootcamps</li>
+                    </ul>
+                    <a href="#" class="card-link">View Event Platforms →</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="card-gradient-top"></div>
+                    <div class="card-header-row">
+                        <div class="icon-wrapper">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Social Impact Engagement</h3>
+                    <p>Grassroots empowerment programs, institutional sustainability networks, large-scale community
+                        awareness drives, and food access enablement.</p>
+                    <ul class="capability-list">
+                        <li>Structured local food drives</li>
+                        <li>Environmental preservation action</li>
+                        <li>University outreach models</li>
+                    </ul>
+                    <a href="pages/social-initiatives.html" class="card-link">Support Impact Actions →</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================
+     COLLABORATORS SECTION
+========================= -->
+    <section class="collaborators motion-reveal">
+
+        <div class="container">
+
+            <!-- Section Heading -->
+            <div class="section-header">
+                <p class="section-tag">Collaboration Network</p>
+                <h2>Trusted By Institutions Across India</h2>
+                <p>Collaborating seamlessly with prominent academic bodies, established UN models, and prestigious
+                    industry operations platforms.</p>
+            </div>
+
+            <!-- Premium marquee (duplicate strip for seamless loop) -->
+            <div class="logo-ribbon-wrapper">
+                <div class="marquee-wrapper">
+                    <!-- Track groups two strips so one transform can loop seamlessly -->
+                    <div class="marquee-track">
+                        <div class="marquee-content">
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>CyberPeace Foundation</strong>
+                                <span class="partner-meta">Programme Partner</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>RDIAS</strong>
+                                <span class="partner-meta">Academic Alliance</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>Confluence 2026</strong>
+                                <span class="partner-meta">Institutional Summit</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>AMIMUN</strong>
+                                <span class="partner-meta">University Flagship</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>USI MUN</strong>
+                                <span class="partner-meta">Strategic Partner</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>Google.org</strong>
+                                <span class="partner-meta">Philanthropic Partner</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>Rotaract</strong>
+                                <span class="partner-meta">Civic Network</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>Heritage Group</strong>
+                                <span class="partner-meta">Educational Group</span>
+                            </div>
+                        </div>
+                        <div class="marquee-content" aria-hidden="true">
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>CyberPeace Foundation</strong>
+                                <span class="partner-meta">Programme Partner</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>RDIAS</strong>
+                                <span class="partner-meta">Academic Alliance</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>Confluence 2026</strong>
+                                <span class="partner-meta">Institutional Summit</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>AMIMUN</strong>
+                                <span class="partner-meta">University Flagship</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>USI MUN</strong>
+                                <span class="partner-meta">Strategic Partner</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>Google.org</strong>
+                                <span class="partner-meta">Philanthropic Partner</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>Rotaract</strong>
+                                <span class="partner-meta">Civic Network</span>
+                            </div>
+                            <div class="logo-card premium-card card">
+                                <span class="card-accent-line"></span>
+                                <strong>Heritage Group</strong>
+                                <span class="partner-meta">Educational Group</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     FEATURED WORK SECTION
+========================= -->
+    <section class="featured-work motion-reveal">
+
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="section-header">
+                <p class="section-tag">Flagship Operations</p>
+                <h2>Demonstrated Execution Scale</h2>
+                <p>An in-depth review of our fully operational delegate logistics pipelines, custom dossier setups, and
+                    high-fidelity project results.</p>
+            </div>
+
+            <!-- Featured Grid -->
+            <div class="featured-grid">
+
+                <!-- Large Featured Card Overhaul -->
+                <div class="featured-card-large premium-overhaul">
+
+                    <div class="featured-image">
+                        <img src="assets/images/flagship_delegate_kit.png" alt="Custom Branded Delegate Kit Setup">
+                        <div class="image-indicator-badge">Verified Physical Setup</div>
+                    </div>
+
+                    <div class="featured-content">
+
+                        <div class="project-header-inline">
+                            <p class="project-type">Turnkey Materials Pipeline</p>
+                            <span class="year-badge">2026</span>
+                        </div>
+
+                        <h3>AMIMUN’26 Execution Dossier</h3>
+
+                        <div class="project-details grid-view">
+                            <div class="detail-matrix-item">
+                                <span>Institutional Anchor</span>
+                                <strong>Amity University Noida</strong>
+                            </div>
+                            <div class="detail-matrix-item">
+                                <span>Operational Role</span>
+                                <strong>Chief Logistics Integrator</strong>
+                            </div>
+                        </div>
+
+                        <div class="detail-block premium-block">
+                            <span>Materials Pipeline Delivered:</span>
+                            <ul class="materials-delivered-list">
+                                <li>Bespoke delegate folders</li>
+                                <li>Tailored chitpad blocks</li>
+                                <li>Precision credential badges</li>
+                                <li>Central registration staging</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-block outcome-block premium-outcome">
+                            <span>Execution Milestone:</span>
+                            <p>“Streamlined material flow and verification metrics for thousands of active delegates,
+                                guaranteeing a premium tactile standard.”</p>
+                        </div>
+
+                        <div class="action-footer">
+                            <a href="#" class="btn-text-icon">
+                                <span>Access Complete Case Study</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Small Cards Overhaul -->
+                <div class="small-projects">
+
+                    <!-- Card 1 -->
+                    <div class="small-project-card premium-small-card">
+                        <div class="project-type-tag-row">
+                            <span class="card-dot-indicator" aria-hidden="true"></span>
+                            <p class="project-type-small">Structured Materials Flow</p>
+                        </div>
+                        <h4>USI MUN 1.0 Logistics Setup</h4>
+
+                        <div class="project-details-small">
+                            <div class="meta-tuple">
+                                <span>Partner Body:</span>
+                                <strong>United Service Institution of India</strong>
+                            </div>
+                            <div class="meta-tuple">
+                                <span>Provided Items:</span>
+                                <span>Tailored folders, identity lanyards, precision layout writing block sets.</span>
+                            </div>
+                            <p class="outcome-small"><strong>Outcome Standard:</strong> Enabled rigorous event pacing
+                                via dependable on-site pre-packed station allocations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="small-project-card premium-small-card">
+                        <div class="project-type-tag-row">
+                            <span class="card-dot-indicator" aria-hidden="true"></span>
+                            <p class="project-type-small">Editorial &amp; Formatting Frameworks</p>
+                        </div>
+                        <h4>Confluence 2026 Framework</h4>
+
+                        <div class="project-details-small">
+                            <div class="meta-tuple">
+                                <span>Partner Body:</span>
+                                <strong>Amity University Uttar Pradesh</strong>
+                            </div>
+                            <div class="meta-tuple">
+                                <span>Provided Items:</span>
+                                <span>Comprehensive academic abstract journals, institutional signage, presentation
+                                    dossiers.</span>
+                            </div>
+                            <p class="outcome-small"><strong>Outcome Standard:</strong> Guaranteed structural layout
+                                uniformity across hundreds of distinct technical presentations.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================
+     WHY BETELGEUSE SECTION
+========================= -->
+    <section class="why-betelguese motion-reveal">
+
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="section-header">
+
+                <p class="section-tag">
+                    Why Betelgeuse Foundation
+                </p>
+
+                <h2>
+                    Structured Execution Backed By
+                    Leadership & Institutional Collaboration
+                </h2>
+
+                <p>
+                    Betelgeuse Foundation combines conference operations,
+                    leadership initiatives, and institutional partnerships
+                    to deliver impactful and professionally managed experiences.
+                </p>
+
+            </div>
+
+            <!-- Feature Grid -->
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon-box" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <path d="M9 22V12h6v10" />
+                            <path d="M9 7h1" />
+                            <path d="M14 7h1" />
+                            <path d="M9 11h1" />
+                            <path d="M14 11h1" />
+                        </svg>
+                    </div>
+                    <h3>Institutional Collaborations</h3>
+                    <p>Direct working relationships with Amity University, RDIAS, Heritage Group, USI, and CyberPeace —
+                        not referrals, not introductions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2" />
+                        </svg>
+                    </div>
+                    <h3>End-to-End Execution</h3>
+                    <p>Logistics, branding, delegate kits, credential systems, volunteer ops, and registration — handled
+                        as a single accountable workflow, not split across vendors.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7" />
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                        </svg>
+                    </div>
+                    <h3>Leadership Development</h3>
+                    <p>200+ students trained in diplomacy and conference procedure through the Delegate Bootcamp
+                        Programme
+                        — structured, not improvised.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 11 12 14 22 4" />
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                        </svg>
+                    </div>
+                    <h3>Operational Precision</h3>
+                    <p>Every phase has a defined checklist, QA gate, and accountable lead. We run operations the way
+                        institutions expect them to run.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                            <polyline points="2 17 12 22 22 17" />
+                            <polyline points="2 12 12 17 22 12" />
+                        </svg>
+                    </div>
+                    <h3>Scalable Event Support</h3>
+                    <p>From single-day workshops to 3-day multi-committee MUNs — the same structured process, scaled to
+                        the event&apos;s operational demand.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                    </div>
+                    <h3>Community Impact</h3>
+                    <p>Cyber First Responder training (250+ students, Google.org partnership), Rotaract civic drives,
+                        food access programs — social work with operational structure.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================
+     TESTIMONIALS SECTION
+========================= -->
+    <section class="testimonials motion-reveal">
+
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="section-header">
+
+                <p class="section-tag">
+                    Testimonials
+                </p>
+
+                <h2>
+                    Trusted By Conferences &
+                    Institutional Partners
+                </h2>
+
+                <p>
+                    Feedback from organizers, collaborators,
+                    and institutional partners associated with
+                    Betelgeuse Foundation initiatives.
+                </p>
+
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="testimonials-grid">
+
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+
+                    <p class="testimonial-text">
+                        “Betelgeuse Foundation ensured smooth
+                        logistics coordination and operational
+                        management throughout the conference.”
+                    </p>
+
+                    <div class="testimonial-author-lockup">
+                        <h4>Secretariat Committee</h4>
+                        <span class="testimonial-org">USI MUN</span>
+                    </div>
+
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+
+                    <p class="testimonial-text">
+                        “The professionalism and execution quality
+                        delivered by the team significantly enhanced
+                        the delegate experience.”
+                    </p>
+
+                    <div class="testimonial-author-lockup">
+                        <h4>Faculty Coordinator</h4>
+                        <span class="testimonial-org">AMIMUN — Amity University</span>
+                    </div>
+
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+
+                    <p class="testimonial-text">
+                        “Their structured approach towards event
+                        execution and coordination was highly
+                        effective and reliable.”
+                    </p>
+
+                    <div class="testimonial-author-lockup">
+                        <h4>Programme Lead</h4>
+                        <span class="testimonial-org">CONFLUENCE 2026</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================
+     FINAL CTA SECTION
+========================= -->
+    <section class="final-cta motion-reveal">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <h2>
+                    Planning A Conference Or Institutional Event?
+                </h2>
+
+                <p>
+                    Betelgeuse brings operational structure, institutional coordination, and field-verified execution to
+                    conferences, workshops, and leadership programs. Let&apos;s discuss your requirements.
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="mailto:info@betelguesefoundation.org" class="primary-btn">
+                        <span>Discuss Your Event</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+
+                    <a href="#" class="secondary-btn">
+                        Partner With Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================
+     FOOTER
+========================= -->
+    <footer class="footer motion-reveal">
+
+        <div class="container footer-container">
+
+            <!-- About -->
+            <div class="footer-column">
+
+                <div class="footer-logo-wrapper">
+                    <img src="assets/images/logo_primary.png" alt="Betelgeuse Foundation Logo" class="footer-logo">
+                </div>
+                <h3 class="sr-only" style="display: none;">Betelgeuse Foundation</h3>
+
+                <p>
+                    Conference solutions, leadership initiatives,
+                    institutional collaborations, and social impact programs.
+                </p>
+
+            </div>
+
+            <!-- Navigation -->
+            <div class="footer-column">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/logistics.html">Logistics</a></li>
+                    <li><a href="pages/events.html">Events</a></li>
+                    <li><a href="pages/social-initiatives.html">Social Initiatives</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h4>Contact</h4>
+
+                <ul>
+                    <li>info@betelguesefoundation.org</li>
+                    <li>+91 XXXXX XXXXX</li>
+                    <li>Noida, India</li>
+                </ul>
+
+            </div>
+
+            <!-- Social -->
+            <div class="footer-column">
+
+                <h4>Follow Us</h4>
+
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- JS File -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
