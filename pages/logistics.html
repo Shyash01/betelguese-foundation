@@ -7,7 +7,8 @@
     <title>Conference Logistics & Delegate Operations | Betelgeuse Foundation</title>
     <meta name="description"
         content="End-to-end delegate kit logistics, precision stationery, credential systems, and on-ground field execution for institutional conferences and MUNs.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+        href="../css/style.css">
     <style>
         /* =======================================================================
            GLOBAL DESIGN SYSTEM
@@ -806,62 +807,165 @@
         }
 
         /* =======================================================================
-           SECTION 6: FEATURED COLLABORATIONS (AUDIT TABLE)
+           SECTION 6: FEATURED COLLABORATIONS (DOSSIER UI)
         ======================================================================= */
         .collab-section {
-            padding: 80px 0;
-            background: var(--accent-light);
+            padding: 100px 0;
+            background: var(--white);
         }
 
-        .audit-list {
+        .dossier-list {
             display: flex;
             flex-direction: column;
+            gap: 16px;
+            max-width: 860px;
+            margin: 40px auto 0;
+        }
+
+        .dossier-row {
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Illuminated Bottom Border on Hover */
+        .dossier-row::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .dossier-row:hover::after {
             width: 100%;
-            border-top: 1px solid var(--border);
-            margin-top: 40px;
+            left: 0;
         }
 
-        .audit-row {
+        .dossier-row:hover {
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+        }
+
+        .dossier-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 20px 24px;
-            border-bottom: 1px solid var(--border);
-            transition: background-color 0.3s ease;
-            background-color: var(--white);
+            justify-content: space-between;
+            padding: 24px 32px;
+            cursor: pointer;
+            user-select: none;
+            background: var(--white);
+            position: relative;
+            z-index: 2;
         }
 
-        .audit-row:hover {
-            background-color: #F8FAFC;
+        .dossier-header-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
         }
 
-        /* subtle shift */
-        .audit-year {
+        .dossier-year {
+            font-size: 16px;
             font-weight: 800;
-            color: var(--accent);
-            width: 80px;
-            font-size: 16px;
+            color: #4F46E5;
         }
 
-        .audit-name {
+        .dossier-name {
+            font-size: 18px;
             font-weight: 700;
-            color: var(--dark);
-            flex: 1.5;
-            font-size: 16px;
+            color: #111827;
         }
 
-        .audit-scale {
-            color: var(--body);
-            flex: 1;
-            font-size: 15px;
-        }
-
-        .audit-role {
+        .dossier-toggle {
+            font-size: 14px;
             font-weight: 600;
-            color: var(--dark);
-            flex: 1.5;
-            text-align: right;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .dossier-toggle span {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .dossier-row.is-active .dossier-toggle span {
+            transform: rotate(45deg);
+        }
+
+        .dossier-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            background: var(--white);
+            padding: 0 32px;
+        }
+
+        .dossier-row.is-active .dossier-content {
+            max-height: 600px;
+            opacity: 1;
+            padding: 0 32px 32px;
+        }
+
+        .dossier-summary {
             font-size: 15px;
+            color: #4B5563;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .dossier-role-card {
+            background: #EEF2FF;
+            border-left: 2px solid #4F46E5;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .dossier-role-text {
+            font-size: 15px;
+            color: #4F46E5;
+            font-weight: 600;
+        }
+
+        .dossier-role-text strong {
+            color: #111827;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        .dossier-deliverables {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dossier-deliverable-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: #4B5563;
+        }
+
+        .dossier-deliverable-item::before {
+            content: '•';
+            color: #4F46E5;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1.2;
         }
 
         /* =======================================================================
@@ -926,12 +1030,12 @@
             background-color: var(--dark-bg);
             background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
-            padding: 100px 0;
+            padding: 70px 0;
             text-align: center;
         }
 
         .metrics-header {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .metrics-header .pill-text {
@@ -1008,12 +1112,50 @@
         }
 
         /* =======================================================================
+           FLOATING CTA
+        ======================================================================= */
+        .floating-cta-section {
+            background-color: #FFFFFF;
+            padding: 140px 0;
+        }
+
+        .cta-island {
+            background-color: #0F172A;
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-island h2 {
+            color: #FFFFFF;
+            font-size: clamp(30px, 3.5vw, 44px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-island p {
+            color: #94A3B8;
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-island .metrics-cta {
+            margin-top: 0;
+        }
+
+        /* =======================================================================
            SECTION 9: FOOTER
         ======================================================================= */
         .footer {
             background: #0F172A;
             color: #64748B;
             padding: 80px 0 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .footer-container {
@@ -1093,14 +1235,25 @@
         }
 
         @media (max-width: 768px) {
-            .audit-row {
+            .dossier-header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .dossier-header-left {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 8px;
             }
 
-            .audit-role {
-                text-align: left;
+            .dossier-content {
+                padding: 0 20px;
+            }
+
+            .dossier-row.is-active .dossier-content {
+                padding: 0 20px 24px;
             }
         }
 
@@ -1151,9 +1304,52 @@
                 margin-left: 0;
             }
         }
-    
+
         /* Active Footer Link */
-        .footer-link-logistics { color: var(--accent) !important; }
+        .footer-link-logistics {
+            color: var(--accent) !important;
+        }
+
+        /*New style for PILL Badge*/
+
+        .hero-badge-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 1.2rem;
+            background-color: #EEF2FF;
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+            border: none;
+            box-shadow: 0 1px 2px rgba(79, 70, 229, 0.06);
+        }
+
+        .hero-badge-wrapper .hero-tag {
+            display: inline-block;
+            color: #4F46E5;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #4F46E5;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.45);
+            animation: pulseGlow 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+
+        @keyframes pulseGlow {
+            to {
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+            }
+        }
     </style>
 </head>
 
@@ -1179,7 +1375,7 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <a href="#" class="nav-btn">Partner With Us</a>
+            <a href="contact.html" class="nav-btn">Partner With Us</a>
         </div>
     </header>
 
@@ -1189,7 +1385,14 @@
     <section class="hero bg-light">
         <div class="container hero-grid">
             <div class="hero-left">
-                <div class="pill-badge">Operations · Materials · Field Execution</div>
+                <!-- <div class="pill-badge">Operations · Materials · Field Execution</div> -->
+                <div class="hero-badge-wrapper">
+
+                    <span class="pulse-dot"></span>
+
+                    <span class="hero-tag">Operations · Materials · Field Execution</span>
+
+                </div>
                 <h1>Precision Logistics & <span class="accent-text">Delegate Operations</span></h1>
                 <p>End-to-end supply chain control, custom high-fidelity delegate materials, and flawless on-ground
                     execution for large-scale institutional fora.</p>
@@ -1657,42 +1860,196 @@
     </section>
 
     <!-- =========================
-         [7] FEATURED COLLABORATIONS (Audit Table)
+         [7] FEATURED COLLABORATIONS (Dossier UI)
     ========================== -->
     <section class="collab-section">
         <div class="container">
             <div class="section-header-centered">
-                <div class="pill-badge">Past Collaborations</div>
-                <h2>Conferences We've Powered</h2>
+                <div class="pill-badge"
+                    style="font-size: 12px; letter-spacing: 0.1em; background: #EEF2FF; color: #4F46E5;">PAST
+                    COLLABORATIONS</div>
+                <h2>Execution Ledger</h2>
                 <p class="section-subtext">Operational proof — not promises. Here is where Betelgeuse has delivered on
                     the ground.</p>
             </div>
 
-            <div class="audit-list">
-                <div class="audit-row">
-                    <div class="audit-year">2026</div>
-                    <div class="audit-name">AMIMUN '26</div>
-                    <div class="audit-scale">800+ Delegates</div>
-                    <div class="audit-role">Lead Logistics Partner</div>
+            <div class="dossier-list">
+
+                <div class="dossier-row">
+                    <div class="dossier-header" onclick="toggleDossier(this)">
+                        <div class="dossier-header-left">
+                            <span class="dossier-year">2026</span>
+                            <span class="dossier-name">AMIMUN 2026</span>
+                        </div>
+                        <div class="dossier-toggle">
+                            View Details <span>+</span>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
+                            institutional materials flow.</p>
+                        <div class="dossier-role-card">
+                            <div class="dossier-role-text">Betelgeuse Role: <strong>Lead Logistics Partner</strong>
+                            </div>
+                        </div>
+                        <ul class="dossier-deliverables">
+                            <li class="dossier-deliverable-item">Delegate Kit Assembly</li>
+                            <li class="dossier-deliverable-item">Venue Branding</li>
+                            <li class="dossier-deliverable-item">Protocol Management</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="audit-row">
-                    <div class="audit-year">2026</div>
-                    <div class="audit-name">USI Forum MUN</div>
-                    <div class="audit-scale">500+ Kits Dispatched</div>
-                    <div class="audit-role">Delegate Materials Partner</div>
+
+                <div class="dossier-row">
+                    <div class="dossier-header" onclick="toggleDossier(this)">
+                        <div class="dossier-header-left">
+                            <span class="dossier-year">2026</span>
+                            <span class="dossier-name">InCITe 2026</span>
+                        </div>
+                        <div class="dossier-toggle">
+                            View Details <span>+</span>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
+                            institutional materials flow.</p>
+                        <div class="dossier-role-card">
+                            <div class="dossier-role-text">Betelgeuse Role: <strong>Academic Content &amp; Logistics
+                                    Integrator</strong></div>
+                        </div>
+                        <ul class="dossier-deliverables">
+                            <li class="dossier-deliverable-item">Delegate Kit Assembly</li>
+                            <li class="dossier-deliverable-item">Venue Branding</li>
+                            <li class="dossier-deliverable-item">Protocol Management</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="audit-row">
-                    <div class="audit-year">2026</div>
-                    <div class="audit-name">Confluence 2026</div>
-                    <div class="audit-scale">2 Venues</div>
-                    <div class="audit-role">Full Operations Support</div>
+
+                <div class="dossier-row">
+                    <div class="dossier-header" onclick="toggleDossier(this)">
+                        <div class="dossier-header-left">
+                            <span class="dossier-year">2026</span>
+                            <span class="dossier-name">USI 3.0</span>
+                        </div>
+                        <div class="dossier-toggle">
+                            View Details <span>+</span>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
+                            institutional materials flow.</p>
+                        <div class="dossier-role-card">
+                            <div class="dossier-role-text">Betelgeuse Role: <strong>Strategic Materials Partner</strong>
+                            </div>
+                        </div>
+                        <ul class="dossier-deliverables">
+                            <li class="dossier-deliverable-item">Delegate Kit Assembly</li>
+                            <li class="dossier-deliverable-item">Venue Branding</li>
+                            <li class="dossier-deliverable-item">Protocol Management</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="audit-row">
-                    <div class="audit-year">2025</div>
-                    <div class="audit-name">Pre-Conference Bootcamp</div>
-                    <div class="audit-scale">120 Delegates</div>
-                    <div class="audit-role">Logistics &amp; Materials</div>
+
+                <div class="dossier-row">
+                    <div class="dossier-header" onclick="toggleDossier(this)">
+                        <div class="dossier-header-left">
+                            <span class="dossier-year">2026</span>
+                            <span class="dossier-name">Confluence 2026</span>
+                        </div>
+                        <div class="dossier-toggle">
+                            View Details <span>+</span>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
+                            institutional materials flow.</p>
+                        <div class="dossier-role-card">
+                            <div class="dossier-role-text">Betelgeuse Role: <strong>Full Operations Support</strong>
+                            </div>
+                        </div>
+                        <ul class="dossier-deliverables">
+                            <li class="dossier-deliverable-item">Delegate Kit Assembly</li>
+                            <li class="dossier-deliverable-item">Venue Branding</li>
+                            <li class="dossier-deliverable-item">Protocol Management</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <div class="dossier-row">
+                    <div class="dossier-header" onclick="toggleDossier(this)">
+                        <div class="dossier-header-left">
+                            <span class="dossier-year">2026</span>
+                            <span class="dossier-name">Pre-Conference Bootcamps</span>
+                        </div>
+                        <div class="dossier-toggle">
+                            View Details <span>+</span>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
+                            institutional materials flow.</p>
+                        <div class="dossier-role-card">
+                            <div class="dossier-role-text">Betelgeuse Role: <strong>Leadership Training &amp; On-site
+                                    Execution</strong></div>
+                        </div>
+                        <ul class="dossier-deliverables">
+                            <li class="dossier-deliverable-item">Delegate Kit Assembly</li>
+                            <li class="dossier-deliverable-item">Venue Branding</li>
+                            <li class="dossier-deliverable-item">Protocol Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dossier-row">
+                    <div class="dossier-header" onclick="toggleDossier(this)">
+                        <div class="dossier-header-left">
+                            <span class="dossier-year">2026</span>
+                            <span class="dossier-name">Schopenhauer &amp; Ecology</span>
+                        </div>
+                        <div class="dossier-toggle">
+                            View Details <span>+</span>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
+                            institutional materials flow.</p>
+                        <div class="dossier-role-card">
+                            <div class="dossier-role-text">Betelgeuse Role: <strong>Institutional Secretariat
+                                    Support</strong></div>
+                        </div>
+                        <ul class="dossier-deliverables">
+                            <li class="dossier-deliverable-item">Delegate Kit Assembly</li>
+                            <li class="dossier-deliverable-item">Venue Branding</li>
+                            <li class="dossier-deliverable-item">Protocol Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dossier-row">
+                    <div class="dossier-header" onclick="toggleDossier(this)">
+                        <div class="dossier-header-left">
+                            <span class="dossier-year">2026</span>
+                            <span class="dossier-name">SMIT MUN</span>
+                        </div>
+                        <div class="dossier-toggle">
+                            View Details <span>+</span>
+                        </div>
+                    </div>
+                    <div class="dossier-content">
+                        <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
+                            institutional materials flow.</p>
+                        <div class="dossier-role-card">
+                            <div class="dossier-role-text">Betelgeuse Role: <strong>Execution &amp; Branding
+                                    Partner</strong></div>
+                        </div>
+                        <ul class="dossier-deliverables">
+                            <li class="dossier-deliverable-item">Delegate Kit Assembly</li>
+                            <li class="dossier-deliverable-item">Venue Branding</li>
+                            <li class="dossier-deliverable-item">Protocol Management</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1793,15 +2150,32 @@
                     <div class="label">National Conferences Powered</div>
                 </div>
             </div>
-            <div class="metrics-cta">
-                <a href="#" class="btn btn-primary">Request a Logistics Audit &rarr;</a>
-                <a href="#" class="btn-secondary-dark">View Collaboration History</a>
+        </div>
+    </section>
+
+    <!-- =========================
+         [10] FLOATING CTA
+    ========================== -->
+    <section class="floating-cta-section">
+        <div class="container">
+            <div class="cta-island">
+                <div class="hero-badge-wrapper" style="margin-bottom: 24px;">
+                    <span class="pulse-dot"></span>
+                    <span class="hero-tag">READY TO EXECUTE</span>
+                </div>
+                <h2>Planning a High-Stakes Institutional Event?</h2>
+                <p>Let’s ensure every delegate receives a perfect experience. Discuss your pipeline with our logistics
+                    leads.</p>
+                <div class="metrics-cta">
+                    <a href="#" class="btn btn-primary">Request a Logistics Audit &rarr;</a>
+                    <a href="#" class="btn-secondary-dark">View Collaboration History</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- =========================
-         [10] FOOTER
+         [11] FOOTER
     ========================== -->
     <footer class="footer">
         <div class="container">
@@ -1825,17 +2199,17 @@
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li>info@betelguesefoundation.org</li>
-                        <li>+91 XXXXX XXXXX</li>
-                        <li>Noida, India</li>
+                        <li>betelguesefoundation@gmail.com</li>
+                        <li>+91 7042827225</li>
+                        <li>Mon-Sat, 10:00 AM - 7:00 PM</li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Follow Us</h4>
                     <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/betelguesefoundation/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/betelguese-foundation/" target="_blank">LinkedIn</a></li>
+                        <!-- <li><a href="#">Facebook</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -1883,6 +2257,21 @@
                 observer.observe(counter);
             });
         });
+
+        function toggleDossier(element) {
+            const row = element.closest('.dossier-row');
+            const isActive = row.classList.contains('is-active');
+
+            // Accordion style: close all
+            document.querySelectorAll('.dossier-row').forEach(r => {
+                r.classList.remove('is-active');
+            });
+
+            // Open clicked one if it wasn't active
+            if (!isActive) {
+                row.classList.add('is-active');
+            }
+        }
     </script>
 </body>
 

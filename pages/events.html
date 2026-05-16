@@ -1,498 +1,1854 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Events &amp; Initiatives | Betelgeuse Foundation</title>
-<meta name="description" content="Betelgeuse Foundation's portfolio of institutional conferences, Model UN collaborations, leadership bootcamps, and social impact initiatives — 14+ events executed across India.">
-<link rel="stylesheet" href="../css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-html { scroll-behavior: smooth; }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes floatHero {
-  0%, 100% { transform: translateY(0); box-shadow: 0 28px 72px rgba(17,24,39,0.15), 0 0 0 rgba(79, 70, 229, 0); }
-  50% { transform: translateY(-10px); box-shadow: 0 35px 80px rgba(17,24,39,0.2), 0 0 40px rgba(79, 70, 229, 0.4); }
-}
-@keyframes pulseDot {
-  0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.6); }
-  70% { box-shadow: 0 0 0 6px rgba(79, 70, 229, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); }
-}
-@keyframes kenBurns {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.15); }
-}
-.fade-up { opacity: 0; animation: fadeUp 0.6s ease forwards; }
-.fade-up--1 { animation-delay: 0.1s; }
-.fade-up--2 { animation-delay: 0.2s; }
-.fade-up--3 { animation-delay: 0.3s; }
-.fade-up--4 { animation-delay: 0.4s; }
-.fade-up--5 { animation-delay: 0.5s; }
-.fade-up--6 { animation-delay: 0.6s; }
-.fade-up--7 { animation-delay: 0.7s; }
-.fade-up--8 { animation-delay: 0.8s; }
-.fade-up--9 { animation-delay: 0.9s; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events &amp; Initiatives | Betelgeuse Foundation</title>
+  <meta name="description"
+    content="Betelgeuse Foundation's portfolio of institutional conferences, Model UN collaborations, leadership bootcamps, and social impact initiatives — 14+ events executed across India.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-.page-events .nav-links a.is-active-page { color: var(--accent-color); font-weight: 700; border-bottom: 2px solid var(--accent-color); padding-bottom: 4px; display: inline-block; }
-.page-events .nav-links a.is-active-page::after { display: none; }
-.page-events .footer-column ul a.is-active-page { color: #E0E7FF; border-bottom: 2px solid var(--accent-color); padding-bottom: 2px; display: inline-block; }
-
-.page-events .events-page-hero { background-color: var(--accent-light); padding: 90px 0 80px; }
-.page-events .events-hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 72px; align-items: center; }
-.page-events .events-hero-badge-wrap { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.5rem 1.2rem; background-color: var(--accent-light); border-radius: 9999px; margin-bottom: 1.5rem; box-shadow: 0 1px 2px rgba(79, 70, 229, 0.06); }
-.page-events .events-hero-status-dot { width: 8px; height: 8px; background-color: #4F46E5; border-radius: 50%; flex-shrink: 0; animation: pulseDot 2s infinite; }
-.page-events .events-hero-badge-text { color: var(--accent-color); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; line-height: 1; }
-.page-events .events-page-hero h1 { font-family: var(--heading-font); font-size: clamp(40px, 5vw, 58px); font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; color: var(--primary-color); margin: 0; }
-.page-events .events-page-hero h1 .events-h1-accent { color: var(--accent-color); font-weight: 800; }
-.page-events .events-hero-lede { font-size: 17px; color: var(--text-color); line-height: 1.75; max-width: 520px; margin: 20px 0 32px; }
-.page-events .events-hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
-.page-events .events-hero-stats { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
-.page-events .events-hero-stats .stat-chip { border: 1px solid #E5E7EB; border-radius: 10px; padding: 12px 20px; background: var(--white); display: inline-flex; flex-direction: column; }
-.page-events .events-hero-stats .stat-chip-val { font-size: 22px; font-weight: 800; color: var(--accent-color); }
-.page-events .events-hero-stats .stat-chip-lbl { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #9CA3AF; margin-top: 2px; }
-.page-events .events-hero-visual { border-radius: 20px; overflow: hidden; box-shadow: 0 28px 72px rgba(17,24,39,0.15); position: relative; border: 1px solid rgba(79, 70, 229, 0.3); animation: floatHero 3s ease-in-out infinite; background: transparent; }
-.page-events .events-hero-visual::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(17, 24, 39, 0.4)); backdrop-filter: blur(8px); z-index: 1; pointer-events: none; }
-.page-events .events-hero-visual img.hero-event-img { width: 100%; height: 420px; object-fit: cover; object-position: center; display: block; transition: transform 0.45s ease; z-index: 0; position: relative; }
-.page-events .events-hero-visual:hover img.hero-event-img { transform: scale(1.04); }
-.page-events .events-hero-float-badge { position: absolute; bottom: 20px; left: 20px; background: var(--white); border-radius: 12px; padding: 14px 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); display: flex; align-items: center; gap: 12px; z-index: 2; }
-.page-events .events-float-icon { width: 36px; height: 36px; border-radius: 8px; background: radial-gradient(circle, rgba(79,70,229,0.1) 0%, rgba(79,70,229,0.02) 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.page-events .events-float-icon svg { stroke: var(--accent-color); }
-.page-events .events-float-title { font-size: 13px; font-weight: 700; color: var(--primary-color); line-height: 1.3; }
-.page-events .events-float-sub { font-size: 12px; color: #9CA3AF; margin-top: 2px; }
-
-.page-events .events-featured { background: var(--white); padding: 100px 0; }
-.page-events .events-featured-head { text-align: center; }
-.page-events .events-pill-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--accent-light); color: var(--accent-color); border-radius: 999px; padding: 6px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-.page-events .events-featured-head h2 { font-family: var(--heading-font); font-size: clamp(36px, 4vw, 48px); font-weight: 800; color: var(--primary-color); line-height: 1.1; margin: 16px 0 0; }
-.page-events .events-featured-sub { font-size: 17px; color: var(--text-color); line-height: 1.65; max-width: 600px; margin: 14px auto 0; }
-.page-events .events-featured-stack { margin-top: 56px; }
-.page-events .events-flagship-grid { display: grid; grid-template-columns: 1fr 1fr; border-radius: 20px; overflow: hidden; border: 1px solid #E5E7EB; box-shadow: 0 4px 24px rgba(17,24,39,0.07); background: var(--white); transition: transform 0.4s ease, box-shadow 0.4s ease; position: relative; }
-.page-events .events-flagship-grid::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: #4F46E5; transform: scaleX(0); transform-origin: center; transition: transform 0.4s ease, box-shadow 0.4s ease; }
-.page-events .events-flagship-grid:hover { transform: translateY(-8px); box-shadow: 0 24px 64px rgba(17, 24, 39, 0.12); }
-.page-events .events-flagship-grid:hover::after { transform: scaleX(1); box-shadow: 0 0 12px rgba(79, 70, 229, 0.4); }
-.page-events .events-flagship-media { overflow: hidden; min-height: 400px; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(17, 24, 39, 0.1)); backdrop-filter: blur(8px); }
-.page-events .events-flagship-media img.flagship-img { width: 100%; height: 100%; min-height: 400px; object-fit: cover; object-position: center; display: block; background: transparent; animation: kenBurns 20s ease-out infinite alternate; transition: transform 0.4s ease; }
-.page-events .events-flagship-media:hover img.flagship-img { transform: scale(1.03); animation-play-state: paused; }
-.page-events .events-flagship-body { padding: 48px; }
-.page-events .events-flagship-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.page-events .events-pill-accent { background: var(--accent-color); color: var(--white); border-radius: 999px; padding: 5px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-.page-events .events-pill-green { background: #DCFCE7; color: #15803D; border-radius: 999px; padding: 5px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-.page-events .events-flagship-body h3 { font-family: var(--heading-font); font-size: 36px; font-weight: 800; color: var(--primary-color); margin: 16px 0 4px; line-height: 1.1; }
-.page-events .events-flagship-kicker { font-size: 16px; color: #9CA3AF; font-weight: 500; margin-bottom: 20px; }
-.page-events .events-flagship-divider { height: 1px; background: #E5E7EB; }
-.page-events .events-flagship-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; margin-top: 20px; }
-.page-events .events-detail-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #9CA3AF; letter-spacing: 0.06em; }
-.page-events .events-detail-value { font-size: 15px; font-weight: 600; color: var(--primary-color); margin-top: 4px; }
-.page-events .events-flagship-copy { margin-top: 24px; font-size: 14px; color: var(--text-color); line-height: 1.7; }
-.page-events .events-outcome-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-.page-events .events-outcome-chip { background: var(--accent-light); border-radius: 10px; padding: 10px 16px; text-align: center; }
-.page-events .events-outcome-chip .num { font-size: 20px; font-weight: 800; color: var(--accent-color); }
-.page-events .events-outcome-chip .lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #9CA3AF; margin-top: 2px; display: block; letter-spacing: 0.06em; }
-
-.page-events .events-row2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
-.page-events .events-row2:has(.event-card:hover) .event-card:not(:hover) { opacity: 0.5; }
-.page-events .event-card { border: 1px solid #E5E7EB; border-radius: 16px; overflow: hidden; background: var(--white); transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease; position: relative; }
-.page-events .event-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: #4F46E5; transform: scaleX(0); transform-origin: center; transition: transform 0.4s ease, box-shadow 0.4s ease; }
-.page-events .event-card:hover { transform: translateY(-8px); box-shadow: 0 24px 64px rgba(17, 24, 39, 0.12); }
-.page-events .event-card:hover::after { transform: scaleX(1); box-shadow: 0 0 12px rgba(79, 70, 229, 0.4); }
-.page-events .event-card-media { height: 200px; overflow: hidden; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(17, 24, 39, 0.1)); backdrop-filter: blur(8px); }
-.page-events .event-card-media img.event-card-img { width: 100%; height: 100%; object-fit: cover; display: block; background: transparent; animation: kenBurns 20s ease-out infinite alternate; transition: transform 0.4s ease; }
-.page-events .event-card:hover .event-card-media img.event-card-img { transform: scale(1.06); animation-play-state: paused; }
-.page-events .event-card-body { padding: 24px; }
-.page-events .event-card-pill { display: inline-flex; background: var(--accent-light); color: var(--accent-color); border-radius: 999px; padding: 5px 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-.page-events .event-card-body h4 { font-family: var(--heading-font); font-size: 19px; font-weight: 700; color: var(--primary-color); margin: 10px 0 4px; line-height: 1.25; }
-.page-events .event-card-inst { font-size: 13px; color: #9CA3AF; margin-bottom: 14px; }
-.page-events .event-card-divider { height: 1px; background: #E5E7EB; margin-bottom: 14px; }
-.page-events .event-card-role { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-bottom: 10px; }
-.page-events .event-card-role-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #9CA3AF; letter-spacing: 0.05em; }
-.page-events .event-card-role-val { font-size: 13px; font-weight: 600; color: var(--primary-color); }
-.page-events .event-card-services { font-size: 13px; color: var(--text-color); line-height: 1.5; }
-
-.page-events .compact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
-.page-events .compact-grid:has(.compact-card:hover) .compact-card:not(:hover) { opacity: 0.5; }
-.page-events .compact-card { border: 1px solid #E5E7EB; border-radius: 14px; padding: 22px; background: var(--white); transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease, opacity 0.3s ease; position: relative; overflow: hidden; }
-.page-events .compact-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: #4F46E5; transform: scaleX(0); transform-origin: center; transition: transform 0.4s ease, box-shadow 0.4s ease; }
-.page-events .compact-card:hover { border-color: var(--accent-color); box-shadow: 0 24px 64px rgba(17, 24, 39, 0.12); transform: translateY(-8px); }
-.page-events .compact-card:hover::after { transform: scaleX(1); box-shadow: 0 0 12px rgba(79, 70, 229, 0.4); }
-.page-events .compact-card-cat { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent-color); letter-spacing: 0.06em; }
-.page-events .compact-card-cat .dot { width: 6px; height: 6px; background: var(--accent-color); border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: middle; }
-.page-events .compact-card h5 { font-family: var(--heading-font); font-size: 16px; font-weight: 700; color: var(--primary-color); margin: 8px 0 4px; line-height: 1.25; }
-.page-events .compact-card p.ctx { font-size: 13px; color: #9CA3AF; line-height: 1.45; }
-.page-events .compact-card .role { margin-top: 12px; font-size: 12px; font-weight: 600; color: var(--accent-color); }
-
-.page-events .events-categories { background: var(--accent-light); padding: 90px 0; }
-.page-events .events-categories-head { text-align: center; }
-.page-events .events-categories-head h2 { font-family: var(--heading-font); font-size: clamp(32px, 3.5vw, 44px); font-weight: 800; color: var(--primary-color); margin: 16px 0 0; line-height: 1.12; }
-.page-events .events-categories-sub { font-size: 17px; color: var(--text-color); line-height: 1.65; max-width: 580px; margin: 14px auto 0; }
-.page-events .categories-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
-.page-events .categories-grid:has(.cat-card:hover) .cat-card:not(:hover) { opacity: 0.5; }
-.page-events .cat-card { background: var(--white); border-radius: 18px; padding: 32px 36px; border: 1px solid #E5E7EB; border-bottom: 3px solid transparent; display: flex; gap: 28px; align-items: flex-start; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease, border-color 0.35s ease, border-bottom-color 0.35s ease, box-shadow 0.35s ease, opacity 0.3s ease; }
-.page-events .cat-card:hover { transform: translateY(-4px) scale(1.01); background-color: var(--white); border-color: #e2e8f0; border-bottom: 3px solid var(--accent-color); box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.12), 0 10px 28px rgba(79, 70, 229, 0.12); }
-.page-events .cat-icon-box { width: 52px; height: 52px; background: radial-gradient(circle, rgba(79,70,229,0.1) 0%, rgba(79,70,229,0.02) 100%); border-radius: 14px; display: grid; place-items: center; flex-shrink: 0; transition: background 0.3s ease; }
-.page-events .cat-card:hover .cat-icon-box { background: radial-gradient(circle, rgba(79,70,229,0.15) 0%, rgba(79,70,229,0.02) 100%); }
-.page-events .cat-icon-box svg { stroke: var(--accent-color); fill: none; }
-.page-events .cat-card h4 { font-size: 19px; font-weight: 700; color: var(--primary-color); margin-bottom: 8px; font-family: var(--heading-font); }
-.page-events .cat-card p.desc { font-size: 14px; color: var(--text-color); line-height: 1.7; margin-bottom: 14px; }
-.page-events .cat-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.page-events .cat-tags span { background: var(--accent-light); color: var(--accent-color); border-radius: 999px; padding: 4px 12px; font-size: 12px; font-weight: 600; }
-
-.page-events .events-gallery { background: var(--white); padding: 90px 0; }
-.page-events .events-gallery-head { text-align: center; }
-.page-events .events-gallery-head h2 { font-family: var(--heading-font); font-size: clamp(32px, 3.5vw, 44px); font-weight: 800; color: var(--primary-color); margin: 16px 0 0; line-height: 1.12; }
-.page-events .events-gallery-sub { font-size: 17px; color: var(--text-color); line-height: 1.65; max-width: 520px; margin: 14px auto 0; text-align: center; }
-.page-events .gallery-grid { columns: 3; column-gap: 16px; margin-top: 48px; }
-.page-events .gallery-item { break-inside: avoid; margin-bottom: 16px; border-radius: 14px; overflow: hidden; position: relative; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(17, 24, 39, 0.1)); backdrop-filter: blur(8px); border: 1px solid transparent; border-bottom: 3px solid transparent; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease, border-color 0.35s ease, border-bottom-color 0.35s ease, box-shadow 0.35s ease; }
-.page-events .gallery-item:hover { transform: translateY(-4px) scale(1.01); border-color: #e2e8f0; border-bottom: 3px solid var(--accent-color); box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.12), 0 10px 28px rgba(79, 70, 229, 0.12); }
-.page-events .gallery-item img.gallery-img { width: 100%; display: block; object-fit: cover; background: transparent; transition: transform 0.4s ease; }
-.page-events .gallery-item:hover img.gallery-img { transform: scale(1.04); }
-.page-events .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15,23,42,0.7)); padding: 14px 16px; opacity: 0; transition: opacity 0.3s ease; }
-.page-events .gallery-item:hover .gallery-overlay { opacity: 1; }
-.page-events .gallery-overlay span { font-size: 13px; font-weight: 600; color: #fff; }
-
-.page-events .events-impact { background-color: #0F172A; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 64px 64px; padding: 90px 0; color: #94A3B8; }
-.page-events .events-impact-head { text-align: center; }
-.page-events .events-impact-pill { color: #A5B4FC; font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin: 0; }
-.page-events .events-impact-head h2 { color: #fff; font-size: clamp(34px, 4vw, 48px); font-weight: 800; margin-top: 8px; line-height: 1.1; font-family: var(--heading-font); }
-.page-events .events-impact-sub { font-size: 16px; color: #94A3B8; margin: 12px 0 56px; }
-.page-events .events-metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 900px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); }
-.page-events .events-metric-cell { padding: 32px 48px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); }
-.page-events .events-metric-cell:nth-child(3n) { border-right: none; }
-.page-events .events-metric-num { font-size: 56px; font-weight: 800; color: #A5B4FC; line-height: 1; text-shadow: 0 0 40px rgba(165,180,252,0.35); font-family: var(--heading-font); }
-.page-events .events-metric-lbl { font-size: 13px; font-weight: 600; color: #64748B; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 10px; display: block; line-height: 1.35; }
-.page-events .events-program-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 860px; margin: 48px auto 0; }
-.page-events .events-program-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 24px 28px; flex: 1; min-width: 220px; }
-.page-events .events-program-card .cat { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #6366F1; letter-spacing: 0.1em; line-height: 1.3; }
-.page-events .events-program-card .name { font-size: 17px; font-weight: 700; color: #fff; margin: 8px 0 6px; font-family: var(--heading-font); }
-.page-events .events-program-card .detail { font-size: 13px; color: #94A3B8; line-height: 1.6; }
-
-.page-events .events-cta { background-color: #0F172A; border-top: 1px solid rgba(255,255,255,0.08); padding: 90px 0 140px; text-align: center; }
-.page-events .events-cta-inner { max-width: 680px; margin: 0 auto; }
-.page-events .events-cta-pill { color: #94A3B8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin: 0; }
-.page-events .events-cta h2 { color: #fff; font-size: clamp(30px, 3.5vw, 44px); font-weight: 800; margin: 12px 0 18px; line-height: 1.15; font-family: var(--heading-font); }
-.page-events .events-cta p.lede { color: #94A3B8; font-size: 16px; line-height: 1.7; margin-bottom: 36px; }
-.page-events .events-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
-.page-events .events-cta-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.8rem; background: var(--accent-color); color: #fff; border-radius: 8px; font-weight: 600; font-size: 0.95rem; border: none; text-decoration: none; transition: background 0.2s ease; }
-.page-events .events-cta-primary:hover { background: var(--accent-hover); color: #fff; }
-.page-events .events-cta-secondary { display: inline-flex; align-items: center; padding: 0.85rem 1.8rem; border: 2px solid rgba(255,255,255,0.25); color: #fff; background: transparent; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: border-color 0.2s ease, color 0.2s ease; }
-.page-events .events-cta-secondary:hover { border-color: #fff; color: #fff; }
-
-.page-events .footer { background: #0F172A; color: #64748B; padding: 80px 0 24px; border-top: 1px solid rgba(255,255,255,0.08); }
-.page-events .footer-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 60px; }
-.page-events .footer-logo { max-width: 150px; margin-bottom: 16px; }
-.page-events .footer-column h4 { color: var(--white); margin-bottom: 24px; font-size: 16px; font-family: var(--heading-font); }
-.page-events .footer-column ul { display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0; margin: 0; }
-.page-events .footer-column ul li, .page-events .footer-column ul a { color: #94A3B8; font-size: 14px; }
-.page-events .footer-column ul a:hover { color: var(--accent-color); }
-.page-events .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 13px; color: #64748B; }
-
-@media (max-width: 960px) {
-  .page-events .events-hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  .page-events .events-flagship-grid { grid-template-columns: 1fr; }
-  .page-events .events-row2 { grid-template-columns: 1fr; }
-  .page-events .compact-grid { grid-template-columns: repeat(2, 1fr); }
-  .page-events .categories-grid { grid-template-columns: 1fr; }
-  .page-events .gallery-grid { columns: 2; }
-  .page-events .events-metrics-grid { grid-template-columns: 1fr; }
-  .page-events .events-metric-cell { border-right: none; }
-  .page-events .events-program-row { flex-direction: column; }
-}
-@media (max-width: 600px) {
-  .page-events .compact-grid { grid-template-columns: 1fr; }
-  .page-events .gallery-grid { columns: 1; }
-  .page-events .footer-container { grid-template-columns: 1fr; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .fade-up { animation: none; opacity: 1; }
-  .page-events .events-hero-visual { animation: none; }
-  .page-events .events-flagship-media img.flagship-img,
-  .page-events .event-card-media img.event-card-img { animation: none; }
-  .page-events .events-hero-visual img.hero-event-img,
-  .page-events .events-flagship-media img.flagship-img,
-  .page-events .event-card-media img.event-card-img,
-  .page-events .gallery-item img.gallery-img { transition: none; }
-  .page-events .events-hero-visual:hover img.hero-event-img,
-  .page-events .events-flagship-media:hover img.flagship-img,
-  .page-events .event-card:hover .event-card-media img.event-card-img,
-  .page-events .gallery-item:hover img.gallery-img { transform: none; }
-  .page-events .event-card:hover { transform: none; }
-  .page-events .compact-card:hover { transform: none; }
-  .page-events .cat-card:hover { transform: none; }
-}
-
-        /* Active Footer Link */
-        .footer-link-events { color: var(--accent) !important; }
-    </style>
-</head>
-<body class="page-events">
-<header class="header">
-<div class="container navbar">
-<div class="logo"><a href="../index.html" class="logo-link"><span class="nav-brand">Betelgeuse Foundation</span></a></div>
-<nav class="nav">
-<ul class="nav-links">
-<li><a href="../index.html">Home</a></li>
-<li><a href="logistics.html">Logistics</a></li>
-<li><a href="events.html" class="is-active-page">Events</a></li>
-<li><a href="social-initiatives.html">Social Initiatives</a></li>
-<li><a href="../about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-<a href="#" class="nav-btn">Partner With Us</a>
-</div>
-</header>
-
-<section class="events-page-hero" aria-labelledby="eh1">
-<div class="container events-hero-grid">
-<div class="events-hero-left">
-<div class="events-hero-badge-wrap fade-up fade-up--1"><span class="events-hero-status-dot" aria-hidden="true"></span><span class="events-hero-badge-text">Conferences · Collaborations · Initiatives</span></div>
-<h1 id="eh1" class="fade-up fade-up--2">Events, Conferences &amp; <span class="events-h1-accent">Experiential Initiatives</span></h1>
-<p class="events-hero-lede fade-up fade-up--2">Betelgeuse Foundation executes structured, high-fidelity event experiences for institutional forums and leadership programs globally.</p>
-<div class="events-hero-ctas fade-up fade-up--3">
-<a href="../index.html" class="primary-btn"><span>View Our Collaborations</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-<a href="mailto:info@betelguesefoundation.org" class="secondary-btn">Discuss Event Support</a>
-</div>
-<div class="events-hero-stats fade-up fade-up--3" role="list">
-<div class="stat-chip" role="listitem"><span class="stat-chip-val js-counter" data-target="14" data-suffix="+">0+</span><span class="stat-chip-lbl">Events executed</span></div>
-<div class="stat-chip" role="listitem"><span class="stat-chip-val js-counter" data-target="450" data-suffix="+">0+</span><span class="stat-chip-lbl">Students trained</span></div>
-<div class="stat-chip" role="listitem"><span class="stat-chip-val js-counter" data-target="250" data-suffix="+">0+</span><span class="stat-chip-lbl">Cyber programme reach</span></div>
-</div>
-</div>
-<div class="events-hero-right-col fade-up fade-up--2">
-<div class="events-hero-visual">
-<img class="hero-event-img" src="../assets/images/event-dummy.svg" alt="Stage setup at AMIMUN 2026 conference auditorium — delegates seated, Betelgeuse Foundation logistics" width="1200" height="420" loading="eager">
-<div class="events-hero-float-badge">
-<div class="events-float-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-<div><div class="events-float-title"><span class="events-hero-status-dot" style="display:inline-block; margin-right:8px; vertical-align:middle; width:6px; height:6px;"></span>AMIMUN &apos;26 — Chief Logistics Partner</div><div class="events-float-sub">Amity University, Noida</div></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="events-featured" aria-labelledby="efh">
-<div class="container">
-<header class="events-featured-head">
-<span class="events-pill-badge fade-up fade-up--1">Portfolio</span>
-<h2 id="efh" class="fade-up fade-up--2">Conferences We Have Powered</h2>
-<p class="events-featured-sub fade-up fade-up--3">A curated record of institutional initiatives, conference partnerships, and execution collaborations — each one operationally delivered.</p>
-</header>
-<div class="events-featured-stack">
-<div class="events-flagship-grid fade-up fade-up--2">
-<div class="events-flagship-media"><img class="flagship-img" src="../assets/images/event-dummy.svg" alt="AMIMUN 2026 — delegate session in progress, conference hall, institutional conference India" width="800" height="400" loading="lazy"></div>
-<div class="events-flagship-body">
-<div class="events-flagship-pills"><span class="events-pill-accent">Flagship collaboration</span><span class="events-pill-green">Chief logistics partner</span></div>
-<h3>AMIMUN &apos;26</h3>
-<p class="events-flagship-kicker">Amity Model United Nations 2026</p>
-<div class="events-flagship-divider" role="presentation"></div>
-<div class="events-flagship-detail-grid">
-<div><div class="events-detail-label">Institution</div><div class="events-detail-value">Amity University, Noida</div></div>
-<div><div class="events-detail-label">Our role</div><div class="events-detail-value">Chief Logistics &amp; Operations Partner</div></div>
-<div><div class="events-detail-label">Edition</div><div class="events-detail-value">2nd Consecutive Year</div></div>
-<div><div class="events-detail-label">Scope</div><div class="events-detail-value">End-to-End Delegate Operations</div></div>
-</div>
-<p class="events-flagship-copy">From delegate kit assembly and credential systems to on-ground distribution and volunteer management — Betelgeuse served as the single operational backbone for AMIMUN&apos;s institutional delivery.</p>
-<div class="events-outcome-chips">
-<div class="events-outcome-chip"><span class="num">800+</span><span class="lbl">Delegates</span></div>
-<div class="events-outcome-chip"><span class="num">3</span><span class="lbl">Day operation</span></div>
-<div class="events-outcome-chip"><span class="num">0</span><span class="lbl">Kit errors</span></div>
-</div>
-</div>
-</div>
-
-<div class="events-row2 fade-up fade-up--3">
-<article class="event-card">
-<div class="event-card-media"><img class="event-card-img" src="../assets/images/event-dummy.svg" alt="USI MUN 3.0 conference session, delegate engagement, institutional collaboration" width="400" height="200" loading="lazy"></div>
-<div class="event-card-body"><span class="event-card-pill">Model United Nations</span><h4>USI MUN 3.0</h4><p class="event-card-inst">United Schools Initiative</p><div class="event-card-divider" role="presentation"></div><div class="event-card-role"><span class="event-card-role-label">Role:</span><span class="event-card-role-val">Logistics &amp; Materials Partner</span></div><p class="event-card-services">Delegate Kits · Credentials · Stationery</p></div>
-</article>
-<article class="event-card">
-<div class="event-card-media"><img class="event-card-img" src="../assets/images/event-dummy.svg" alt="Confluence 2026 institutional summit session, Heritage Group collaboration" width="400" height="200" loading="lazy"></div>
-<div class="event-card-body"><span class="event-card-pill">Institutional summit</span><h4>Confluence 2026</h4><p class="event-card-inst">Heritage Educational Group</p><div class="event-card-divider" role="presentation"></div><div class="event-card-role"><span class="event-card-role-label">Role:</span><span class="event-card-role-val">Full Operations Partner</span></div><p class="event-card-services">Venue Coord · Branding · Volunteer Ops</p></div>
-</article>
-<article class="event-card">
-<div class="event-card-media"><img class="event-card-img" src="../assets/images/event-dummy.svg" alt="RDIAS Global Summit — conference auditorium, institutional collaboration Betelgeuse" width="400" height="200" loading="lazy"></div>
-<div class="event-card-body"><span class="event-card-pill">Global summit</span><h4>RDIAS Global Summit</h4><p class="event-card-inst">Raj Dhani Institute · 2 Editions</p><div class="event-card-divider" role="presentation"></div><div class="event-card-role"><span class="event-card-role-label">Role:</span><span class="event-card-role-val">Collaboration &amp; Execution Partner</span></div><p class="event-card-services">Ops Coordination · Materials · Branding</p></div>
-</article>
-</div>
-
-<div class="compact-grid fade-up fade-up--3">
-<article class="compact-card"><div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Mun conference</div><h5>AMIMUN &apos;25</h5><p class="ctx">Amity University — Inaugural Edition</p><div class="role">Chief Logistics Partner</div></article>
-<article class="compact-card"><div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Mun conference</div><h5>USI MUN 1.0 &amp; 2.0</h5><p class="ctx">United Schools Initiative</p><div class="role">Materials &amp; Operations</div></article>
-<article class="compact-card"><div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Academic conference</div><h5>InCITe 2026</h5><p class="ctx">Institutional Academic Forum</p><div class="role">Coordination &amp; Execution</div></article>
-<article class="compact-card"><div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Research conference</div><h5>RDCAPE 2025</h5><p class="ctx">Research &amp; Academic Platform</p><div class="role">Operations &amp; Branding</div></article>
-<article class="compact-card"><div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Institutional event</div><h5>SPIN 2025</h5><p class="ctx">Student-Led Initiative</p><div class="role">Logistics Execution Partner</div></article>
-<article class="compact-card"><div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Academic summit</div><h5>Schopenhauer &amp; Ecology</h5><p class="ctx">International Philosophy Conference</p><div class="role">Conference Collateral &amp; Ops</div></article>
-<article class="compact-card"><div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>University fest</div><h5>Amity Youth Fest</h5><p class="ctx">Amity University Campus-Wide</p><div class="role">On-Ground Execution</div></article>
-<article class="compact-card"><div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Mun collaboration</div><h5>SMIT MUN</h5><p class="ctx">Inter-Institutional Collaboration</p><div class="role">Collaboration &amp; Support Partner</div></article>
-</div>
-</div>
-</div>
-</section>
-
-<section class="events-categories" aria-labelledby="ech">
-<div class="container">
-<header class="events-categories-head">
-<span class="events-pill-badge fade-up fade-up--1">What we do</span>
-<h2 id="ech" class="fade-up fade-up--2">Areas of Institutional Engagement</h2>
-<p class="events-categories-sub fade-up fade-up--3">Betelgeuse operates across four structured experience domains — each with its own execution depth.</p>
-</header>
-<div class="categories-grid">
-<article class="cat-card fade-up fade-up--2">
-<div class="cat-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
-<div><h4>Conferences &amp; Model UN Forums</h4><p class="desc">Full-cycle execution for institutional MUNs, academic summits, and large-scale research conferences — from logistics setup to post-event reporting.</p><div class="cat-tags"><span>MUN Operations</span><span>Delegate Management</span><span>Credential Systems</span><span>Conference Branding</span></div></div>
-</article>
-<article class="cat-card fade-up fade-up--2">
-<div class="cat-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
-<div><h4>Leadership &amp; Diplomacy Programs</h4><p class="desc">Structured bootcamps, delegate training, and experiential learning programs that build public speaking, diplomacy, and institutional awareness.</p><div class="cat-tags"><span>Bootcamp Design</span><span>Training Delivery</span><span>Youth Diplomacy</span><span>Public Speaking</span></div></div>
-</article>
-<article class="cat-card fade-up fade-up--3">
-<div class="cat-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-<div><h4>Workshops &amp; Civic Engagement</h4><p class="desc">Collaborative institutional workshops, cybersecurity awareness programs, Rotaract civic initiatives, and youth outreach campaigns across academic communities.</p><div class="cat-tags"><span>Cyber Awareness</span><span>Civic Programs</span><span>Rotaract</span><span>Community Outreach</span></div></div>
-</article>
-<article class="cat-card fade-up fade-up--3">
-<div class="cat-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-<div><h4>Social Impact Initiatives</h4><p class="desc">Environmental sustainability drives, food access programs, awareness campaigns, and institutional outreach projects that connect organizations with communities.</p><div class="cat-tags"><span>Sustainability</span><span>Food Drives</span><span>Awareness Campaigns</span><span>University Outreach</span></div></div>
-</article>
-</div>
-</div>
-</section>
-
-<section class="events-gallery" aria-labelledby="egh">
-<div class="container">
-<header class="events-gallery-head">
-<span class="events-pill-badge fade-up fade-up--1">On the ground</span>
-<h2 id="egh" class="fade-up fade-up--2">Events in Frame</h2>
-<p class="events-gallery-sub fade-up fade-up--3">Photographed moments from institutional conferences, delegate sessions, leadership programs, and operational deployments.</p>
-</header>
-<div class="gallery-grid">
-<div class="gallery-item fade-up fade-up--1"><img class="gallery-img" style="height:240px" src="../assets/images/event-dummy.svg" alt="Delegate registration desk — AMIMUN conference, Betelgeuse credential distribution" width="600" height="240" loading="lazy"><div class="gallery-overlay"><span>Delegate Registration — AMIMUN &apos;26</span></div></div>
-<div class="gallery-item fade-up fade-up--2"><img class="gallery-img" style="height:300px" src="../assets/images/event-dummy.svg" alt="Conference auditorium — delegates seated at committee session, institutional MUN India" width="600" height="300" loading="lazy"><div class="gallery-overlay"><span>Committee Session — USI MUN</span></div></div>
-<div class="gallery-item fade-up fade-up--3"><img class="gallery-img" style="height:200px" src="../assets/images/event-dummy.svg" alt="Volunteer team briefing — event coordination, Betelgeuse on-ground operations" width="600" height="200" loading="lazy"><div class="gallery-overlay"><span>Ops Briefing — Pre-Event</span></div></div>
-<div class="gallery-item fade-up fade-up--1"><img class="gallery-img" style="height:280px" src="../assets/images/event-dummy.svg" alt="Leadership bootcamp — student delegates in workshop session, public speaking training" width="600" height="280" loading="lazy"><div class="gallery-overlay"><span>Delegate Bootcamp Programme</span></div></div>
-<div class="gallery-item fade-up fade-up--2"><img class="gallery-img" style="height:260px" src="../assets/images/event-dummy.svg" alt="Conference branding — event banner, institutional collateral deployment" width="600" height="260" loading="lazy"><div class="gallery-overlay"><span>Branding Deployment — Confluence 2026</span></div></div>
-<div class="gallery-item fade-up fade-up--3"><img class="gallery-img" style="height:220px" src="../assets/images/event-dummy.svg" alt="Stage setup — auditorium preparation, institutional event execution India" width="600" height="220" loading="lazy"><div class="gallery-overlay"><span>Stage Coordination — Pre-Gavel</span></div></div>
-<div class="gallery-item fade-up fade-up--4"><img class="gallery-img" style="height:310px" src="../assets/images/event-dummy.svg" alt="Cyber First Responder Programme — student workshop, CyberPeace Foundation collaboration" width="600" height="310" loading="lazy"><div class="gallery-overlay"><span>Cyber First Responder Programme</span></div></div>
-<div class="gallery-item fade-up fade-up--5"><img class="gallery-img" style="height:190px" src="../assets/images/event-dummy.svg" alt="Logistics coordination — kit assembly and distribution, delegate materials" width="600" height="190" loading="lazy"><div class="gallery-overlay"><span>Kit Assembly — AMIMUN &apos;25</span></div></div>
-<div class="gallery-item fade-up fade-up--6"><img class="gallery-img" style="height:270px" src="../assets/images/event-dummy.svg" alt="Community outreach initiative — social impact programme, Rotaract collaboration" width="600" height="270" loading="lazy"><div class="gallery-overlay"><span>Social Initiative — Civic Outreach</span></div></div>
-</div>
-</div>
-</section>
-
-<section class="events-impact" aria-labelledby="eih">
-<div class="container">
-<header class="events-impact-head">
-<p class="events-impact-pill fade-up fade-up--1">Reach &amp; impact</p>
-<h2 id="eih" class="fade-up fade-up--2">Operational Reach, Verified.</h2>
-<p class="events-impact-sub fade-up fade-up--3">Numbers from field execution — not estimates.</p>
-</header>
-<div class="events-metrics-grid fade-up fade-up--2">
-<div class="events-metric-cell"><div class="events-metric-num js-counter" data-target="14" data-suffix="+">0+</div><span class="events-metric-lbl">Events executed</span></div>
-<div class="events-metric-cell"><div class="events-metric-num js-counter" data-target="450" data-suffix="+">0+</div><span class="events-metric-lbl">Students trained</span></div>
-<div class="events-metric-cell"><div class="events-metric-num js-counter" data-target="250" data-suffix="+">0+</div><span class="events-metric-lbl">Cyber programme reach</span></div>
-<div class="events-metric-cell"><div class="events-metric-num">2</div><span class="events-metric-lbl">Consecutive AMIMUN editions</span></div>
-<div class="events-metric-cell"><div class="events-metric-num">6</div><span class="events-metric-lbl">Institutional domains</span></div>
-<div class="events-metric-cell"><div class="events-metric-num">3</div><span class="events-metric-lbl">Civic initiative programmes</span></div>
-</div>
-<div class="events-program-row fade-up fade-up--3">
-<div class="events-program-card"><div class="cat">Training programme</div><div class="name">Delegate Bootcamp</div><p class="detail">200+ students trained in diplomacy, public speaking, and conference procedure.</p></div>
-<div class="events-program-card"><div class="cat">Civic tech initiative</div><div class="name">Cyber First Responder</div><p class="detail">250+ students trained in cybersecurity awareness with CyberPeace Foundation &amp; Google.org.</p></div>
-<div class="events-program-card"><div class="cat">Social engagement</div><div class="name">Rotaract Initiatives</div><p class="detail">Civic awareness, healthcare drives, and community engagement across institutional networks.</p></div>
-</div>
-</div>
-</section>
-
-<section class="events-cta" aria-labelledby="ecta">
-<div class="container events-cta-inner">
-<p class="events-cta-pill fade-up fade-up--1">Collaborate with us</p>
-<h2 id="ecta" class="fade-up fade-up--2">Planning A Conference, Workshop,<br>Or Institutional Initiative?</h2>
-<p class="lede fade-up fade-up--3">Whether you need a logistics partner, a delegation operations team, or a full-cycle execution collaborator — Betelgeuse brings structure, reliability, and institutional experience to your event.</p>
-<div class="events-cta-btns fade-up fade-up--3">
-<a href="mailto:info@betelguesefoundation.org" class="events-cta-primary">Discuss Collaboration<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-<a href="logistics.html" class="events-cta-secondary">View Logistics Capabilities</a>
-</div>
-</div>
-</section>
-
-<footer class="footer">
-<div class="container">
-<div class="footer-container">
-<div class="footer-column">
-<img src="../assets/images/logo-placeholder.svg" alt="Betelgeuse Foundation Logo" class="footer-logo" width="150" height="48" loading="lazy">
-<p>Conference solutions, leadership initiatives, institutional collaborations, and social impact programs.</p>
-</div>
-<div class="footer-column">
-<h4>Quick Links</h4>
-<ul>
-<li><a href="../index.html">Home</a></li>
-<li><a href="logistics.html">Logistics</a></li>
-<li><a href="events.html" class="is-active-page">Events</a></li>
-<li><a href="social-initiatives.html">Social Initiatives</a></li>
-<li><a href="../about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-<div class="footer-column">
-<h4>Contact</h4>
-<ul>
-<li>info@betelguesefoundation.org</li>
-<li>+91 XXXXX XXXXX</li>
-<li>Noida, India</li>
-</ul>
-</div>
-<div class="footer-column">
-<h4>Follow Us</h4>
-<ul>
-<li><a href="#">Instagram</a></li>
-<li><a href="#">LinkedIn</a></li>
-<li><a href="#">Facebook</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="footer-bottom">&copy; 2026 Betelgeuse Foundation. All rights reserved.</div>
-</div>
-</footer>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll(".js-counter");
-  const options = { threshold: 0.5 };
-  
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const targetElement = entry.target;
-        const targetValue = parseInt(targetElement.getAttribute("data-target"));
-        const suffix = targetElement.getAttribute("data-suffix") || "";
-        const duration = 2000;
-        const startTime = performance.now();
-        
-        const updateCounter = (currentTime) => {
-          const elapsedTime = currentTime - startTime;
-          const progress = Math.min(elapsedTime / duration, 1);
-          const easeOut = 1 - Math.pow(1 - progress, 3);
-          const currentVal = Math.floor(easeOut * targetValue);
-          
-          targetElement.textContent = currentVal + suffix;
-          
-          if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-          } else {
-            targetElement.textContent = targetValue + suffix;
-          }
-        };
-        
-        requestAnimationFrame(updateCounter);
-        observer.unobserve(targetElement);
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatHero {
+
+      0%,
+      100% {
+        transform: translateY(0);
+        box-shadow: 0 28px 72px rgba(17, 24, 39, 0.15), 0 0 0 rgba(79, 70, 229, 0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+        box-shadow: 0 35px 80px rgba(17, 24, 39, 0.2), 0 0 40px rgba(79, 70, 229, 0.4);
+      }
+    }
+
+    @keyframes pulseDot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.6);
+      }
+
+      70% {
+        box-shadow: 0 0 0 6px rgba(79, 70, 229, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+      }
+    }
+
+    @keyframes kenBurns {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.15);
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .fade-up--1 {
+      animation-delay: 0.1s;
+    }
+
+    .fade-up--2 {
+      animation-delay: 0.2s;
+    }
+
+    .fade-up--3 {
+      animation-delay: 0.3s;
+    }
+
+    .fade-up--4 {
+      animation-delay: 0.4s;
+    }
+
+    .fade-up--5 {
+      animation-delay: 0.5s;
+    }
+
+    .fade-up--6 {
+      animation-delay: 0.6s;
+    }
+
+    .fade-up--7 {
+      animation-delay: 0.7s;
+    }
+
+    .fade-up--8 {
+      animation-delay: 0.8s;
+    }
+
+    .fade-up--9 {
+      animation-delay: 0.9s;
+    }
+
+    .page-events .nav-links a.is-active-page {
+      color: var(--accent-color);
+      font-weight: 700;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 4px;
+      display: inline-block;
+    }
+
+    .page-events .nav-links a.is-active-page::after {
+      display: none;
+    }
+
+    .page-events .footer-column ul a.is-active-page {
+      color: #E0E7FF;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 2px;
+      display: inline-block;
+    }
+
+    .page-events .events-page-hero {
+      background-color: var(--accent-light);
+      padding: 90px 0 80px;
+    }
+
+    .page-events .events-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .page-events .events-hero-badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 1.2rem;
+      background-color: var(--accent-light);
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 2px rgba(79, 70, 229, 0.06);
+    }
+
+    .page-events .events-hero-status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #4F46E5;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulseDot 2s infinite;
+    }
+
+    .page-events .events-hero-badge-text {
+      color: var(--accent-color);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .page-events .events-page-hero h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(40px, 5vw, 58px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--primary-color);
+      margin: 0;
+    }
+
+    .page-events .events-page-hero h1 .events-h1-accent {
+      color: var(--accent-color);
+      font-weight: 800;
+    }
+
+    .page-events .events-hero-lede {
+      font-size: 17px;
+      color: var(--text-color);
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 20px 0 32px;
+    }
+
+    .page-events .events-hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .page-events .events-hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .page-events .events-hero-stats .stat-chip {
+      border: 1px solid #E5E7EB;
+      border-radius: 10px;
+      padding: 12px 20px;
+      background: var(--white);
+      display: inline-flex;
+      flex-direction: column;
+    }
+
+    .page-events .events-hero-stats .stat-chip-val {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent-color);
+    }
+
+    .page-events .events-hero-stats .stat-chip-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9CA3AF;
+      margin-top: 2px;
+    }
+
+    .page-events .events-hero-visual {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 28px 72px rgba(17, 24, 39, 0.15);
+      position: relative;
+      border: 1px solid rgba(79, 70, 229, 0.3);
+      animation: floatHero 3s ease-in-out infinite;
+      background: transparent;
+    }
+
+    .page-events .events-hero-visual::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(17, 24, 39, 0.4));
+      backdrop-filter: blur(8px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .page-events .events-hero-visual img.hero-event-img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.45s ease;
+      z-index: 0;
+      position: relative;
+    }
+
+    .page-events .events-hero-visual:hover img.hero-event-img {
+      transform: scale(1.04);
+    }
+
+    .page-events .events-hero-float-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 2;
+    }
+
+    .page-events .events-float-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, rgba(79, 70, 229, 0.02) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .page-events .events-float-icon svg {
+      stroke: var(--accent-color);
+    }
+
+    .page-events .events-float-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-color);
+      line-height: 1.3;
+    }
+
+    .page-events .events-float-sub {
+      font-size: 12px;
+      color: #9CA3AF;
+      margin-top: 2px;
+    }
+
+    .page-events .events-featured {
+      background: var(--white);
+      padding: 100px 0;
+    }
+
+    .page-events .events-featured-head {
+      text-align: center;
+    }
+
+    .page-events .events-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-light);
+      color: var(--accent-color);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .page-events .events-featured-head h2 {
+      font-family: var(--heading-font);
+      font-size: clamp(36px, 4vw, 48px);
+      font-weight: 800;
+      color: var(--primary-color);
+      line-height: 1.1;
+      margin: 16px 0 0;
+    }
+
+    .page-events .events-featured-sub {
+      font-size: 17px;
+      color: var(--text-color);
+      line-height: 1.65;
+      max-width: 600px;
+      margin: 14px auto 0;
+    }
+
+    .page-events .events-featured-stack {
+      margin-top: 56px;
+    }
+
+    .page-events .events-flagship-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 4px 24px rgba(17, 24, 39, 0.07);
+      background: var(--white);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+    }
+
+    .page-events .events-flagship-grid::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #4F46E5;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .page-events .events-flagship-grid:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 64px rgba(17, 24, 39, 0.12);
+    }
+
+    .page-events .events-flagship-grid:hover::after {
+      transform: scaleX(1);
+      box-shadow: 0 0 12px rgba(79, 70, 229, 0.4);
+    }
+
+    .page-events .events-flagship-media {
+      overflow: hidden;
+      min-height: 400px;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(17, 24, 39, 0.1));
+      backdrop-filter: blur(8px);
+    }
+
+    .page-events .events-flagship-media img.flagship-img {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: transparent;
+      animation: kenBurns 20s ease-out infinite alternate;
+      transition: transform 0.4s ease;
+    }
+
+    .page-events .events-flagship-media:hover img.flagship-img {
+      transform: scale(1.03);
+      animation-play-state: paused;
+    }
+
+    .page-events .events-flagship-body {
+      padding: 48px;
+    }
+
+    .page-events .events-flagship-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .page-events .events-pill-accent {
+      background: var(--accent-color);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .page-events .events-pill-green {
+      background: #DCFCE7;
+      color: #15803D;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .page-events .events-flagship-body h3 {
+      font-family: var(--heading-font);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin: 16px 0 4px;
+      line-height: 1.1;
+    }
+
+    .page-events .events-flagship-kicker {
+      font-size: 16px;
+      color: #9CA3AF;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .page-events .events-flagship-divider {
+      height: 1px;
+      background: #E5E7EB;
+    }
+
+    .page-events .events-flagship-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 32px;
+      margin-top: 20px;
+    }
+
+    .page-events .events-detail-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #9CA3AF;
+      letter-spacing: 0.06em;
+    }
+
+    .page-events .events-detail-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-top: 4px;
+    }
+
+    .page-events .events-flagship-copy {
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--text-color);
+      line-height: 1.7;
+    }
+
+    .page-events .events-outcome-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .page-events .events-outcome-chip {
+      background: var(--accent-light);
+      border-radius: 10px;
+      padding: 10px 16px;
+      text-align: center;
+    }
+
+    .page-events .events-outcome-chip .num {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent-color);
+    }
+
+    .page-events .events-outcome-chip .lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #9CA3AF;
+      margin-top: 2px;
+      display: block;
+      letter-spacing: 0.06em;
+    }
+
+    .page-events .events-row2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .page-events .events-row2:has(.event-card:hover) .event-card:not(:hover) {
+      opacity: 0.5;
+    }
+
+    .page-events .event-card {
+      border: 1px solid #E5E7EB;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--white);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease;
+      position: relative;
+    }
+
+    .page-events .event-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #4F46E5;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .page-events .event-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 64px rgba(17, 24, 39, 0.12);
+    }
+
+    .page-events .event-card:hover::after {
+      transform: scaleX(1);
+      box-shadow: 0 0 12px rgba(79, 70, 229, 0.4);
+    }
+
+    .page-events .event-card-media {
+      height: 200px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(17, 24, 39, 0.1));
+      backdrop-filter: blur(8px);
+    }
+
+    .page-events .event-card-media img.event-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: transparent;
+      animation: kenBurns 20s ease-out infinite alternate;
+      transition: transform 0.4s ease;
+    }
+
+    .page-events .event-card:hover .event-card-media img.event-card-img {
+      transform: scale(1.06);
+      animation-play-state: paused;
+    }
+
+    .page-events .event-card-body {
+      padding: 24px;
+    }
+
+    .page-events .event-card-pill {
+      display: inline-flex;
+      background: var(--accent-light);
+      color: var(--accent-color);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .page-events .event-card-body h4 {
+      font-family: var(--heading-font);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 10px 0 4px;
+      line-height: 1.25;
+    }
+
+    .page-events .event-card-inst {
+      font-size: 13px;
+      color: #9CA3AF;
+      margin-bottom: 14px;
+    }
+
+    .page-events .event-card-divider {
+      height: 1px;
+      background: #E5E7EB;
+      margin-bottom: 14px;
+    }
+
+    .page-events .event-card-role {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .page-events .event-card-role-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #9CA3AF;
+      letter-spacing: 0.05em;
+    }
+
+    .page-events .event-card-role-val {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .page-events .event-card-services {
+      font-size: 13px;
+      color: var(--text-color);
+      line-height: 1.5;
+    }
+
+    .page-events .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .page-events .compact-grid:has(.compact-card:hover) .compact-card:not(:hover) {
+      opacity: 0.5;
+    }
+
+    .page-events .compact-card {
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 22px;
+      background: var(--white);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease, opacity 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-events .compact-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #4F46E5;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .page-events .compact-card:hover {
+      border-color: var(--accent-color);
+      box-shadow: 0 24px 64px rgba(17, 24, 39, 0.12);
+      transform: translateY(-8px);
+    }
+
+    .page-events .compact-card:hover::after {
+      transform: scaleX(1);
+      box-shadow: 0 0 12px rgba(79, 70, 229, 0.4);
+    }
+
+    .page-events .compact-card-cat {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      letter-spacing: 0.06em;
+    }
+
+    .page-events .compact-card-cat .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .page-events .compact-card h5 {
+      font-family: var(--heading-font);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 8px 0 4px;
+      line-height: 1.25;
+    }
+
+    .page-events .compact-card p.ctx {
+      font-size: 13px;
+      color: #9CA3AF;
+      line-height: 1.45;
+    }
+
+    .page-events .compact-card .role {
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-color);
+    }
+
+    .page-events .events-categories {
+      background: var(--accent-light);
+      padding: 90px 0;
+    }
+
+    .page-events .events-categories-head {
+      text-align: center;
+    }
+
+    .page-events .events-categories-head h2 {
+      font-family: var(--heading-font);
+      font-size: clamp(32px, 3.5vw, 44px);
+      font-weight: 800;
+      color: var(--primary-color);
+      margin: 16px 0 0;
+      line-height: 1.12;
+    }
+
+    .page-events .events-categories-sub {
+      font-size: 17px;
+      color: var(--text-color);
+      line-height: 1.65;
+      max-width: 580px;
+      margin: 14px auto 0;
+    }
+
+    .page-events .categories-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .page-events .categories-grid:has(.cat-card:hover) .cat-card:not(:hover) {
+      opacity: 0.5;
+    }
+
+    .page-events .cat-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 32px 36px;
+      border: 1px solid #E5E7EB;
+      border-bottom: 3px solid transparent;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease, border-color 0.35s ease, border-bottom-color 0.35s ease, box-shadow 0.35s ease, opacity 0.3s ease;
+    }
+
+    .page-events .cat-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      background-color: var(--white);
+      border-color: #e2e8f0;
+      border-bottom: 3px solid var(--accent-color);
+      box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.12), 0 10px 28px rgba(79, 70, 229, 0.12);
+    }
+
+    .page-events .cat-icon-box {
+      width: 52px;
+      height: 52px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, rgba(79, 70, 229, 0.02) 100%);
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+    }
+
+    .page-events .cat-card:hover .cat-icon-box {
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(79, 70, 229, 0.02) 100%);
+    }
+
+    .page-events .cat-icon-box svg {
+      stroke: var(--accent-color);
+      fill: none;
+    }
+
+    .page-events .cat-card h4 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+      font-family: var(--heading-font);
+    }
+
+    .page-events .cat-card p.desc {
+      font-size: 14px;
+      color: var(--text-color);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .page-events .cat-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .page-events .cat-tags span {
+      background: var(--accent-light);
+      color: var(--accent-color);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .page-events .events-gallery {
+      background: var(--white);
+      padding: 90px 0;
+    }
+
+    .page-events .events-gallery-head {
+      text-align: center;
+    }
+
+    .page-events .events-gallery-head h2 {
+      font-family: var(--heading-font);
+      font-size: clamp(32px, 3.5vw, 44px);
+      font-weight: 800;
+      color: var(--primary-color);
+      margin: 16px 0 0;
+      line-height: 1.12;
+    }
+
+    .page-events .events-gallery-sub {
+      font-size: 17px;
+      color: var(--text-color);
+      line-height: 1.65;
+      max-width: 520px;
+      margin: 14px auto 0;
+      text-align: center;
+    }
+
+    .page-events .gallery-grid {
+      columns: 3;
+      column-gap: 16px;
+      margin-top: 48px;
+    }
+
+    .page-events .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(17, 24, 39, 0.1));
+      backdrop-filter: blur(8px);
+      border: 1px solid transparent;
+      border-bottom: 3px solid transparent;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease, border-color 0.35s ease, border-bottom-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .page-events .gallery-item:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: #e2e8f0;
+      border-bottom: 3px solid var(--accent-color);
+      box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.12), 0 10px 28px rgba(79, 70, 229, 0.12);
+    }
+
+    .page-events .gallery-item img.gallery-img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      background: transparent;
+      transition: transform 0.4s ease;
+    }
+
+    .page-events .gallery-item:hover img.gallery-img {
+      transform: scale(1.04);
+    }
+
+    .page-events .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(15, 23, 42, 0.7));
+      padding: 14px 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .page-events .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .page-events .gallery-overlay span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .page-events .events-impact {
+      background-color: #0F172A;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+      padding: 90px 0 80px;
+      color: #94A3B8;
+    }
+
+    .page-events .events-impact-head {
+      text-align: center;
+    }
+
+    .page-events .events-impact-pill {
+      color: #A5B4FC;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .page-events .events-impact-head h2 {
+      color: #fff;
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 800;
+      margin-top: 8px;
+      line-height: 1.1;
+      font-family: var(--heading-font);
+    }
+
+    .page-events .events-impact-sub {
+      font-size: 16px;
+      color: #94A3B8;
+      margin: 12px 0 56px;
+    }
+
+    .page-events .events-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .page-events .events-metric-cell {
+      padding: 32px 48px;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .page-events .events-metric-cell:nth-child(3n) {
+      border-right: none;
+    }
+
+    .page-events .events-metric-num {
+      font-size: 56px;
+      font-weight: 800;
+      color: #A5B4FC;
+      line-height: 1;
+      text-shadow: 0 0 40px rgba(165, 180, 252, 0.35);
+      font-family: var(--heading-font);
+    }
+
+    .page-events .events-metric-lbl {
+      font-size: 13px;
+      font-weight: 600;
+      color: #64748B;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 10px;
+      display: block;
+      line-height: 1.35;
+    }
+
+    .page-events .events-program-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 860px;
+      margin: 48px auto 0;
+    }
+
+    .page-events .events-program-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 24px 28px;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .page-events .events-program-card .cat {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #6366F1;
+      letter-spacing: 0.1em;
+      line-height: 1.3;
+    }
+
+    .page-events .events-program-card .name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      margin: 8px 0 6px;
+      font-family: var(--heading-font);
+    }
+
+    .page-events .events-program-card .detail {
+      font-size: 13px;
+      color: #94A3B8;
+      line-height: 1.6;
+    }
+
+    .page-events .events-cta {
+      background-color: #FFFFFF;
+      padding: 140px 0;
+      text-align: center;
+    }
+
+    .page-events .events-cta-inner {
+      background-color: #0F172A;
+      border-radius: 24px;
+      padding: 80px 40px;
+      box-shadow: 0 24px 64px rgba(17, 24, 39, 0.12);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page-events .events-cta-pill {
+      color: #94A3B8;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0;
+    }
+
+    .page-events .events-cta h2 {
+      color: #fff;
+      font-size: clamp(30px, 3.5vw, 44px);
+      font-weight: 800;
+      margin: 12px 0 18px;
+      line-height: 1.15;
+      font-family: var(--heading-font);
+    }
+
+    .page-events .events-cta p.lede {
+      color: #94A3B8;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .page-events .events-cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .page-events .events-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.8rem;
+      background: var(--accent-color);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .page-events .events-cta-primary:hover {
+      background: var(--accent-hover);
+      color: #fff;
+    }
+
+    .page-events .events-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.85rem 1.8rem;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      background: transparent;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .page-events .events-cta-secondary:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .footer {
+      background: #0F172A;
+      color: #64748B;
+      padding: 80px 0 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-logo {
+      max-width: 150px;
+      margin-bottom: 16px;
+      max-height: none !important;
+    }
+
+    .footer-column h4 {
+      color: var(--white);
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+
+    .footer-column ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+      opacity: 1;
+    }
+
+    .footer-column ul li,
+    .footer-column ul a {
+      color: #94A3B8;
+      font-size: 14px;
+    }
+
+    .footer-column ul a:hover {
+      color: var(--accent);
+      opacity: 1;
+      transform: none;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #64748B;
+    }
+
+    @media (max-width: 960px) {
+      .page-events .events-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .page-events .events-flagship-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-events .events-row2 {
+        grid-template-columns: 1fr;
+      }
+
+      .page-events .compact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .page-events .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-events .gallery-grid {
+        columns: 2;
+      }
+
+      .page-events .events-metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-events .events-metric-cell {
+        border-right: none;
+      }
+
+      .page-events .events-program-row {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-events .compact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-events .gallery-grid {
+        columns: 1;
+      }
+
+      .page-events .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .fade-up {
+        animation: none;
+        opacity: 1;
+      }
+
+      .page-events .events-hero-visual {
+        animation: none;
+      }
+
+      .page-events .events-flagship-media img.flagship-img,
+      .page-events .event-card-media img.event-card-img {
+        animation: none;
+      }
+
+      .page-events .events-hero-visual img.hero-event-img,
+      .page-events .events-flagship-media img.flagship-img,
+      .page-events .event-card-media img.event-card-img,
+      .page-events .gallery-item img.gallery-img {
+        transition: none;
+      }
+
+      .page-events .events-hero-visual:hover img.hero-event-img,
+      .page-events .events-flagship-media:hover img.flagship-img,
+      .page-events .event-card:hover .event-card-media img.event-card-img,
+      .page-events .gallery-item:hover img.gallery-img {
+        transform: none;
+      }
+
+      .page-events .event-card:hover {
+        transform: none;
+      }
+
+      .page-events .compact-card:hover {
+        transform: none;
+      }
+
+      .page-events .cat-card:hover {
+        transform: none;
+      }
+    }
+
+    /* Active Footer Link */
+    .footer-link-events {
+      color: var(--accent) !important;
+    }
+
+    /*New style for PILL Badge*/
+
+    .hero-badge-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 1.2rem;
+      background-color: #EEF2FF;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+      border: none;
+      box-shadow: 0 1px 2px rgba(79, 70, 229, 0.06);
+    }
+
+    .hero-badge-wrapper .hero-tag {
+      display: inline-block;
+      color: #4F46E5;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #4F46E5;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.45);
+      animation: pulseGlow 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    @keyframes pulseGlow {
+      to {
+        box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+      }
+    }
+  </style>
+</head>
+
+<body class="page-events">
+  <header class="header">
+    <div class="container navbar">
+      <div class="logo"><a href="../index.html" class="logo-link"><span class="nav-brand">Betelgeuse
+            Foundation</span></a></div>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="logistics.html">Logistics</a></li>
+          <li><a href="events.html" class="is-active-page">Events</a></li>
+          <li><a href="social-initiatives.html">Social Initiatives</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="nav-btn">Partner With Us</a>
+    </div>
+  </header>
+
+  <section class="events-page-hero" aria-labelledby="eh1">
+    <div class="container events-hero-grid">
+      <div class="events-hero-left">
+        <div class="events-hero-badge-wrap fade-up fade-up--1"><span class="events-hero-status-dot"
+            aria-hidden="true"></span><span class="events-hero-badge-text">Conferences · Collaborations ·
+            Initiatives</span></div>
+        <h1 id="eh1" class="fade-up fade-up--2">Events, Conferences &amp; <span class="events-h1-accent">Experiential
+            Initiatives</span></h1>
+        <p class="events-hero-lede fade-up fade-up--2">Betelgeuse Foundation executes structured, high-fidelity event
+          experiences for institutional forums and leadership programs globally.</p>
+        <div class="events-hero-ctas fade-up fade-up--3">
+          <a href="../index.html" class="primary-btn"><span>View Our Collaborations</span><svg width="16" height="16"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+          <a href="mailto:betelguesefoundation@gmail.com" class="secondary-btn">Discuss Event Support</a>
+        </div>
+        <div class="events-hero-stats fade-up fade-up--3" role="list">
+          <div class="stat-chip" role="listitem"><span class="stat-chip-val js-counter" data-target="14"
+              data-suffix="+">0+</span><span class="stat-chip-lbl">Events executed</span></div>
+          <div class="stat-chip" role="listitem"><span class="stat-chip-val js-counter" data-target="450"
+              data-suffix="+">0+</span><span class="stat-chip-lbl">Students trained</span></div>
+          <div class="stat-chip" role="listitem"><span class="stat-chip-val js-counter" data-target="250"
+              data-suffix="+">0+</span><span class="stat-chip-lbl">Cyber programme reach</span></div>
+        </div>
+      </div>
+      <div class="events-hero-right-col fade-up fade-up--2">
+        <div class="events-hero-visual">
+          <img class="hero-event-img" src="../assets/images/event-dummy.svg"
+            alt="Stage setup at AMIMUN 2026 conference auditorium — delegates seated, Betelgeuse Foundation logistics"
+            width="1200" height="420" loading="eager">
+          <div class="events-hero-float-badge">
+            <div class="events-float-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg></div>
+            <div>
+              <div class="events-float-title"><span class="events-hero-status-dot"
+                  style="display:inline-block; margin-right:8px; vertical-align:middle; width:6px; height:6px;"></span>AMIMUN
+                &apos;26 — Chief Logistics Partner</div>
+              <div class="events-float-sub">Amity University, Noida</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-featured" aria-labelledby="efh">
+    <div class="container">
+      <header class="events-featured-head">
+        <span class="events-pill-badge fade-up fade-up--1">Portfolio</span>
+        <h2 id="efh" class="fade-up fade-up--2">Conferences We Have Powered</h2>
+        <p class="events-featured-sub fade-up fade-up--3">A curated record of institutional initiatives, conference
+          partnerships, and execution collaborations — each one operationally delivered.</p>
+      </header>
+      <div class="events-featured-stack">
+        <div class="events-flagship-grid fade-up fade-up--2">
+          <div class="events-flagship-media"><img class="flagship-img" src="../assets/images/event-dummy.svg"
+              alt="AMIMUN 2026 — delegate session in progress, conference hall, institutional conference India"
+              width="800" height="400" loading="lazy"></div>
+          <div class="events-flagship-body">
+            <div class="events-flagship-pills"><span class="events-pill-accent">Flagship collaboration</span><span
+                class="events-pill-green">Chief logistics partner</span></div>
+            <h3>AMIMUN &apos;26</h3>
+            <p class="events-flagship-kicker">Amity Model United Nations 2026</p>
+            <div class="events-flagship-divider" role="presentation"></div>
+            <div class="events-flagship-detail-grid">
+              <div>
+                <div class="events-detail-label">Institution</div>
+                <div class="events-detail-value">Amity University, Noida</div>
+              </div>
+              <div>
+                <div class="events-detail-label">Our role</div>
+                <div class="events-detail-value">Chief Logistics &amp; Operations Partner</div>
+              </div>
+              <div>
+                <div class="events-detail-label">Edition</div>
+                <div class="events-detail-value">2nd Consecutive Year</div>
+              </div>
+              <div>
+                <div class="events-detail-label">Scope</div>
+                <div class="events-detail-value">End-to-End Delegate Operations</div>
+              </div>
+            </div>
+            <p class="events-flagship-copy">From delegate kit assembly and credential systems to on-ground distribution
+              and volunteer management — Betelgeuse served as the single operational backbone for AMIMUN&apos;s
+              institutional delivery.</p>
+            <div class="events-outcome-chips">
+              <div class="events-outcome-chip"><span class="num">800+</span><span class="lbl">Delegates</span></div>
+              <div class="events-outcome-chip"><span class="num">3</span><span class="lbl">Day operation</span></div>
+              <div class="events-outcome-chip"><span class="num">0</span><span class="lbl">Kit errors</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="events-row2 fade-up fade-up--3">
+          <article class="event-card">
+            <div class="event-card-media"><img class="event-card-img" src="../assets/images/event-dummy.svg"
+                alt="USI MUN 3.0 conference session, delegate engagement, institutional collaboration" width="400"
+                height="200" loading="lazy"></div>
+            <div class="event-card-body"><span class="event-card-pill">Model United Nations</span>
+              <h4>USI MUN 3.0</h4>
+              <p class="event-card-inst">United Schools Initiative</p>
+              <div class="event-card-divider" role="presentation"></div>
+              <div class="event-card-role"><span class="event-card-role-label">Role:</span><span
+                  class="event-card-role-val">Logistics &amp; Materials Partner</span></div>
+              <p class="event-card-services">Delegate Kits · Credentials · Stationery</p>
+            </div>
+          </article>
+          <article class="event-card">
+            <div class="event-card-media"><img class="event-card-img" src="../assets/images/event-dummy.svg"
+                alt="Confluence 2026 institutional summit session, Heritage Group collaboration" width="400"
+                height="200" loading="lazy"></div>
+            <div class="event-card-body"><span class="event-card-pill">Institutional summit</span>
+              <h4>Confluence 2026</h4>
+              <p class="event-card-inst">Heritage Educational Group</p>
+              <div class="event-card-divider" role="presentation"></div>
+              <div class="event-card-role"><span class="event-card-role-label">Role:</span><span
+                  class="event-card-role-val">Full Operations Partner</span></div>
+              <p class="event-card-services">Venue Coord · Branding · Volunteer Ops</p>
+            </div>
+          </article>
+          <article class="event-card">
+            <div class="event-card-media"><img class="event-card-img" src="../assets/images/event-dummy.svg"
+                alt="RDIAS Global Summit — conference auditorium, institutional collaboration Betelgeuse" width="400"
+                height="200" loading="lazy"></div>
+            <div class="event-card-body"><span class="event-card-pill">Global summit</span>
+              <h4>RDIAS Global Summit</h4>
+              <p class="event-card-inst">Raj Dhani Institute · 2 Editions</p>
+              <div class="event-card-divider" role="presentation"></div>
+              <div class="event-card-role"><span class="event-card-role-label">Role:</span><span
+                  class="event-card-role-val">Collaboration &amp; Execution Partner</span></div>
+              <p class="event-card-services">Ops Coordination · Materials · Branding</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="compact-grid fade-up fade-up--3">
+          <article class="compact-card">
+            <div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Mun conference</div>
+            <h5>AMIMUN &apos;25</h5>
+            <p class="ctx">Amity University — Inaugural Edition</p>
+            <div class="role">Chief Logistics Partner</div>
+          </article>
+          <article class="compact-card">
+            <div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Mun conference</div>
+            <h5>USI MUN 1.0 &amp; 2.0</h5>
+            <p class="ctx">United Schools Initiative</p>
+            <div class="role">Materials &amp; Operations</div>
+          </article>
+          <article class="compact-card">
+            <div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Academic conference</div>
+            <h5>InCITe 2026</h5>
+            <p class="ctx">Institutional Academic Forum</p>
+            <div class="role">Coordination &amp; Execution</div>
+          </article>
+          <article class="compact-card">
+            <div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Research conference</div>
+            <h5>RDCAPE 2025</h5>
+            <p class="ctx">Research &amp; Academic Platform</p>
+            <div class="role">Operations &amp; Branding</div>
+          </article>
+          <article class="compact-card">
+            <div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Institutional event</div>
+            <h5>SPIN 2025</h5>
+            <p class="ctx">Student-Led Initiative</p>
+            <div class="role">Logistics Execution Partner</div>
+          </article>
+          <article class="compact-card">
+            <div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Academic summit</div>
+            <h5>Schopenhauer &amp; Ecology</h5>
+            <p class="ctx">International Philosophy Conference</p>
+            <div class="role">Conference Collateral &amp; Ops</div>
+          </article>
+          <article class="compact-card">
+            <div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>University fest</div>
+            <h5>Amity Youth Fest</h5>
+            <p class="ctx">Amity University Campus-Wide</p>
+            <div class="role">On-Ground Execution</div>
+          </article>
+          <article class="compact-card">
+            <div class="compact-card-cat"><span class="dot" aria-hidden="true"></span>Mun collaboration</div>
+            <h5>SMIT MUN</h5>
+            <p class="ctx">Inter-Institutional Collaboration</p>
+            <div class="role">Collaboration &amp; Support Partner</div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-categories" aria-labelledby="ech">
+    <div class="container">
+      <header class="events-categories-head">
+        <span class="events-pill-badge fade-up fade-up--1">What we do</span>
+        <h2 id="ech" class="fade-up fade-up--2">Areas of Institutional Engagement</h2>
+        <p class="events-categories-sub fade-up fade-up--3">Betelgeuse operates across four structured experience
+          domains — each with its own execution depth.</p>
+      </header>
+      <div class="categories-grid">
+        <article class="cat-card fade-up fade-up--2">
+          <div class="cat-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              <line x1="12" y1="19" x2="12" y2="23" />
+              <line x1="8" y1="23" x2="16" y2="23" />
+            </svg></div>
+          <div>
+            <h4>Conferences &amp; Model UN Forums</h4>
+            <p class="desc">Full-cycle execution for institutional MUNs, academic summits, and large-scale research
+              conferences — from logistics setup to post-event reporting.</p>
+            <div class="cat-tags"><span>MUN Operations</span><span>Delegate Management</span><span>Credential
+                Systems</span><span>Conference Branding</span></div>
+          </div>
+        </article>
+        <article class="cat-card fade-up fade-up--2">
+          <div class="cat-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="7" />
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+            </svg></div>
+          <div>
+            <h4>Leadership &amp; Diplomacy Programs</h4>
+            <p class="desc">Structured bootcamps, delegate training, and experiential learning programs that build
+              public speaking, diplomacy, and institutional awareness.</p>
+            <div class="cat-tags"><span>Bootcamp Design</span><span>Training Delivery</span><span>Youth
+                Diplomacy</span><span>Public Speaking</span></div>
+          </div>
+        </article>
+        <article class="cat-card fade-up fade-up--3">
+          <div class="cat-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg></div>
+          <div>
+            <h4>Workshops &amp; Civic Engagement</h4>
+            <p class="desc">Collaborative institutional workshops, cybersecurity awareness programs, Rotaract civic
+              initiatives, and youth outreach campaigns across academic communities.</p>
+            <div class="cat-tags"><span>Cyber Awareness</span><span>Civic
+                Programs</span><span>Rotaract</span><span>Community Outreach</span></div>
+          </div>
+        </article>
+        <article class="cat-card fade-up fade-up--3">
+          <div class="cat-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg></div>
+          <div>
+            <h4>Social Impact Initiatives</h4>
+            <p class="desc">Environmental sustainability drives, food access programs, awareness campaigns, and
+              institutional outreach projects that connect organizations with communities.</p>
+            <div class="cat-tags"><span>Sustainability</span><span>Food Drives</span><span>Awareness
+                Campaigns</span><span>University Outreach</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-gallery" aria-labelledby="egh">
+    <div class="container">
+      <header class="events-gallery-head">
+        <span class="events-pill-badge fade-up fade-up--1">On the ground</span>
+        <h2 id="egh" class="fade-up fade-up--2">Events in Frame</h2>
+        <p class="events-gallery-sub fade-up fade-up--3">Photographed moments from institutional conferences, delegate
+          sessions, leadership programs, and operational deployments.</p>
+      </header>
+      <div class="gallery-grid">
+        <div class="gallery-item fade-up fade-up--1"><img class="gallery-img" style="height:240px"
+            src="../assets/images/event-dummy.svg"
+            alt="Delegate registration desk — AMIMUN conference, Betelgeuse credential distribution" width="600"
+            height="240" loading="lazy">
+          <div class="gallery-overlay"><span>Delegate Registration — AMIMUN &apos;26</span></div>
+        </div>
+        <div class="gallery-item fade-up fade-up--2"><img class="gallery-img" style="height:300px"
+            src="../assets/images/event-dummy.svg"
+            alt="Conference auditorium — delegates seated at committee session, institutional MUN India" width="600"
+            height="300" loading="lazy">
+          <div class="gallery-overlay"><span>Committee Session — USI MUN</span></div>
+        </div>
+        <div class="gallery-item fade-up fade-up--3"><img class="gallery-img" style="height:200px"
+            src="../assets/images/event-dummy.svg"
+            alt="Volunteer team briefing — event coordination, Betelgeuse on-ground operations" width="600" height="200"
+            loading="lazy">
+          <div class="gallery-overlay"><span>Ops Briefing — Pre-Event</span></div>
+        </div>
+        <div class="gallery-item fade-up fade-up--1"><img class="gallery-img" style="height:280px"
+            src="../assets/images/event-dummy.svg"
+            alt="Leadership bootcamp — student delegates in workshop session, public speaking training" width="600"
+            height="280" loading="lazy">
+          <div class="gallery-overlay"><span>Delegate Bootcamp Programme</span></div>
+        </div>
+        <div class="gallery-item fade-up fade-up--2"><img class="gallery-img" style="height:260px"
+            src="../assets/images/event-dummy.svg"
+            alt="Conference branding — event banner, institutional collateral deployment" width="600" height="260"
+            loading="lazy">
+          <div class="gallery-overlay"><span>Branding Deployment — Confluence 2026</span></div>
+        </div>
+        <div class="gallery-item fade-up fade-up--3"><img class="gallery-img" style="height:220px"
+            src="../assets/images/event-dummy.svg"
+            alt="Stage setup — auditorium preparation, institutional event execution India" width="600" height="220"
+            loading="lazy">
+          <div class="gallery-overlay"><span>Stage Coordination — Pre-Gavel</span></div>
+        </div>
+        <div class="gallery-item fade-up fade-up--4"><img class="gallery-img" style="height:310px"
+            src="../assets/images/event-dummy.svg"
+            alt="Cyber First Responder Programme — student workshop, CyberPeace Foundation collaboration" width="600"
+            height="310" loading="lazy">
+          <div class="gallery-overlay"><span>Cyber First Responder Programme</span></div>
+        </div>
+        <div class="gallery-item fade-up fade-up--5"><img class="gallery-img" style="height:190px"
+            src="../assets/images/event-dummy.svg"
+            alt="Logistics coordination — kit assembly and distribution, delegate materials" width="600" height="190"
+            loading="lazy">
+          <div class="gallery-overlay"><span>Kit Assembly — AMIMUN &apos;25</span></div>
+        </div>
+        <div class="gallery-item fade-up fade-up--6"><img class="gallery-img" style="height:270px"
+            src="../assets/images/event-dummy.svg"
+            alt="Community outreach initiative — social impact programme, Rotaract collaboration" width="600"
+            height="270" loading="lazy">
+          <div class="gallery-overlay"><span>Social Initiative — Civic Outreach</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-impact" aria-labelledby="eih">
+    <div class="container">
+      <header class="events-impact-head">
+        <p class="events-impact-pill fade-up fade-up--1">Reach &amp; impact</p>
+        <h2 id="eih" class="fade-up fade-up--2">Operational Reach, Verified.</h2>
+        <p class="events-impact-sub fade-up fade-up--3">Numbers from field execution — not estimates.</p>
+      </header>
+      <div class="events-metrics-grid fade-up fade-up--2">
+        <div class="events-metric-cell">
+          <div class="events-metric-num js-counter" data-target="14" data-suffix="+">0+</div><span
+            class="events-metric-lbl">Events executed</span>
+        </div>
+        <div class="events-metric-cell">
+          <div class="events-metric-num js-counter" data-target="450" data-suffix="+">0+</div><span
+            class="events-metric-lbl">Students trained</span>
+        </div>
+        <div class="events-metric-cell">
+          <div class="events-metric-num js-counter" data-target="250" data-suffix="+">0+</div><span
+            class="events-metric-lbl">Cyber programme reach</span>
+        </div>
+        <div class="events-metric-cell">
+          <div class="events-metric-num">2</div><span class="events-metric-lbl">Consecutive AMIMUN editions</span>
+        </div>
+        <div class="events-metric-cell">
+          <div class="events-metric-num">6</div><span class="events-metric-lbl">Institutional domains</span>
+        </div>
+        <div class="events-metric-cell">
+          <div class="events-metric-num">3</div><span class="events-metric-lbl">Civic initiative programmes</span>
+        </div>
+      </div>
+      <div class="events-program-row fade-up fade-up--3">
+        <div class="events-program-card">
+          <div class="cat">Training programme</div>
+          <div class="name">Delegate Bootcamp</div>
+          <p class="detail">200+ students trained in diplomacy, public speaking, and conference procedure.</p>
+        </div>
+        <div class="events-program-card">
+          <div class="cat">Civic tech initiative</div>
+          <div class="name">Cyber First Responder</div>
+          <p class="detail">250+ students trained in cybersecurity awareness with CyberPeace Foundation &amp;
+            Google.org.</p>
+        </div>
+        <div class="events-program-card">
+          <div class="cat">Social engagement</div>
+          <div class="name">Rotaract Initiatives</div>
+          <p class="detail">Civic awareness, healthcare drives, and community engagement across institutional networks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-cta" aria-labelledby="ecta">
+    <div class="container events-cta-inner">
+      <div class="hero-badge-wrapper fade-up fade-up--1" style="margin-bottom: 24px; display: inline-flex;">
+        <span class="pulse-dot"></span>
+        <span class="hero-tag">COLLABORATE WITH US</span>
+      </div>
+      <h2 id="ecta" class="fade-up fade-up--2">Planning A Conference, Workshop,<br>Or Institutional Initiative?</h2>
+      <p class="lede fade-up fade-up--3">Whether you need a logistics partner, a delegation operations team, or a
+        full-cycle execution collaborator — Betelgeuse brings structure, reliability, and institutional experience to
+        your event.</p>
+      <div class="events-cta-btns fade-up fade-up--3">
+        <a href="mailto:betelguesefoundation@gmail.com" class="events-cta-primary">Discuss Collaboration<svg width="16"
+            height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg></a>
+        <a href="logistics.html" class="events-cta-secondary">View Logistics Capabilities</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-column">
+          <img src="../assets/images/logo_primary.png" alt="Betelgeuse Foundation Logo" class="footer-logo">
+          <p>Conference solutions, leadership initiatives, institutional collaborations, and social impact
+            programs.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="logistics.html">Logistics</a></li>
+            <li><a href="events.html" class="is-active-page">Events</a></li>
+            <li><a href="social-initiatives.html">Social Initiatives</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li>betelguesefoundation@gmail.com</li>
+            <li>+91 7042827225</li>
+            <li>Mon-Sat, 10:00 AM - 7:00 PM</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/betelguesefoundation/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/company/betelguese-foundation/" target="_blank">LinkedIn</a></li>
+            <!-- <li><a href="#">Facebook</a></li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Betelgeuse Foundation. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".js-counter");
+      const options = { threshold: 0.5 };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const targetElement = entry.target;
+            const targetValue = parseInt(targetElement.getAttribute("data-target"));
+            const suffix = targetElement.getAttribute("data-suffix") || "";
+            const duration = 2000;
+            const startTime = performance.now();
+
+            const updateCounter = (currentTime) => {
+              const elapsedTime = currentTime - startTime;
+              const progress = Math.min(elapsedTime / duration, 1);
+              const easeOut = 1 - Math.pow(1 - progress, 3);
+              const currentVal = Math.floor(easeOut * targetValue);
+
+              targetElement.textContent = currentVal + suffix;
+
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              } else {
+                targetElement.textContent = targetValue + suffix;
+              }
+            };
+
+            requestAnimationFrame(updateCounter);
+            observer.unobserve(targetElement);
+          }
+        });
+      }, options);
+
+      counters.forEach(counter => observer.observe(counter));
     });
-  }, options);
-  
-  counters.forEach(counter => observer.observe(counter));
-});
-</script>
+  </script>
 </body>
+
 </html>

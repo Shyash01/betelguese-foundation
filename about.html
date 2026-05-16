@@ -866,7 +866,7 @@
         /* SECTION 6 - CLOSING CTA */
         .closing-cta {
             background: white;
-            padding: 0 0 80px;
+            padding: 110px 0 140px 0;
         }
 
         .closing-cta-wrapper {
@@ -1029,6 +1029,83 @@
         .footer-link-about {
             color: var(--accent) !important;
         }
+
+        /* =======================================================================
+           FOOTER STANDARDIZATION
+        ======================================================================= */
+        .footer {
+            background: #0F172A;
+            color: #64748B;
+            padding: 80px 0 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            max-width: 150px;
+            margin-bottom: 16px;
+            max-height: none !important;
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        .footer-column ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            opacity: 1;
+        }
+
+        .footer-column ul li,
+        .footer-column ul a {
+            color: #94A3B8;
+            font-size: 14px;
+        }
+
+        .footer-column ul a:hover {
+            color: var(--accent);
+            opacity: 1;
+            transform: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            text-align: center;
+            font-size: 13px;
+            color: #64748B;
+        }
+
+        @media (max-width: 960px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -1059,7 +1136,11 @@
     <section class="about-hero">
         <div class="about-hero-grid">
             <div>
-                <span class="pill-badge">ABOUT THE FOUNDATION</span>
+                <!-- SECTION 1 <span class="pill-badge">ABOUT THE FOUNDATION</span> -->
+                <div class="hero-badge-wrapper">
+                    <div class="pulse-dot"></div>
+                    <p class="hero-tag">ABOUT THE FOUNDATION</p>
+                </div>
                 <h1>
                     <span class="about-hero-line1">Built on Execution,</span>
                     <span class="about-hero-line2">Grounded in Purpose</span>
@@ -1114,7 +1195,7 @@
                     </div>
                 </div>
                 <div class="foundation-profile-footer">
-                    <span class="foundation-profile-footer-left">info@betelguesefoundation.org</span>
+                    <span class="foundation-profile-footer-left">betelguesefoundation@gmail.com</span>
                     <span class="foundation-profile-footer-right">Noida, India</span>
                 </div>
             </div>
@@ -1517,7 +1598,7 @@
 
     <!-- SECTION 6 - CLOSING CTA -->
     <section class="closing-cta">
-        <div class="closing-cta-wrapper" style="margin-top: 40px;">
+        <div class="closing-cta-wrapper" style="margin-top: 30px;">
             <div class="closing-cta-card">
                 <span class="pill-badge">WORK WITH US</span>
                 <h2>Ready to Create Something Meaningful?</h2>
@@ -1537,37 +1618,35 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
-                    <span class="footer-brand"
-                        style="font-size:18px; font-weight:800; color:white; letter-spacing:-0.02em;">Betelgeuse
-                        Foundation</span>
+                    <img src="assets/images/logo_primary.png" alt="Betelgeuse Foundation Logo" class="footer-logo">
                     <p>Conference solutions, leadership initiatives, institutional collaborations, and social impact
                         programs.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="logistics.html">Logistics</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="social-initiatives.html" class="is-active-page">Social Initiatives</a></li>
-                        <li><a href="../about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/logistics.html">Logistics</a></li>
+                        <li><a href="pages/events.html">Events</a></li>
+                        <li><a href="pages/social-initiatives.html">Social Initiatives</a></li>
+                        <li><a href="about.html" class="is-active-page">About</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li>info@betelguesefoundation.org</li>
-                        <li>+91 XXXXX XXXXX</li>
-                        <li>Noida, India</li>
+                        <li>betelguesefoundation@gmail.com</li>
+                        <li>+91 7042827225</li>
+                        <li>Mon-Sat, 10:00 AM - 7:00 PM</li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Follow Us</h4>
                     <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/betelguesefoundation/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/betelguese-foundation/" target="_blank">LinkedIn</a></li>
+                        <!-- <li><a href="#">Facebook</a></li> -->
                     </ul>
                 </div>
             </div>
