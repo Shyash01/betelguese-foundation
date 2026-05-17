@@ -34,10 +34,70 @@
             width: 100%;
         }
 
+        /* =============================================
+           ANIMATION ENGINE — floatHero + fadeUp
+        ============================================= */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatHero {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                box-shadow: 0 28px 72px rgba(17, 24, 39, 0.15), 0 0 0 rgba(79, 70, 229, 0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+                box-shadow: 0 35px 80px rgba(17, 24, 39, 0.2), 0 0 40px rgba(79, 70, 229, 0.4);
+            }
+        }
+
+        @keyframes pulseGlow {
+            to {
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .fade-up--1 {
+            animation-delay: 0.1s;
+        }
+
+        .fade-up--2 {
+            animation-delay: 0.2s;
+        }
+
+        .fade-up--3 {
+            animation-delay: 0.3s;
+        }
+
+        .fade-up--4 {
+            animation-delay: 0.4s;
+        }
+
+        .fade-up--5 {
+            animation-delay: 0.5s;
+        }
+
         /* SECTION 1 - HERO */
         .about-hero {
             background: var(--accent-light);
-            padding: 80px 0 72px;
+            padding: 60px 0 60px;
             margin: 0;
         }
 
@@ -84,8 +144,10 @@
         .about-hero h1 {
             font-size: clamp(38px, 4.5vw, 54px);
             line-height: 1.1;
-            margin: 0 0 18px;
+            margin: 0 0 12px;
+            /* compressed from 18px */
             font-weight: 800;
+            letter-spacing: -0.03em;
         }
 
         .about-hero-line1 {
@@ -103,7 +165,8 @@
             color: var(--body);
             line-height: 1.75;
             max-width: 500px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+            /* compressed from 32px */
         }
 
         .about-hero-buttons {
@@ -160,19 +223,16 @@
             background: white;
             border: 1px solid var(--border);
             border-radius: 10px;
-            padding: 12px 20px;
+            padding: 16px 24px;
+            /* normalized — gives 2022 room to breathe */
+            min-width: 140px;
+            /* prevents year from feeling squeezed */
             display: inline-flex;
             flex-direction: column;
             gap: 3px;
         }
 
-        .about-hero-stat:first-child {
-            padding-left: 0;
-        }
-
-        .about-hero-stat:last-child {
-            border-right: none;
-        }
+        /* remove the asymmetric overrides — all chips now have uniform padding */
 
         .about-hero-stat-number {
             font-size: 26px;
@@ -191,14 +251,18 @@
             display: block;
         }
 
-        /* Foundation Profile Card */
+        /* Foundation Profile Card — floatHero physics + combined entry */
         .foundation-profile-card {
             background: white;
             border-radius: 20px;
             padding: 0;
             overflow: hidden;
             border: 1px solid var(--border);
-            box-shadow: 0 24px 64px rgba(17, 24, 39, 0.1);
+            border-top: 3px solid var(--accent);
+            /* fadeUp entry first, then continuous float */
+            animation:
+                fadeUp 0.6s ease 0.2s both,
+                floatHero 3s ease-in-out 0.8s infinite;
         }
 
         .foundation-profile-header {
@@ -267,12 +331,8 @@
 
         /* SECTION 2 - VISION & MISSION */
         .vision-mission {
-            background: var(--dark-bg);
+            background: #FFFFFF;
             padding: 90px 0;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-            background-size: 60px 60px;
         }
 
         .vision-mission-header {
@@ -283,14 +343,14 @@
         }
 
         .vision-mission-header h2 {
-            color: white;
+            color: var(--dark);
             font-size: clamp(36px, 4vw, 48px);
             font-weight: 800;
             margin: 10px 0 14px;
         }
 
         .vision-mission-header p {
-            color: #94A3B8;
+            color: var(--body);
             font-size: 17px;
             max-width: 520px;
             margin: 0 auto;
@@ -308,16 +368,18 @@
         }
 
         .vm-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #EEF2FF;
+            border: 1px solid #E5E7EB;
             border-radius: 20px;
             padding: 40px 44px;
-            transition: border-color 0.3s ease, background 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
         }
 
         .vm-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(99, 102, 241, 0.4);
+            border-color: rgba(79, 70, 229, 0.3);
+            box-shadow: 0 20px 60px rgba(79, 70, 229, 0.15);
+            animation: floatHero 3s ease-in-out infinite;
         }
 
         .vm-card-top {
@@ -331,14 +393,14 @@
             width: 48px;
             height: 48px;
             flex-shrink: 0;
-            background: rgba(99, 102, 241, 0.2);
+            background: var(--accent-light);
             border-radius: 12px;
             display: grid;
             place-items: center;
         }
 
         .vm-icon-container svg {
-            stroke: #A5B4FC;
+            stroke: var(--accent);
             stroke-width: 1.75;
             fill: none;
         }
@@ -347,14 +409,14 @@
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 0.12em;
-            color: #6366F1;
+            color: var(--accent);
             text-transform: uppercase;
         }
 
         .vm-card h3 {
             font-size: 24px;
             font-weight: 800;
-            color: white;
+            color: var(--dark);
             margin: 0 0 16px;
             line-height: 1.2;
         }
@@ -362,20 +424,20 @@
         .card-rule {
             width: 40px;
             height: 2px;
-            background: rgba(99, 102, 241, 0.5);
+            background: var(--accent);
             margin-bottom: 20px;
         }
 
         .vm-card p {
             font-size: 15px;
-            color: #94A3B8;
+            color: var(--body);
             line-height: 1.8;
             margin: 0;
         }
 
         /* SECTION 3 - OUR STORY */
         .our-story {
-            background: white;
+            background: #EEF2FF;
             padding: 80px 0;
             margin: 0;
         }
@@ -408,18 +470,25 @@
             font-size: clamp(32px, 3.5vw, 44px);
             font-weight: 800;
             color: var(--dark);
-            margin: 14px 0 20px;
+            margin: 14px 0 16px;
             line-height: 1.2;
         }
 
-        .our-story p {
+        .legacy-box {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .legacy-box p {
             font-size: 16px;
             color: var(--body);
             line-height: 1.75;
             margin-bottom: 16px;
         }
 
-        .our-story p:last-of-type {
+        .legacy-box p:last-of-type {
             margin-bottom: 28px;
         }
 
@@ -453,17 +522,16 @@
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 24px;
-            background: white;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
             border-bottom: 3px solid transparent;
             transition: all 0.3s ease, border-bottom-color 0.3s ease;
         }
 
         .milestone-block:hover {
-            background: white;
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(79, 70, 229, 0.12);
-            border-color: rgba(79, 70, 229, 0.15);
+            background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+            border-color: rgba(79, 70, 229, 0.3);
             border-bottom: 3px solid var(--accent);
+            animation: floatHero 3s ease-in-out infinite;
         }
 
         .milestone-number {
@@ -493,7 +561,7 @@
 
         /* SECTION 4 - CAPABILITIES */
         .capabilities {
-            background: white;
+            background: #EEF2FF;
             padding: 80px 0;
         }
 
@@ -678,7 +746,7 @@
 
         /* SECTION ADVISORY BOARD */
         .advisory-board {
-            background: white;
+            background: #FFFFFF;
             padding: 90px 0;
         }
 
@@ -706,121 +774,118 @@
 
         .advisory-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 1160px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1200px;
             margin: 48px auto 0;
             padding: 0 20px;
         }
 
-        .advisory-grid:has(.testimonial-card:hover) .testimonial-card:not(:hover) {
-            opacity: 0.5;
-        }
-
-        .testimonial-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-bottom: 3px solid transparent;
-            border-radius: 18px;
-            padding: 36px;
-            position: relative;
-            transition: all 0.3s ease, border-bottom-color 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(79, 70, 229, 0.12);
-            border-color: rgba(79, 70, 229, 0.15);
-            border-bottom-color: var(--accent);
-        }
-
-        .testimonial-card::before {
-            content: '\201C';
-            position: absolute;
-            top: -8px;
-            left: 20px;
-            font-size: 140px;
-            font-family: Georgia, serif;
-            color: rgba(79, 70, 229, 0.06);
-            line-height: 1;
-            pointer-events: none;
-            z-index: 0;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .testimonial-card:hover::before {
-            transform: scale(1.1) rotate(5deg);
-            color: rgba(79, 70, 229, 0.15);
-        }
-
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-top {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .testimonial-avatar {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
+        .member-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 16px;
             overflow: hidden;
-            flex-shrink: 0;
-            background-color: #E2E8F0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 1 !important;
+            visibility: visible !important;
         }
 
-        .testimonial-avatar img {
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.15);
+            opacity: 1 !important;
+        }
+
+        .member-card:hover .member-image {
+            transform: scale(1.05);
+        }
+
+        .member-image-container {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .member-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease;
         }
 
-        .testimonial-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--dark);
+        .member-details {
+            padding: 24px 32px 32px;
         }
 
-        .testimonial-title {
+        .member-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E5E7EB;
+            margin-bottom: 24px;
+        }
+
+        .member-name {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0F172A;
+            margin: 0 0 4px 0;
+        }
+
+        .member-role {
             font-size: 13px;
-            color: var(--muted);
-            margin-top: 2px;
-        }
-
-        .testimonial-quote {
-            font-style: italic;
-            font-size: 16px;
-            color: var(--body);
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-bottom {
-            border-top: 1px solid var(--border);
-            padding-top: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .testimonial-event {
-            font-size: 12px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent);
+            color: #0284c7;
+            margin: 0;
         }
 
-        .testimonial-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
+        .member-message-wrapper {
+            position: relative;
+        }
+
+        .member-message {
+            height: 220px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+
+        .member-message::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .member-message::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .member-message::-webkit-scrollbar-thumb {
+            background: #4F46E5;
+            border-radius: 10px;
+        }
+
+        .member-message p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #4B5563;
+            margin: 0 0 16px 0;
+            font-style: normal;
+            text-align: left;
+        }
+
+        .member-message p:last-child {
+            margin-bottom: 0;
+        }
+
+        .member-message-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+            pointer-events: none;
         }
 
         .metrics-grid {
@@ -954,6 +1019,12 @@
         }
 
         /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 960px) {
+            .advisory-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .about-hero-grid {
                 grid-template-columns: 1fr;
@@ -1137,33 +1208,34 @@
         <div class="about-hero-grid">
             <div>
                 <!-- SECTION 1 <span class="pill-badge">ABOUT THE FOUNDATION</span> -->
-                <div class="hero-badge-wrapper">
+                <div class="hero-badge-wrapper fade-up fade-up--1">
                     <div class="pulse-dot"></div>
                     <p class="hero-tag">ABOUT THE FOUNDATION</p>
                 </div>
-                <h1>
+                <h1 class="fade-up fade-up--2">
                     <span class="about-hero-line1">Built on Execution,</span>
                     <span class="about-hero-line2">Grounded in Purpose</span>
                 </h1>
-                <p>Betelgeuse Foundation is an institutional operations and youth leadership organization based in
+                <p class="fade-up fade-up--3">Betelgeuse Foundation is an institutional operations and youth leadership
+                    organization based in
                     Noida, India. We manage conference logistics, execute institutional events, run community outreach
                     programs, and build leadership capacity — with a field-verified record across 14+ institutional
                     initiatives.</p>
-                <div class="about-hero-buttons">
+                <div class="about-hero-buttons fade-up fade-up--4">
                     <a href="pages/events.html" class="about-hero-btn-primary">View Our Work →</a>
                     <a href="pages/contact.html" class="about-hero-btn-secondary">Contact Our Team</a>
                 </div>
-                <div class="about-hero-stats">
+                <div class="about-hero-stats fade-up fade-up--5">
                     <div class="about-hero-stat">
-                        <span class="about-hero-stat-number">2022</span>
+                        <span class="about-hero-stat-number js-counter" data-target="2022" data-suffix="">2022</span>
                         <span class="about-hero-stat-label">YEAR FOUNDED</span>
                     </div>
                     <div class="about-hero-stat">
-                        <span class="about-hero-stat-number">14+</span>
+                        <span class="about-hero-stat-number js-counter" data-target="14" data-suffix="+">14+</span>
                         <span class="about-hero-stat-label">INITIATIVES DELIVERED</span>
                     </div>
                     <div class="about-hero-stat">
-                        <span class="about-hero-stat-number">450+</span>
+                        <span class="about-hero-stat-number js-counter" data-target="450" data-suffix="+">450+</span>
                         <span class="about-hero-stat-label">STUDENTS IMPACTED</span>
                     </div>
                 </div>
@@ -1205,7 +1277,7 @@
     <!-- SECTION 2 - VISION & MISSION -->
     <section class="vision-mission">
         <div class="vision-mission-header">
-            <span class="pill-badge-dark">OUR FOUNDATION</span>
+            <span class="pill-badge">OUR FOUNDATION</span>
             <h2>Vision & Mission</h2>
             <p>Two commitments that govern every decision we make — from delegate kit quality to community food drives.
             </p>
@@ -1214,9 +1286,9 @@
             <div class="vm-card">
                 <div class="vm-card-top">
                     <div class="vm-icon-container">
-                        <svg width="22" height="22" viewBox="0 0 24 24">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                             <circle cx="12" cy="12" r="3" />
-                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
                         </svg>
                     </div>
                     <span class="vm-label">OUR VISION</span>
@@ -1229,11 +1301,9 @@
             <div class="vm-card">
                 <div class="vm-card-top">
                     <div class="vm-icon-container">
-                        <svg width="22" height="22" viewBox="0 0 24 24">
-                            <path
-                                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-                            <path
-                                d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                        <svg width="24" height="24" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
                         </svg>
                     </div>
                     <span class="vm-label">OUR MISSION</span>
@@ -1253,20 +1323,26 @@
             <div>
                 <span class="pill-badge">OUR STORY</span>
                 <h2>Rooted in Execution, Driven by Purpose</h2>
-                <p>Betelgeuse Foundation was established to bridge a specific gap — institutional events in India,
-                    particularly Model UN conferences and academic summits, were routinely let down by the same
-                    operational failures: poor delegate kit quality, disorganised registration, and absent
-                    accountability.</p>
-                <p>We built the systems, sourced the materials, and placed our own people on the ground. Conference by
-                    conference, we built a record — from AMIMUN '25 to RDIAS Global Summit, from USI MUN to
-                    international research conferences.</p>
-                <p>Alongside conference work, we recognised a parallel responsibility: to the communities around us. The
-                    Grassroots Fellowship, the Cyber First Responder Programme, food drives, and elderly care visits
-                    grew from the same organisational instinct — if you can coordinate an 800-delegate conference, you
-                    can coordinate a community food distribution.</p>
-                <div class="story-pullquote">
-                    <p>We don't separate logistics excellence from social responsibility. To us, both are expressions of
-                        the same discipline.</p>
+                <div class="legacy-box">
+                    <p>Betelgeuse Foundation was established to bridge a specific gap — institutional events in India,
+                        particularly Model UN conferences and academic summits, were routinely let down by the same
+                        operational failures: poor delegate kit quality, disorganised registration, and absent
+                        accountability.</p>
+                    <p>We built the systems, sourced the materials, and placed our own people on the ground. Conference
+                        by
+                        conference, we built a record — from AMIMUN '25 to RDIAS Global Summit, from USI MUN to
+                        international research conferences.</p>
+                    <p>Alongside conference work, we recognised a parallel responsibility: to the communities around us.
+                        The
+                        Grassroots Fellowship, the Cyber First Responder Programme, food drives, and elderly care visits
+                        grew from the same organisational instinct — if you can coordinate an 800-delegate conference,
+                        you
+                        can coordinate a community food distribution.</p>
+                    <div class="story-pullquote">
+                        <p>We don't separate logistics excellence from social responsibility. To us, both are
+                            expressions of
+                            the same discipline.</p>
+                    </div>
                 </div>
             </div>
             <div class="milestone-grid">
@@ -1303,112 +1379,93 @@
                 institutional journey.</p>
         </div>
         <div class="advisory-grid">
-            <div class="member-card">
-                <div class="member-card-header">
-                    <div class="member-card-header-top">
-                        <div class="member-card-avatar">
-                            <img src="images/advisory-board/Gauri.jpg"
-                                alt="Gauri Sareen, Secretary General AMIMUN 2024">
-                        </div>
-                        <div class="member-card-info">
-                            <h3>Gauri Sareen</h3>
-                            <p>Secretary General · AMIMUN '24</p>
-                        </div>
+            <div class="member-card fade-up fade-up--1">
+                <div class="member-image-container">
+                    <img src="assets/images/gauri.png" alt="Gauri Sareen" class="member-image">
+                </div>
+                <div class="member-details">
+                    <div class="member-header">
+                        <h3 class="member-name">Gauri Sareen</h3>
+                        <p class="member-role">Secretary General AMIMUN'24</p>
                     </div>
-                    <div class="member-card-separator"></div>
-                </div>
-                <div class="member-card-body">
-                    <p>"What makes AMIMUN truly special is not just the debates or the committees, but the people who
-                        bring life to it — the delegates who challenge themselves, the volunteers who work quietly
-                        behind the scenes, and the leaders who guide with care and purpose."</p>
-                </div>
-                <div class="member-card-footer">
-                    <span class="member-card-context">AMIMUN '24</span>
-                    <div class="member-card-socials">
-                        <div class="member-card-social"></div>
-                        <div class="member-card-social"></div>
-                        <div class="member-card-social"></div>
+                    <div class="member-message-wrapper">
+                        <div class="member-message">
+                            <p>Dear AMIMUN Family,</p>
+                            <p>As I sit to write this message, I find myself reflecting on the journey AMIMUN has given
+                                me — a journey that has shaped my confidence, my perspective, and the person I have
+                                become. What began years ago with me entering my first AMIMUN conference as a nervous
+                                delegate grew into something far greater than I could have imagined. AMIMUN became a
+                                place where I found support, friendship, and countless opportunities to learn and grow.
+                            </p>
+                            <p>What makes AMIMUN truly special is not just the debates...</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="member-card">
-                <div class="member-card-header">
-                    <div class="member-card-header-top">
-                        <div class="member-card-avatar">
-                            <img src="images/advisory-board/Sagar Chamarti.jpg"
-                                alt="Sagar Chamarti, Director General AMIMUN 2024">
-                        </div>
-                        <div class="member-card-info">
-                            <h3>Sagar Chamarti</h3>
-                            <p>Director General · AMIMUN '24</p>
-                        </div>
+            <div class="member-card fade-up fade-up--2">
+                <div class="member-image-container">
+                    <img src="assets/images/sagar.png" alt="Sagar Chamarti" class="member-image">
+                </div>
+                <div class="member-details">
+                    <div class="member-header">
+                        <h3 class="member-name">Sagar Chamarti</h3>
+                        <p class="member-role">Director General, AMIMUN'24</p>
                     </div>
-                    <div class="member-card-separator"></div>
-                </div>
-                <div class="member-card-body">
-                    <p>"You are not merely participants — you are emerging leaders with the ability to influence
-                        thought, question norms, and propose solutions that mirror the world we hope to build."</p>
-                </div>
-                <div class="member-card-footer">
-                    <span class="member-card-context">AMIMUN '24</span>
-                    <div class="member-card-socials">
-                        <div class="member-card-social"></div>
-                        <div class="member-card-social"></div>
-                        <div class="member-card-social"></div>
+                    <div class="member-message-wrapper">
+                        <div class="member-message">
+                            <p>Dear Delegates,</p>
+                            <p>It is an honour to welcome you to the Amity International Model United Nations Conference
+                                2026. Having served as the Director General of AMIMUN'24, I have witnessed firsthand how
+                                the power of dialogue, diplomacy, and disciplined engagement can shape young minds and
+                                inspire meaningful global perspectives.</p>
+                            <p>Our previous theme, "Optimus ad Optimorum," encouraged each of us to pursue excellence
+                                with purpose. Today, AMIMUN'26 carries this legacy forward under the...</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="member-card">
-                <div class="member-card-header">
-                    <div class="member-card-header-top">
-                        <div class="member-card-avatar">
-                            <img src="images/advisory-board/jay-yadav.jpg"
-                                alt="Jay Yadav, Director General AMIMUN 2025">
-                        </div>
-                        <div class="member-card-info">
-                            <h3>Jay Yadav</h3>
-                            <p>Director General · AMIMUN '25</p>
-                        </div>
+            <div class="member-card fade-up fade-up--3">
+                <div class="member-image-container">
+                    <img src="assets/images/Jay_Yadav.png" alt="Jay Yadav" class="member-image">
+                </div>
+                <div class="member-details">
+                    <div class="member-header">
+                        <h3 class="member-name">Jay Yadav</h3>
+                        <p class="member-role">Director General, AMIMUN'25</p>
                     </div>
-                    <div class="member-card-separator"></div>
-                </div>
-                <div class="member-card-body">
-                    <p>"Diplomacy has never been about winning an argument — it is about finding common purpose and
-                        turning diverse opinions into collective action."</p>
-                </div>
-                <div class="member-card-footer">
-                    <span class="member-card-context">AMIMUN '25</span>
-                    <div class="member-card-socials">
-                        <div class="member-card-social"></div>
-                        <div class="member-card-social"></div>
-                        <div class="member-card-social"></div>
+                    <div class="member-message-wrapper">
+                        <div class="member-message">
+                            <p>Dear AMIMUN Delegates,</p>
+                            <p>Each year, AMIMUN evolves into something greater than a conference — it becomes a space
+                                where young minds come together with the intention to understand, question, and shape
+                                the world around them. What truly defines AMIMUN is not only the enthusiasm for
+                                diplomacy or the pursuit of global awareness, but the willingness of its delegates to
+                                rethink perspectives, approach challenges with openness, and imagine solutions grounded
+                                in empathy and clarity. Being part of this journey has been...</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="member-card">
-                <div class="member-card-header">
-                    <div class="member-card-header-top">
-                        <div class="member-card-avatar">
-                            <img src="images/advisory-board/Amishi.png"
-                                alt="Amishi Arora, Chief Advisor Betelgeuse Foundation">
-                        </div>
-                        <div class="member-card-info">
-                            <h3>Amishi Arora</h3>
-                            <p>Chief Advisor</p>
-                        </div>
+            <div class="member-card fade-up fade-up--4">
+                <div class="member-image-container">
+                    <img src="assets/images/amishi.png" alt="Amishi Arora" class="member-image">
+                </div>
+                <div class="member-details">
+                    <div class="member-header">
+                        <h3 class="member-name">Amishi Arora</h3>
+                        <p class="member-role">Chief Advisor</p>
                     </div>
-                    <div class="member-card-separator"></div>
-                </div>
-                <div class="member-card-body">
-                    <p>"Leadership is not defined by titles or applause — it is defined by responsibility, integrity,
-                        and the discipline to act with purpose."</p>
-                </div>
-                <div class="member-card-footer">
-                    <span class="member-card-context">BETELGEUSE FOUNDATION</span>
-                    <div class="member-card-socials">
-                        <div class="member-card-social"></div>
-                        <div class="member-card-social"></div>
-                        <div class="member-card-social"></div>
+                    <div class="member-message-wrapper">
+                        <div class="member-message">
+                            <p>Dear AMIMUN Family,</p>
+                            <p>The essence of AMIMUN has always extended beyond its committees and debates. It lives in
+                                the collective spirit of cooperation, respect, and curiosity that each one of you brings
+                                to this conference. Every edition reminds us that diplomacy does not begin on global
+                                stages — it begins here, in these rooms, with your willingness to speak, listen, and
+                                work toward shared understanding.</p>
+                            <p>What truly sets AMIMUN apart is the sense of community it creates. It is a space where
+                                ideas are welcomed, diverse...</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1645,7 +1702,8 @@
                     <h4>Follow Us</h4>
                     <ul>
                         <li><a href="https://www.instagram.com/betelguesefoundation/" target="_blank">Instagram</a></li>
-                        <li><a href="https://www.linkedin.com/company/betelguese-foundation/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.linkedin.com/company/betelguese-foundation/"
+                                target="_blank">LinkedIn</a></li>
                         <!-- <li><a href="#">Facebook</a></li> -->
                     </ul>
                 </div>
@@ -1654,6 +1712,36 @@
         </div>
     </footer>
 
+    <script>
+        /* Count-Up Animation — fires once when stat chips enter viewport */
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".js-counter");
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute("data-target"), 10);
+                    const suffix = el.getAttribute("data-suffix") || "";
+                    const duration = 1800;
+                    let start = null;
+                    const step = (ts) => {
+                        if (!start) start = ts;
+                        const progress = Math.min((ts - start) / duration, 1);
+                        const ease = 1 - (1 - progress) * (1 - progress);
+                        el.textContent = Math.floor(ease * target).toLocaleString() + suffix;
+                        if (progress < 1) requestAnimationFrame(step);
+                        else el.textContent = target.toLocaleString() + suffix;
+                    };
+                    requestAnimationFrame(step);
+                    obs.unobserve(el);
+                });
+            }, { threshold: 0.2 });
+            counters.forEach(c => {
+                c.textContent = "0" + (c.getAttribute("data-suffix") || "");
+                observer.observe(c);
+            });
+        });
+    </script>
 </body>
 
 </html>
