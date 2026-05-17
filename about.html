@@ -786,14 +786,14 @@
             border: 1px solid rgba(79, 70, 229, 0.1);
             border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             opacity: 1 !important;
             visibility: visible !important;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
         }
 
         .member-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.15);
+            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.2);
             opacity: 1 !important;
         }
 
@@ -845,9 +845,21 @@
         }
 
         .member-message {
-            height: 220px;
+            height: 250px;
             overflow-y: auto;
+            position: relative;
+            padding-bottom: 20px;
             padding-right: 15px;
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        }
+
+        .member-signature {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(79, 70, 229, 0.1);
+            font-weight: 700;
+            color: #1e293b;
         }
 
         .member-message::-webkit-scrollbar {
@@ -1208,9 +1220,9 @@
         <div class="about-hero-grid">
             <div>
                 <!-- SECTION 1 <span class="pill-badge">ABOUT THE FOUNDATION</span> -->
-                <div class="hero-badge-wrapper fade-up fade-up--1">
+                <div class="hero-badge-wrapper section-tag section-tag--on-indigo fade-up fade-up--1">
                     <div class="pulse-dot"></div>
-                    <p class="hero-tag">ABOUT THE FOUNDATION</p>
+                    <span>ABOUT THE FOUNDATION</span>
                 </div>
                 <h1 class="fade-up fade-up--2">
                     <span class="about-hero-line1">Built on Execution,</span>
@@ -1277,7 +1289,7 @@
     <!-- SECTION 2 - VISION & MISSION -->
     <section class="vision-mission">
         <div class="vision-mission-header">
-            <span class="pill-badge">OUR FOUNDATION</span>
+            <span class="section-tag section-tag--on-white">OUR FOUNDATION</span>
             <h2>Vision & Mission</h2>
             <p>Two commitments that govern every decision we make — from delegate kit quality to community food drives.
             </p>
@@ -1321,7 +1333,7 @@
     <section class="our-story">
         <div class="our-story-grid">
             <div>
-                <span class="pill-badge">OUR STORY</span>
+                <span class="section-tag section-tag--on-indigo">OUR STORY</span>
                 <h2>Rooted in Execution, Driven by Purpose</h2>
                 <div class="legacy-box">
                     <p>Betelgeuse Foundation was established to bridge a specific gap — institutional events in India,
@@ -1373,7 +1385,7 @@
     <!-- SECTION 3.5 - ADVISORY BOARD -->
     <section class="advisory-board">
         <div class="advisory-header">
-            <span class="pill-badge">ADVISORY BOARD</span>
+            <span class="section-tag section-tag--on-white">ADVISORY BOARD</span>
             <h2>Voices From Our Network</h2>
             <p>Leaders, secretaries-general, and advisors who have shaped and guided Betelgeuse Foundation's
                 institutional journey.</p>
@@ -1385,6 +1397,7 @@
                 </div>
                 <div class="member-details">
                     <div class="member-header">
+
                         <h3 class="member-name">Gauri Sareen</h3>
                         <p class="member-role">Secretary General AMIMUN'24</p>
                     </div>
@@ -1408,6 +1421,7 @@
                 </div>
                 <div class="member-details">
                     <div class="member-header">
+
                         <h3 class="member-name">Sagar Chamarti</h3>
                         <p class="member-role">Director General, AMIMUN'24</p>
                     </div>
@@ -1438,10 +1452,11 @@
                             <p>Dear AMIMUN Delegates,</p>
                             <p>Each year, AMIMUN evolves into something greater than a conference — it becomes a space
                                 where young minds come together with the intention to understand, question, and shape
-                                the world around them. What truly defines AMIMUN is not only the enthusiasm for
-                                diplomacy or the pursuit of global awareness, but the willingness of its delegates to
-                                rethink perspectives, approach challenges with openness, and imagine solutions grounded
-                                in empathy and clarity. Being part of this journey has been...</p>
+                                the world around them.</p>
+                            <p>Diplomacy has never been about winning an argument — it is about finding common purpose.
+                                What truly defines AMIMUN is the willingness of its delegates to rethink perspectives,
+                                approach challenges with openness, and imagine solutions grounded in empathy and clarity.
+                                Being part of this journey has been deeply rewarding.</p>
                         </div>
                     </div>
                 </div>
@@ -1452,6 +1467,7 @@
                 </div>
                 <div class="member-details">
                     <div class="member-header">
+
                         <h3 class="member-name">Amishi Arora</h3>
                         <p class="member-role">Chief Advisor</p>
                     </div>
@@ -1475,7 +1491,7 @@
     <!-- SECTION 4 - CAPABILITIES -->
     <section class="capabilities">
         <div class="capabilities-header">
-            <span class="pill-badge">CAPABILITIES & EXECUTION</span>
+            <span class="section-tag section-tag--on-indigo">CAPABILITIES & EXECUTION</span>
             <h2>What We Actually Do</h2>
             <p>Three operational domains — each with its own depth of delivery and institutional record.</p>
         </div>
@@ -1621,7 +1637,7 @@
     <!-- SECTION 5 - BY THE NUMBERS -->
     <section class="by-the-numbers">
         <div class="by-the-numbers-header">
-            <span class="pill-badge">BY THE NUMBERS</span>
+            <span class="section-tag" style="background: #ffffff; color: #4F46E5; border: none;">BY THE NUMBERS</span>
             <h2>A Record, Not A Claim.</h2>
             <p>Everything below is field-verified across institutional deployments from 2022 to present.</p>
         </div>
@@ -1657,7 +1673,7 @@
     <section class="closing-cta">
         <div class="closing-cta-wrapper" style="margin-top: 30px;">
             <div class="closing-cta-card">
-                <span class="pill-badge">WORK WITH US</span>
+                <div class="section-tag" style="background: #ffffff; color: #4F46E5; border: none; display: inline-flex; align-items: center; gap: 8px;"><span class="pulse-dot"></span>WORK WITH US</div>
                 <h2>Ready to Create Something Meaningful?</h2>
                 <p>Whether you are planning a conference, looking for a logistics partner, or want to collaborate on a
                     social initiative — Betelgeuse brings structure, accountability, and on-ground commitment to
