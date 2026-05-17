@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conference Logistics & Delegate Operations | Betelgeuse Foundation</title>
+    <title>Conference Logistics & Delegate Operations | Betelguese Foundation</title>
     <meta name="description"
         content="End-to-end delegate kit logistics, precision stationery, credential systems, and on-ground field execution for institutional conferences and MUNs.">
     <link rel="stylesheet" href="../css/style.css">
@@ -989,7 +989,7 @@
         }
 
         /* =======================================================================
-           SECTION 7: WHY BETELGEUSE
+           SECTION 7: WHY Betelguese
         ======================================================================= */
         .diff-section {
             padding: 100px 0;
@@ -1388,7 +1388,7 @@
     ========================== -->
     <header class="header">
         <div class="container navbar">
-            <div class="logo"><a href="../index.html" class="logo-link"><span class="nav-brand">Betelgeuse
+            <div class="logo"><a href="../index.html" class="logo-link"><span class="nav-brand">Betelguese
                         Foundation</span></a></div>
             <nav class="nav">
                 <ul class="nav-links">
@@ -1473,7 +1473,7 @@
                         </div>
                     </div>
                     <div class="ops-footer">
-                        <span class="ops-footer-left">Betelgeuse Ops Lead — On-Site</span>
+                        <span class="ops-footer-left">Betelguese Ops Lead — On-Site</span>
                         <span class="ops-footer-right">QA-Verified Dispatch</span>
                     </div>
                 </div>
@@ -1489,7 +1489,7 @@
             <div class="section-header-centered">
                 <div class="pill-badge" style="background: var(--accent-light);">What We Handle</div>
                 <h2>End-to-End Conference Operations</h2>
-                <p class="section-subtext">Betelgeuse doesn't manage aesthetics. We manage the operational
+                <p class="section-subtext">Betelguese doesn't manage aesthetics. We manage the operational
                     infrastructure that makes institutional conferences run without friction.</p>
             </div>
 
@@ -1602,97 +1602,461 @@
     </section>
 
     <!-- =========================
-         [4] TACTILE ASSETS
+         [4] TACTILE ASSETS — FULL OPERATIONAL INVENTORY CATALOG
     ========================== -->
-    <section class="tactile-assets">
+    <style>
+        /* ---- Catalog Section ---- */
+        .catalog-section {
+            padding: 100px 0;
+            background: #EEF2FF;
+        }
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .cat-card {
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid rgba(79,70,229,0.1);
+            padding: 32px;
+            transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .cat-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            box-shadow: 0 0 0 0 rgba(79,70,229,0);
+            transition: box-shadow 0.4s ease;
+            pointer-events: none;
+        }
+        .cat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 56px rgba(79,70,229,0.18);
+        }
+        .catalog-grid:has(.cat-card:hover) .cat-card:not(:hover) {
+            opacity: 0.6;
+        }
+        .cat-icon {
+            width: 52px;
+            height: 52px;
+            background: #EEF2FF;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4F46E5;
+            margin-bottom: 20px;
+        }
+        .cat-card h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #0F172A;
+            letter-spacing: -0.03em;
+            margin-bottom: 6px;
+        }
+        .cat-card .cat-sub {
+            font-size: 13px;
+            color: #6B7280;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .cat-divider { border-top: 1px solid #E5E7EB; margin: 16px 0; }
+        .cat-product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .cat-product-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #374151;
+        }
+        .cat-product-name { display: flex; align-items: center; gap: 8px; }
+        .cat-product-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: #4F46E5; flex-shrink: 0;
+        }
+        .tag-custom {
+            font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+            text-transform: uppercase; padding: 2px 8px; border-radius: 999px;
+            background: #EEF2FF; color: #4F46E5; white-space: nowrap;
+        }
+        .tag-std {
+            font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+            text-transform: uppercase; padding: 2px 8px; border-radius: 999px;
+            background: #F0FDF4; color: #16A34A; white-space: nowrap;
+        }
+        .cat-card .asset-link {
+            color: #4F46E5; font-weight: 600; font-size: 13px; display: inline-block;
+        }
+        /* Comparison Badge Strip */
+        .catalog-compare-strip {
+            margin-top: 56px;
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid rgba(79,70,229,0.12);
+            padding: 32px 40px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+        .compare-col h4 {
+            font-size: 15px; font-weight: 800; color: #0F172A;
+            letter-spacing: -0.02em; margin-bottom: 10px;
+        }
+        .compare-col ul {
+            list-style: none; padding: 0; margin: 0;
+            display: flex; flex-direction: column; gap: 7px;
+        }
+        .compare-col ul li {
+            font-size: 13px; color: #374151;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .compare-col ul li::before {
+            content: '✓'; color: #4F46E5; font-weight: 700; font-size: 12px;
+        }
+        .compare-divider {
+            width: 1px; background: #E5E7EB; align-self: stretch; margin: 0 auto;
+        }
+        .compare-center-label {
+            text-align: center; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            color: #9CA3AF; padding: 0 16px;
+        }
+        .compare-left-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #EEF2FF; color: #4F46E5;
+            padding: 4px 12px; border-radius: 999px;
+            font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+            text-transform: uppercase; margin-bottom: 14px;
+        }
+        .compare-right-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #F0FDF4; color: #16A34A;
+            padding: 4px 12px; border-radius: 999px;
+            font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+            text-transform: uppercase; margin-bottom: 14px;
+        }
+        @media (max-width: 900px) {
+            .catalog-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .catalog-grid { grid-template-columns: 1fr; }
+            .catalog-compare-strip { grid-template-columns: 1fr; }
+            .compare-divider { width: 100%; height: 1px; }
+        }
+        /* ---- Capability Toggle ---- */
+        .cap-toggle-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 48px 0 48px;
+        }
+        .cap-toggle {
+            display: inline-flex;
+            align-items: center;
+            background: #ffffff;
+            border: 1.5px solid rgba(79,70,229,0.25);
+            border-radius: 9999px;
+            padding: 5px;
+            gap: 4px;
+            box-shadow: 0 2px 12px rgba(79,70,229,0.06);
+        }
+        .cap-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 10px 22px;
+            border-radius: 9999px;
+            border: none;
+            background: transparent;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: var(--body-font, inherit);
+            cursor: pointer;
+            transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+            letter-spacing: -0.01em;
+        }
+        .cap-toggle-btn:hover {
+            background: #EEF2FF;
+            color: #4F46E5;
+            box-shadow: 0 0 0 4px rgba(79,70,229,0.1);
+        }
+        .cap-toggle-btn--active {
+            background: #4F46E5;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(79,70,229,0.35);
+        }
+        .cap-toggle-btn--active:hover {
+            background: #4338CA;
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(79,70,229,0.45);
+        }
+        .cap-toggle-hint {
+            font-size: 12px;
+            color: #9CA3AF;
+            letter-spacing: 0.02em;
+            margin: 0;
+        }
+        /* Cards hidden via filter */
+        .cat-card[data-cap-hidden="true"] {
+            display: none;
+        }
+        .cat-card {
+            transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s ease;
+        }
+        /* ---- State-Switch System ---- */
+        .state-customized { display: none; }
+        .state-standard  { display: block; }
+        #catalogGrid.mode-bespoke .state-standard  { display: none; }
+        #catalogGrid.mode-bespoke .state-customized { display: block;
+            animation: fadeInState 0.3s ease forwards; }
+        @keyframes fadeInState {
+            from { opacity: 0; transform: translateY(4px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        /* Indigo glow on premium cards in bespoke mode */
+        #catalogGrid.mode-bespoke .cat-card[data-premium="true"] {
+            border-color: rgba(79,70,229,0.5);
+            box-shadow: 0 0 0 3px rgba(79,70,229,0.1), 0 20px 48px rgba(79,70,229,0.16);
+        }
+    </style>
+
+    <script>
+        /* Capability Toggle — filter catalog cards by data-cap attribute */
+        (function() {
+            function initCatalogToggle() {
+                const toggle = document.getElementById('capToggle');
+                if (!toggle) return;
+                const grid = document.getElementById('catalogGrid');
+                const hint = toggle.closest('.cap-toggle-wrap').querySelector('.cap-toggle-hint');
+                const cards = grid ? Array.from(grid.querySelectorAll('.cat-card')) : [];
+                const labels = { bulk: 'Bulk &amp; Standard', bespoke: 'Bespoke &amp; Customized', all: 'All products' };
+
+                toggle.addEventListener('click', function(e) {
+                    const btn = e.target.closest('.cap-toggle-btn');
+                    if (!btn) return;
+                    const filter = btn.dataset.filter;
+
+                    /* Update button active states */
+                    toggle.querySelectorAll('.cap-toggle-btn').forEach(function(b) {
+                        b.classList.toggle('cap-toggle-btn--active', b === btn);
+                        b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+                    });
+
+                    /* Toggle .mode-bespoke on grid for state-switch */
+                    if (grid) {
+                        grid.classList.toggle('mode-bespoke', filter === 'bespoke');
+                    }
+
+                    /* Show / hide cards by data-cap */
+                    cards.forEach(function(card) {
+                        const cap = card.dataset.cap || 'both';
+                        const show = (filter === 'bulk' && (cap === 'bulk' || cap === 'both')) ||
+                                     (filter === 'bespoke' && (cap === 'bespoke' || cap === 'both'));
+                        card.setAttribute('data-cap-hidden', show ? 'false' : 'true');
+                    });
+
+                    /* Update hint */
+                    if (hint) {
+                        const visCount = cards.filter(c => c.getAttribute('data-cap-hidden') !== 'true').length;
+                        const modeLabel = filter === 'bespoke' ? 'Bespoke & Customized' : 'Bulk & Standard';
+                        hint.textContent = 'Showing ' + visCount + ' of ' + cards.length + ' categories — ' + modeLabel;
+                    }
+                });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initCatalogToggle);
+            } else {
+                initCatalogToggle();
+            }
+        })();
+    </script>
+
+    <section class="catalog-section tactile-assets">
         <div class="container">
             <div class="section-header-centered">
-                <div class="pill-badge">Tactile Assets</div>
-                <h2>Inventory Built for Institutional Scale</h2>
-                <p class="section-subtext">Premium physical touchpoints engineered for recognition, durability, and
-                    frictionless delegate experiences across multi-day fora.</p>
+                <div class="pill-badge" style="background:#fff; color:#4F46E5; border:none;">CATALOG</div>
+                <h2 style="letter-spacing:-0.03em;">Full Operational Inventory</h2>
+                <p class="section-subtext">Every physical asset Betelguese deploys — from premium certificates to field-tested credential systems. Bulk standard and bespoke branding, both in-house.</p>
             </div>
-            <div class="assets-grid">
 
-                <div class="asset-card">
-                    <div class="asset-icon-area">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+            <!-- ======= Capability Toggle ======= -->
+            <div class="cap-toggle-wrap">
+                <div class="cap-toggle" id="capToggle" role="tablist" aria-label="Filter by capability type">
+                    <button class="cap-toggle-btn cap-toggle-btn--active" id="btnBulk"
+                        data-filter="bulk" role="tab" aria-selected="true">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
                         </svg>
+                        Bulk &amp; Standard
+                    </button>
+                    <button class="cap-toggle-btn" id="btnBespoke"
+                        data-filter="bespoke" role="tab" aria-selected="false">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                        </svg>
+                        Bespoke &amp; Customized
+                    </button>
+                </div>
+                <p class="cap-toggle-hint">Showing all products — toggle to filter by sourcing type</p>
+            </div>
+
+            <div class="catalog-grid" id="catalogGrid">
+
+                <!-- Card 1: Writing Suite -->
+                <div class="cat-card">
+                    <div class="cat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                     </div>
-                    <h3>Executive Folders &amp; Portfolios</h3>
-                    <p>Premium leatherette, custom debossing, structured document layouts for institutional gravitas.
-                    </p>
-                    <div class="asset-divider"></div>
-                    <div class="asset-checklist">
-                        <div class="asset-checklist-item">
-                            <span class="check">✓</span> <span>Committee-ready tab systems</span>
-                        </div>
-                        <div class="asset-checklist-item">
-                            <span class="check">✓</span> <span>Institutional crest alignment</span>
-                        </div>
-                        <div class="asset-checklist-item">
-                            <span class="check">✓</span> <span>Bulk finishing &amp; QA gates</span>
-                        </div>
+                    <h3>The Writing Suite</h3>
+                    <p class="cat-sub">Stationery engineered for deliberative environments and institutional gravitas.</p>
+                    <div class="cat-divider"></div>
+                    <div class="state-standard cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Plain Ruled Notepads (A5)</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Chitpads / Placard Slips</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Generic Ballpoint Pens</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Plain Letterhead Blocks</span><span class="tag-std">Standard</span></div>
+                    </div>
+                    <div class="state-customized cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Branded Notepads (Conference Logo)</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Committee-Specific Chitpads</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Branded Twist-Action Pens</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Full-Bleed Logo Letterheads</span><span class="tag-custom">Customizable</span></div>
                     </div>
                     <a href="#specifications" class="asset-link">View Specifications &darr;</a>
                 </div>
 
-                <div class="asset-card">
-                    <div class="asset-icon-area">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
-                            <line x1="9" y1="12" x2="15" y2="12" />
-                            <line x1="9" y1="16" x2="13" y2="16" />
-                        </svg>
+                <!-- Card 2: Credential Systems -->
+                <div class="cat-card">
+                    <div class="cat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                     </div>
-                    <h3>Precision Stationery</h3>
-                    <p>Branded chitpads, diplomatic notepads, high-GSM paper stock for deliberative environments.</p>
-                    <div class="asset-divider"></div>
-                    <div class="asset-checklist">
-                        <div class="asset-checklist-item">
-                            <span class="check">✓</span> <span>Rulebook-weight stock options</span>
-                        </div>
-                        <div class="asset-checklist-item">
-                            <span class="check">✓</span> <span>Per-committee print variants</span>
-                        </div>
-                        <div class="asset-checklist-item">
-                            <span class="check">✓</span> <span>Color-system consistency</span>
-                        </div>
+                    <h3>Credential &amp; ID Systems</h3>
+                    <p class="cat-sub">Role-tiered badges and multi-color lanyard options for rapid delegate identification.</p>
+                    <div class="cat-divider"></div>
+                    <div class="state-standard cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>ID Cards — B3/B4 (Plain)</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Single-Color Polyester Lanyards</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Staff / Press Badges</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Badge Holders &amp; Clips</span><span class="tag-std">Standard</span></div>
+                    </div>
+                    <div class="state-customized cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Role-Color-Coded ID Cards (B3/B4)</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Multi-Color Dye-Sub Lanyards</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Tiered Secretariat Credentials</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>RFID-Ready Badge Option</span><span class="tag-custom">Customizable</span></div>
                     </div>
                     <a href="#specifications" class="asset-link">View Specifications &darr;</a>
                 </div>
 
-                <div class="asset-card">
-                    <div class="asset-icon-area">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                            <circle cx="12" cy="12" r="2" />
-                        </svg>
+                <!-- Card 3: Folder Systems -->
+                <div class="cat-card">
+                    <div class="cat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
                     </div>
-                    <h3>Credential Systems</h3>
-                    <p>Lanyards, RFID-ready badges, tiered delegate ID matrices for registration excellence.</p>
-                    <div class="asset-divider"></div>
-                    <div class="asset-checklist">
-                        <div class="asset-checklist-item">
-                            <span class="check">✓</span> <span>Role-based visual encoding</span>
-                        </div>
-                        <div class="asset-checklist-item">
-                            <span class="check">✓</span> <span>Rapid reprint contingencies</span>
-                        </div>
-                        <div class="asset-checklist-item">
-                            <span class="check">✓</span> <span>Registration desk bundles</span>
-                        </div>
+                    <h3>Folder &amp; Portfolio Systems</h3>
+                    <p class="cat-sub">Jute, Leatherite, Plastic &amp; Cardboard — every construction type for every institutional need.</p>
+                    <div class="cat-divider"></div>
+                    <div class="state-standard cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Cardboard Tab Folders</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Clear Plastic Sleeves</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Simple Clip Mechanism</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Plain Spine, No Branding</span><span class="tag-std">Standard</span></div>
+                    </div>
+                    <div class="state-customized cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Premium Jute Eco Folders</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Leatherite — Debossed Crest</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Spot UV + Soft-Touch Laminate</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Committee Tab Insert System</span><span class="tag-custom">Customizable</span></div>
+                    </div>
+                    <a href="#specifications" class="asset-link">View Specifications &darr;</a>
+                </div>
+
+                <!-- Card 4: Recognition Assets -->
+                <div class="cat-card">
+                    <div class="cat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                    </div>
+                    <h3>Recognition &amp; Certificates</h3>
+                    <p class="cat-sub">A4/A3 premium matte/gloss certificates. 300–350 GSM. Built for framing.</p>
+                    <div class="cat-divider"></div>
+                    <div class="state-standard cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>A4 Matte — Participation</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>300 GSM stock, plain template</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Gloss Laminate Finish</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Batch Print (no names)</span><span class="tag-std">Standard</span></div>
+                    </div>
+                    <div class="state-customized cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>A3 Award — Institutional Seal</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>350 GSM Premium Matte + Spot UV</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Full-Bleed Conference Branding</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>QR-Linked Verifiable Certificate</span><span class="tag-custom">Customizable</span></div>
+                    </div>
+                    <a href="#specifications" class="asset-link">View Specifications &darr;</a>
+                </div>
+
+                <!-- Card 5: Kit Assembly -->
+                <div class="cat-card">
+                    <div class="cat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <h3>Delegate Kit Assembly</h3>
+                    <p class="cat-sub">Complete delegate kits packed, QA-checked and tagged before your opening gavel.</p>
+                    <div class="cat-divider"></div>
+                    <div class="state-standard cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Kit: Plain Folder + Ruled Notepad</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Credential + ID Bundle</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>QA Seal &amp; Manifest</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Generic Pen Included</span><span class="tag-std">Standard</span></div>
+                    </div>
+                    <div class="state-customized cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Branded Folder + Logo Notepad</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Committee-Specific Inserts</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Bespoke Welcome Card + Lanyard</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Delegate Name-Tagged Seal</span><span class="tag-custom">Customizable</span></div>
+                    </div>
+                    <a href="#specifications" class="asset-link">View Specifications &darr;</a>
+                </div>
+
+                <!-- Card 6: Branding Collateral -->
+                <div class="cat-card">
+                    <div class="cat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Branding &amp; Signage</h3>
+                    <p class="cat-sub">On-site signage, roll-up banners, and event collateral deployed with zero last-minute gaps.</p>
+                    <div class="cat-divider"></div>
+                    <div class="state-standard cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Directional Signage (Generic)</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Plain Nameplate Tents</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Floor Stand Banners</span><span class="tag-std">Standard</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Foam Board Display</span><span class="tag-std">Standard</span></div>
+                    </div>
+                    <div class="state-customized cat-product-list">
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Full-Brand Roll-Up Banners</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Podium &amp; Dais Branded Drapes</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Conference-Theme Nameplate Tents</span><span class="tag-custom">Customizable</span></div>
+                        <div class="cat-product-item"><span class="cat-product-name"><span class="cat-product-dot"></span>Entrance Arch &amp; Event Backdrops</span><span class="tag-custom">Customizable</span></div>
                     </div>
                     <a href="#specifications" class="asset-link">View Specifications &darr;</a>
                 </div>
 
             </div>
+
         </div>
     </section>
 
@@ -1702,10 +2066,9 @@
     <section id="specifications" class="specs-section">
         <div class="container">
             <div class="section-header-centered">
-                <div class="pill-badge" style="background: var(--accent-light);">Product Specifications</div>
-                <h2>Material Specifications Matrix</h2>
-                <p class="section-subtext">Technical parameters for procurement, institutional review, and vendor
-                    coordination.</p>
+                <div class="pill-badge" style="background:#fff; color:#4F46E5; border:none;">SPECIFICATIONS</div>
+                <h2 style="letter-spacing:-0.03em;">Material Specifications Matrix</h2>
+                <p class="section-subtext">Technical parameters for procurement, institutional review, and vendor coordination. Click any category to expand.</p>
             </div>
             <div class="specs-container">
 
@@ -1713,26 +2076,30 @@
                     <summary>
                         <div class="summary-left">
                             <div class="summary-dot"></div>
-                            <span class="summary-title">Executive Folders &amp; Portfolios</span>
+                            <span class="summary-title">Folder &amp; Portfolio Systems</span>
                         </div>
                         <span class="summary-icon">+</span>
                     </summary>
                     <div class="details-content">
                         <div class="spec-row">
+                            <span class="spec-label">Construction</span>
+                            <span class="spec-value">Jute · Leatherite · Plastic · Cardboard — all variants available</span>
+                        </div>
+                        <div class="spec-row">
                             <span class="spec-label">Dimensions</span>
                             <span class="spec-value">A4 oversized · spine 32–38mm</span>
                         </div>
                         <div class="spec-row">
-                            <span class="spec-label">Stock</span>
-                            <span class="spec-value">300GSM matt outer · 120GSM inner</span>
+                            <span class="spec-label">Stock (Cover)</span>
+                            <span class="spec-value">300 GSM matt outer · 120 GSM inner lining</span>
                         </div>
                         <div class="spec-row">
                             <span class="spec-label">Finishing</span>
-                            <span class="spec-value">Spot UV · soft-touch laminate</span>
+                            <span class="spec-value">Spot UV · soft-touch laminate · debossed crest option</span>
                         </div>
                         <div class="spec-row">
-                            <span class="spec-label">Deboss</span>
-                            <span class="spec-value">Single-plate institutional crest</span>
+                            <span class="spec-label">Customization</span>
+                            <span class="spec-value">Conference logo · theme color · committee tab inserts</span>
                         </div>
                         <div class="spec-row">
                             <span class="spec-label">MOQ</span>
@@ -1741,22 +2108,94 @@
                     </div>
                 </details>
 
+                <details id="spec-certificates">
+                    <summary>
+                        <div class="summary-left">
+                            <div class="summary-dot"></div>
+                            <span class="summary-title">Recognition &amp; Certificates</span>
+                        </div>
+                        <span class="summary-icon">+</span>
+                    </summary>
+                    <div class="details-content">
+                        <div class="spec-row">
+                            <span class="spec-label">Sizes</span>
+                            <span class="spec-value">A4 (Participation) · A3 (Award &amp; Special Recognition)</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Paper GSM</span>
+                            <span class="spec-value">300–350 GSM Premium stock — Matte or Gloss finish</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Print</span>
+                            <span class="spec-value">4-color offset · full-bleed design · institutional seal</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Customization</span>
+                            <span class="spec-value">Conference branding · delegate name · committee imprint</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Digital Option</span>
+                            <span class="spec-value">QR-linked verifiable certificate available on request</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">MOQ</span>
+                            <span class="spec-value">100 units per certificate type</span>
+                        </div>
+                    </div>
+                </details>
+
+                <details id="spec-credentials">
+                    <summary>
+                        <div class="summary-left">
+                            <div class="summary-dot"></div>
+                            <span class="summary-title">Credential &amp; ID Systems</span>
+                        </div>
+                        <span class="summary-icon">+</span>
+                    </summary>
+                    <div class="details-content">
+                        <div class="spec-row">
+                            <span class="spec-label">ID Card Sizes</span>
+                            <span class="spec-value">B3 / B4 · double-sided full-color print</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Lanyard Options</span>
+                            <span class="spec-value">Multi-color · custom dye sublimation · 15mm polyester</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Tiers</span>
+                            <span class="spec-value">Delegate · Observer · Press · Staff · Secretariat</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Encoding</span>
+                            <span class="spec-value">RFID chip option · QR matrix fallback</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Accessories</span>
+                            <span class="spec-value">Badge holders · clip-on fasteners · reprint contingency packs</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">MOQ</span>
+                            <span class="spec-value">150 units per tier</span>
+                        </div>
+                    </div>
+                </details>
+
                 <details id="spec-stationery">
                     <summary>
                         <div class="summary-left">
                             <div class="summary-dot"></div>
-                            <span class="summary-title">Precision Stationery Suite</span>
+                            <span class="summary-title">The Writing Suite — Stationery</span>
                         </div>
                         <span class="summary-icon">+</span>
                     </summary>
                     <div class="details-content">
                         <div class="spec-row">
                             <span class="spec-label">Format</span>
-                            <span class="spec-value">A5 spiral-bound notepad · A4 letterhead block</span>
+                            <span class="spec-value">A5 spiral-bound notepad · A4 letterhead block · chitpads</span>
                         </div>
                         <div class="spec-row">
                             <span class="spec-label">Paper GSM</span>
-                            <span class="spec-value">90GSM ruled interior · 160GSM cover</span>
+                            <span class="spec-value">90 GSM ruled interior · 160 GSM cover</span>
                         </div>
                         <div class="spec-row">
                             <span class="spec-label">Print</span>
@@ -1767,40 +2206,44 @@
                             <span class="spec-value">Full bleed logo · event theme integration</span>
                         </div>
                         <div class="spec-row">
+                            <span class="spec-label">Pen Options</span>
+                            <span class="spec-value">Branded twist-action ballpoint · custom barrel color</span>
+                        </div>
+                        <div class="spec-row">
                             <span class="spec-label">MOQ</span>
                             <span class="spec-value">300 sets per event</span>
                         </div>
                     </div>
                 </details>
 
-                <details id="spec-credentials">
+                <details id="spec-kits">
                     <summary>
                         <div class="summary-left">
                             <div class="summary-dot"></div>
-                            <span class="summary-title">Credential &amp; Badge Systems</span>
+                            <span class="summary-title">Delegate Kit Assembly &amp; Dispatch</span>
                         </div>
                         <span class="summary-icon">+</span>
                     </summary>
                     <div class="details-content">
                         <div class="spec-row">
-                            <span class="spec-label">Badge Size</span>
-                            <span class="spec-value">86mm × 54mm (CR80) · double-sided print</span>
+                            <span class="spec-label">Kit Contents</span>
+                            <span class="spec-value">Folder · notepad · pen · credential · committee inserts</span>
                         </div>
                         <div class="spec-row">
-                            <span class="spec-label">Lanyard</span>
-                            <span class="spec-value">15mm polyester · custom color dye sublimation</span>
+                            <span class="spec-label">QA Protocol</span>
+                            <span class="spec-value">Item-level checklist · sealed packs with quantity manifest</span>
                         </div>
                         <div class="spec-row">
-                            <span class="spec-label">Encoding</span>
-                            <span class="spec-value">RFID chip option · QR matrix fallback</span>
+                            <span class="spec-label">Assembly Lead Time</span>
+                            <span class="spec-value">48–72 hours pre-event (standard) · 24-hour rush on request</span>
                         </div>
                         <div class="spec-row">
-                            <span class="spec-label">Tiers</span>
-                            <span class="spec-value">Delegate / Observer / Press / Staff / Secretariat</span>
+                            <span class="spec-label">Delivery Mode</span>
+                            <span class="spec-value">On-site delivery with Betelguese ops lead present</span>
                         </div>
                         <div class="spec-row">
-                            <span class="spec-label">MOQ</span>
-                            <span class="spec-value">150 units per tier</span>
+                            <span class="spec-label">Default Rate</span>
+                            <span class="spec-value">0 kit delivery defaults across all institutional deployments</span>
                         </div>
                     </div>
                 </details>
@@ -1898,7 +2341,7 @@
                     style="font-size: 12px; letter-spacing: 0.1em; background: #EEF2FF; color: #4F46E5;">PAST
                     COLLABORATIONS</div>
                 <h2>Execution Ledger</h2>
-                <p class="section-subtext">Operational proof — not promises. Here is where Betelgeuse has delivered on
+                <p class="section-subtext">Operational proof — not promises. Here is where Betelguese has delivered on
                     the ground.</p>
             </div>
 
@@ -1918,7 +2361,7 @@
                         <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
                             institutional materials flow.</p>
                         <div class="dossier-role-card">
-                            <div class="dossier-role-text">Betelgeuse Role: <strong>Lead Logistics Partner</strong>
+                            <div class="dossier-role-text">Betelguese Role: <strong>Lead Logistics Partner</strong>
                             </div>
                         </div>
                         <ul class="dossier-deliverables">
@@ -1943,7 +2386,7 @@
                         <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
                             institutional materials flow.</p>
                         <div class="dossier-role-card">
-                            <div class="dossier-role-text">Betelgeuse Role: <strong>Academic Content &amp; Logistics
+                            <div class="dossier-role-text">Betelguese Role: <strong>Academic Content &amp; Logistics
                                     Integrator</strong></div>
                         </div>
                         <ul class="dossier-deliverables">
@@ -1968,7 +2411,7 @@
                         <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
                             institutional materials flow.</p>
                         <div class="dossier-role-card">
-                            <div class="dossier-role-text">Betelgeuse Role: <strong>Strategic Materials Partner</strong>
+                            <div class="dossier-role-text">Betelguese Role: <strong>Strategic Materials Partner</strong>
                             </div>
                         </div>
                         <ul class="dossier-deliverables">
@@ -1993,7 +2436,7 @@
                         <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
                             institutional materials flow.</p>
                         <div class="dossier-role-card">
-                            <div class="dossier-role-text">Betelgeuse Role: <strong>Full Operations Support</strong>
+                            <div class="dossier-role-text">Betelguese Role: <strong>Full Operations Support</strong>
                             </div>
                         </div>
                         <ul class="dossier-deliverables">
@@ -2018,7 +2461,7 @@
                         <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
                             institutional materials flow.</p>
                         <div class="dossier-role-card">
-                            <div class="dossier-role-text">Betelgeuse Role: <strong>Leadership Training &amp; On-site
+                            <div class="dossier-role-text">Betelguese Role: <strong>Leadership Training &amp; On-site
                                     Execution</strong></div>
                         </div>
                         <ul class="dossier-deliverables">
@@ -2043,7 +2486,7 @@
                         <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
                             institutional materials flow.</p>
                         <div class="dossier-role-card">
-                            <div class="dossier-role-text">Betelgeuse Role: <strong>Institutional Secretariat
+                            <div class="dossier-role-text">Betelguese Role: <strong>Institutional Secretariat
                                     Support</strong></div>
                         </div>
                         <ul class="dossier-deliverables">
@@ -2068,7 +2511,7 @@
                         <p class="dossier-summary">Comprehensive logistical deployment managing over 800+ delegates and
                             institutional materials flow.</p>
                         <div class="dossier-role-card">
-                            <div class="dossier-role-text">Betelgeuse Role: <strong>Execution &amp; Branding
+                            <div class="dossier-role-text">Betelguese Role: <strong>Execution &amp; Branding
                                     Partner</strong></div>
                         </div>
                         <ul class="dossier-deliverables">
@@ -2084,13 +2527,13 @@
     </section>
 
     <!-- =========================
-         [8] WHY BETELGEUSE
+         [8] WHY Betelguese
     ========================== -->
     <section class="diff-section">
         <div class="container">
             <div class="section-header-centered">
                 <div class="pill-badge">The Difference</div>
-                <h2>Why Institutions Choose Betelgeuse</h2>
+                <h2>Why Institutions Choose Betelguese</h2>
                 <p class="section-subtext">Not a vendor. A logistics partner accountable to your delegate experience.
                 </p>
             </div>
@@ -2147,7 +2590,7 @@
                         </svg>
                     </div>
                     <h4>On-Site Command Presence</h4>
-                    <p>A dedicated Betelgeuse ops lead is on the floor from setup to closing gavel. You get a partner,
+                    <p>A dedicated Betelguese ops lead is on the floor from setup to closing gavel. You get a partner,
                         not a drop-off.</p>
                 </div>
 
@@ -2210,7 +2653,7 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-column">
-                    <img src="../assets/images/logo_primary.png" alt="Betelgeuse Foundation Logo" class="footer-logo">
+                    <img src="../assets/images/logo_primary.png" alt="Betelguese Foundation Logo" class="footer-logo">
                     <p>Conference solutions, leadership initiatives, institutional collaborations, and social impact
                         programs.</p>
                 </div>
@@ -2244,7 +2687,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2026 Betelgeuse Foundation. All rights reserved.
+                &copy; 2026 Betelguese Foundation. All rights reserved.
             </div>
         </div>
     </footer>
@@ -2302,6 +2745,27 @@
                 row.classList.add('is-active');
             }
         }
+
+        /* ---- Specs Matrix: Single-open accordion for <details> ---- */
+        (function () {
+            const specsContainer = document.querySelector('.specs-container');
+            if (!specsContainer) return;
+
+            specsContainer.addEventListener('click', function (e) {
+                const summary = e.target.closest('summary');
+                if (!summary) return;
+
+                const clickedDetails = summary.closest('details');
+                if (!clickedDetails) return;
+
+                /* Close all siblings BEFORE the browser toggles the clicked one */
+                specsContainer.querySelectorAll('details[open]').forEach(function (d) {
+                    if (d !== clickedDetails) {
+                        d.removeAttribute('open');
+                    }
+                });
+            });
+        })();
     </script>
 </body>
 
